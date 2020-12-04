@@ -7,13 +7,28 @@
              mc:Ignorable="d" >
     <WrapPanel Height="1080" Width="1920">
         <WrapPanel.Background>
-            <VisualBrush Stretch="None">
-                <VisualBrush.Visual>
-                    <MediaElement  Source="images\Backgrounds\modelX.mp4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1920"></MediaElement>
-                </VisualBrush.Visual>
-            </VisualBrush>
+            <ImageBrush ImageSource="images\Backgrounds\Settings-bg.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <Label FontSize="60" Content="Ez itt a Settings oldal" RenderTransformOrigin="0.881,0.531" Margin="174,10,40,300"/>
-        <Label FontSize="30" Content="Settings" Margin="584,218,68,100"></Label>
+        <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="1560,20,0,0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </WrapPanel>
 </UserControl>

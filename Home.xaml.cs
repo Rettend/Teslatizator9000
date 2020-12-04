@@ -25,7 +25,7 @@ namespace Teslatizator9000
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
             MainWindow.panel.Children.Add(new Settings());
