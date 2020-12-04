@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Teslatizator9000"
              mc:Ignorable="d">
 
-  <WrapPanel Height="1080" Width="1920">
+<WrapPanel x:Name="Container" Height="1080" Width="1920">
     <WrapPanel.Background>
       <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill"/>
     </WrapPanel.Background>

@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Title="ModelY">
 
-    <WrapPanel Height="1080" Width="1920">
+    <WrapPanel x:Name="Container" Height="1080" Width="1920">
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\Desktop-ModelY.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>

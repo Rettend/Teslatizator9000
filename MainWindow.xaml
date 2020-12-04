@@ -8,8 +8,5 @@
         Title="MainWindow" Height="auto" Width="auto"
         WindowState="Maximized"
         WindowStyle="None">
-    <Window.Resources>
-        <FontFamily x:Key="Font">font.woff</FontFamily>
-    </Window.Resources>
     <WrapPanel x:Name="Container"></WrapPanel>
 </Window>

@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Title="Model3">
 
-    <WrapPanel Height="1080" Width="1920">
+    <WrapPanel x:Name="Container" Height="1080" Width="1920">
         <WrapPanel.Background>
             <VisualBrush Stretch="None">
                 <VisualBrush.Visual>
