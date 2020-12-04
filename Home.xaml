@@ -9,5 +9,6 @@
     <Grid>
         <Label FontSize="60" Content="Ez itt a Home oldal" RenderTransformOrigin="0.881,0.531" Margin="204,46,54,264"/>
         <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="301,273,0,0" VerticalAlignment="Top" Width="75"/>
+        <MediaElement Name="VidPlayer" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="518" Source="Videos\Vid.mp4" LoadedBehavior="Play" Margin="0,129,0,0"></MediaElement>
     </Grid>
 </UserControl>
