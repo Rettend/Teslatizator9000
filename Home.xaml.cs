@@ -30,5 +30,34 @@ namespace Teslatizator9000
             MainWindow.panel.Children.Clear();
             MainWindow.panel.Children.Add(new Settings());
         }
+
+        private void Button_Click_ModelS(object sender, RoutedEventArgs s)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new ModelS());
+        }
+
+        private void Button_Click_Model3(object sender, RoutedEventArgs s)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new Model3());
+        }
+
+        private void Button_Click_ModelX(object sender, RoutedEventArgs s)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new ModelX());
+        }
+
+        private void Button_Click_ModelY(object sender, RoutedEventArgs s)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new ModelY());
+        }
+
+        private void Button_Click_Off(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }

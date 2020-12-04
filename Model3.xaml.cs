@@ -18,11 +18,17 @@ namespace Teslatizator9000
     /// <summary>
     /// Interaction logic for Model3.xaml
     /// </summary>
-    public partial class Model3 : Page
+    public partial class Model3 : UserControl
     {
         public Model3()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_Home(object sender, RoutedEventArgs e)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new Home());
         }
     }
 }

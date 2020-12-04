@@ -137,6 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\icons\off.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\Backgrounds\Settings-bg.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

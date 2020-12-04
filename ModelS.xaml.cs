@@ -18,11 +18,17 @@ namespace Teslatizator9000
     /// <summary>
     /// Interaction logic for ModelS.xaml
     /// </summary>
-    public partial class ModelS : Page
+    public partial class ModelS : UserControl
     {
         public ModelS()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_Home(object sender, RoutedEventArgs e)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new Home());
         }
     }
 }

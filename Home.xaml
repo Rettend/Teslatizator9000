@@ -6,12 +6,13 @@
              xmlns:local="clr-namespace:Teslatizator9000"
              mc:Ignorable="d">
 
-<WrapPanel x:Name="Container" Height="1080" Width="1920">
-    <WrapPanel.Background>
-      <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill"/>
-    </WrapPanel.Background>
+    <WrapPanel x:Name="Container" Height="1080" Width="1920">
+        <WrapPanel.Background>
+            <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill"/>
+        </WrapPanel.Background>
         <WrapPanel VerticalAlignment="Center" Width="1920" HorizontalAlignment="Center" Height="100" Margin="0,20,0,0">
-            <Button Click="Button_Click_Settings" Content="Home" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="120" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png"/>
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -32,7 +33,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Click="Button_Click_Settings" Content="Model S" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -53,7 +54,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Click="Button_Click_Settings" Content="Model 3" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -74,7 +75,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Click="Button_Click_Settings" Content="Model X" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -95,7 +96,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Click="Button_Click" Content="Model Y" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -117,7 +118,6 @@
                 </Button.Style>
             </Button>
             <Button Click="Button_Click_Settings" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="120" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Image Source="images\icons\rock-solid.png" />
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="Template">
@@ -137,9 +137,10 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                <Image Source="images\icons\rock-solid.png"/>
             </Button>
         </WrapPanel>
-        
+
     </WrapPanel>
 
 </UserControl>
