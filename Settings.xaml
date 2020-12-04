@@ -9,6 +9,6 @@
     <Grid>
         <Label FontSize="60" Content="Ez itt a Settings oldal" RenderTransformOrigin="0.881,0.531" Margin="174,10,40,300"/>
         <Label FontSize="30" Content="Settings" Margin="584,218,68,100"></Label>
-        <MediaElement Name="VidPlayer" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="518" Source="modelX.mp4" LoadedBehavior="Play" Margin="0,129,0,0"></MediaElement>
+        <MediaElement Name="VidPlayer" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="518" Source="images\Backgrounds\modelX.mp4" LoadedBehavior="Play" Margin="0,129,0,0"></MediaElement>
     </Grid>
 </UserControl>
