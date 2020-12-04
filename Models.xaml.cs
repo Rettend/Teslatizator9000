@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Teslatizator9000
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Models.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Models : Page
     {
-        public static WrapPanel panel; 
-        public MainWindow()
+        public Models()
         {
-            Initialized += MainWindow_Initialized;
             InitializeComponent();
-        }
-
-        private void MainWindow_Initialized(object sender, EventArgs e)
-        {
-            panel = Container;
-            panel.Children.Add(new Home());
         }
     }
 }
