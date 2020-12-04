@@ -11,7 +11,7 @@
       <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill"/>
     </WrapPanel.Background>
     <Label FontSize="40" Content="Home" HorizontalAlignment="Center" Margin="342,0,342,390" FontFamily="TeslaFont"/>
-    <Button Click="Button_Click" Content="Button" Background="White" BorderBrush="White" Margin="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="200" FontFamily="Got"/>
+    <Button Click="Button_Click" Content="Butttttton" Background="White" BorderBrush="White" Margin="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Height="200" FontFamily="Got"/>
   </WrapPanel>
 
 </UserControl>
