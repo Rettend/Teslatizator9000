@@ -137,6 +137,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\Backgrounds\Tesla_logo.png" />
     <Resource Include="images\icons\off.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -149,7 +150,7 @@
     <Resource Include="images\Backgrounds\Info-ModelS.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Content Include="images\Backgrounds\Info-modelX.mp4">
+    <Content Include="images\Backgrounds\Info-ModelX.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="images\Backgrounds\Info-ModelY.jpg">

@@ -8,11 +8,7 @@
 
     <WrapPanel x:Name="Container" Height="1080" Width="1920">
         <WrapPanel.Background>
-            <VisualBrush Stretch="None">
-                <VisualBrush.Visual>
-                    <MediaElement  Source="images\Backgrounds\Info-ModelX.mp4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1920"></MediaElement>
-                </VisualBrush.Visual>
-            </VisualBrush>
+            <ImageBrush ImageSource="images\Backgrounds\Info-Model3.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
         <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="1560,20,0,0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
             <Button.Style>

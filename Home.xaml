@@ -10,137 +10,31 @@
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <WrapPanel VerticalAlignment="Center" Width="1920" HorizontalAlignment="Center" Height="100" Margin="0,20,0,0">
-            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="120" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Image Source="images\icons\off.png"/>
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+        <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70"/>
             </Button>
-            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="420" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button Click="Button_Click_Settings" Background="#00000000" Margin="0" HorizontalContentAlignment="Center" Width="120" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkGoldenrod"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Image Source="images\icons\rock-solid.png"/>
+            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
             </Button>
         </WrapPanel>
-
+        <Image Source="images\Backgrounds\Tesla_logo.png" Width="640" Margin="640,50,0,0"/>
+        <Label Content="-tizator" FontFamily="Gill Sans MT" FontSize="60" Height="76" Margin="0,100,0,0" />
+        <Label Content="9000" FontFamily="Gill Sans MT" FontSize="90" Height="110" RenderTransformOrigin="0.5,0.5" Margin="-50,0,0,0" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="11.35"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </WrapPanel>
 
 </UserControl>

@@ -30,7 +30,7 @@ namespace Teslatizator9000
         private void MainWindow_Initialized(object sender, EventArgs e)
         {
             panel = Container;
-            panel.Children.Add(new Settings());
+            panel.Children.Add(new Home());
         }
     }
 }
