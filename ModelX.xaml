@@ -14,26 +14,18 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </WrapPanel.Background>
-        <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="1560,20,0,0" HorizontalContentAlignment="Center" Width="360" Height="100" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="DarkGoldenrod"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
+        <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70"/>
+            </Button>
+            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
+            </Button>
+        </WrapPanel>
     </WrapPanel>
 </UserControl>

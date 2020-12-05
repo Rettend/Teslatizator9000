@@ -32,5 +32,6 @@ namespace Teslatizator9000
             panel = Container;
             panel.Children.Add(new Home());
         }
+
     }
 }
