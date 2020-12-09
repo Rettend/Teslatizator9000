@@ -23,7 +23,6 @@
                 <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
             </Button>
         </WrapPanel>
-        <Button Content="Test" Width="100" Click="Button_Click_Konfig"/>
         <Image x:Name="TeslaLogo" Source="images\Backgrounds\Tesla_logo.png" Width="640" Margin="640,50,0,0"/>
 
         <Label Content="-tizator" FontFamily="Gill Sans MT" FontSize="60" Height="76" Margin="0,100,0,0" />
@@ -37,6 +36,9 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-    </WrapPanel>
 
+        <Canvas>
+            <Button Content="Saját Tesla konfigurálása" Width="1920" Click="Button_Click_Konfig" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="-1608" Canvas.Top="808" Height="182" />
+        </Canvas>
+    </WrapPanel>
 </UserControl>

@@ -23,5 +23,15 @@
                 <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
             </Button>
         </WrapPanel>
+
+        <Canvas>
+            <Label  Content="Model Y" Canvas.Left="-1124" Canvas.Top="140" Height="120" Width="373" FontFamily="Gill Sans MT" FontSize="80" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  Content="Távolság 1 töltéssel: 505km " Canvas.Left="-1833" Canvas.Top="265" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  Content="Top sebesség: 217km/óra" Canvas.Left="-1833" Canvas.Top="380" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  Content="0-100km/óra: 5,1mp" Canvas.Left="-1833" Canvas.Top="505" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  Content="Kezdőár: 63.000€" Canvas.Left="-633" Canvas.Top="265" Height="120" Width="559" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  Content="Jobb autópilóta: a kocsi teljesen tudja irányítani magát" Canvas.Left="-1833" Canvas.Top="856" Height="120" Width="1585" FontFamily="Gill Sans MT" Foreground="White" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Canvas>
+
     </WrapPanel>
 </UserControl>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d">
-    <Canvas x:Name="Container" Height="1080" Width="1920" Background="White">
+    <Canvas x:Name="Container" Height="1080" Width="1920" Background="GhostWhite">
 
         <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
             <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
@@ -28,17 +28,42 @@
         <Button Content="Model 3" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="791" />
         <Button Content="Model X" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="875" />
         <Button Content="Model Y" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="44" Canvas.Top="969" />
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="268" Canvas.Top="705" >
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="265" Canvas.Top="705" >
             <Image Source="images\icons\white-ui.png" Height="79" Width="115"/>
         </Button>
-        <Button Content="Fekete" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="410" Canvas.Top="705" />
-        <Button Content="Szürke" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="558" Canvas.Top="705" />
-        <Button Content="Kék" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="710" Canvas.Top="705" />
-        <Button Content="Piros" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="812" Canvas.Top="705" />
-        <Button Content="Kerék 1" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="350" Canvas.Top="875" />
-        <Button Content="Kerék 2" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="648" Canvas.Top="875" />
-        <Button Content="Fekete belső" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1134" Canvas.Top="800" />
-        <Button Content="Fekete-fehér belső" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1532" Canvas.Top="809" />
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="390" Canvas.Top="705">
+            <Image Source="images\icons\black-ui.png" Height="79" Width="115"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="515" Canvas.Top="705" >
+            <Image Source="images\icons\gray-ui.png" Height="79" Width="115"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="640" Canvas.Top="705" >
+            <Image Source="images\icons\blue-ui.png" Height="79" Width="115"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="755" Canvas.Top="705" >
+            <Image Source="images\icons\red-ui.png" Height="79" Width="115"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="350" Canvas.Top="875" >
+            <Image Source="images\icons\white-tire.png" Height="125" Width="145"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="648" Canvas.Top="875" >
+            <Image Source="images\icons\black-tire.png" Height="125" Width="145"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1134" Canvas.Top="800" >
+            <Image Source="images\icons\black-int.png" Height="125" Width="135"/>
+        </Button>
+
+        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1532" Canvas.Top="809" >
+            <Image Source="images\icons\white-int.png" Height="125" Width="135"/>
+        </Button>
 
     </Canvas>
 </UserControl>
