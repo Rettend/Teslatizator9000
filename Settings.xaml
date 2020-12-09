@@ -9,7 +9,10 @@
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\Settings-bg.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <Label Content="Settings" FontFamily="Gill Sans MT" FontSize="50" Width="1920" HorizontalContentAlignment="Center" Margin="0,20,0,0" />
-        <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="1700,-68,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" BorderBrush="#00707070" />
+        <DockPanel Margin="20,20,0,0" Width="1880">
+            <Label Content="Settings" FontFamily="Gill Sans MT" FontSize="60" HorizontalContentAlignment="Center" VerticalAlignment="Center" Width="1779" Padding="100,5,5,5" />
+            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" BorderBrush="#00707070" VerticalAlignment="Center" Width="101" HorizontalAlignment="Right" />
+        </DockPanel>
+        <StackPanel Height="100" Width="100"/>
     </WrapPanel>
 </UserControl>

@@ -24,5 +24,34 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="Image" x:Key="TeslaLogo">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="TestStoryboard">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                             From="0"
+                             To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="TestStoryboard">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                             From="0"
+                             To="1" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                             From="0"
+                             To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

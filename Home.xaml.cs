@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -57,6 +58,13 @@ namespace Teslatizator9000
         {
             MainWindow.panel.Children.Clear();
             MainWindow.panel.Children.Add(new Settings());
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Storyboard myStoryboard = (Storyboard)this.Resources["TestStoryboard"];
+            Storyboard.SetTarget(myStoryboard.Children.ElementAt(0) as DoubleAnimation, TeslaLogo);
+            Storyboard.SetTarget(myStoryboard.Children.ElementAt(1) as DoubleAnimation, TeslaLogo);
+            myStoryboard.Begin();
         }
     }
 }
