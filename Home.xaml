@@ -23,7 +23,9 @@
                 <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
             </Button>
         </WrapPanel>
-        <Image Style="{StaticResource TeslaLogo}" x:Name="TeslaLogo" Source="images\Backgrounds\Tesla_logo.png" Width="640" Margin="640,50,0,0" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="Test" Width="100" Click="Button_Click_Konfig"/>
+        <Image x:Name="TeslaLogo" Source="images\Backgrounds\Tesla_logo.png" Width="640" Margin="640,50,0,0"/>
+
         <Label Content="-tizator" FontFamily="Gill Sans MT" FontSize="60" Height="76" Margin="0,100,0,0" />
         <Label Content="9000" FontFamily="Gill Sans MT" FontSize="90" Height="110" RenderTransformOrigin="0.5,0.5" Margin="-50,0,0,0" >
             <Label.RenderTransform>
