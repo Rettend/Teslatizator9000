@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d">
-    <Canvas x:Name="Container" Height="1080" Width="1920" Background="GhostWhite">
+    <Canvas x:Name="Container" Height="1080" Width="1920" Background="White">
 
         <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
             <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
@@ -21,8 +21,20 @@
             </Button>
         </WrapPanel>
 
-        <Image Source="images\Model3\exterior\tesla3_Feher_Kerek1.jpg" Height="512" Width="948" Canvas.Top="95"/>
-        <Image Source="images\Model3\interior\tesla3_Belso_Fekete.jpg" Height="512" Width="948" Canvas.Left="962" Canvas.Top="95"/>
+        <UniformGrid  Margin="0,130,0,0" Width="1920" Panel.ZIndex="-10">
+            <Image Source="images\Model3\exterior\tesla3_Feher_Kerek1.jpg" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="images\Model3\interior\tesla3_Belso_Fekete.jpg" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+        </UniformGrid>
+
 
         <Button Content="Model S" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="705" />
         <Button Content="Model 3" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="791" />
@@ -54,15 +66,15 @@
         </Button>
 
         <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="648" Canvas.Top="875" >
-            <Image Source="images\icons\black-tire.png" Height="125" Width="145"/>
+            <Image Source="images\icons\black-tire.png"/>
         </Button>
 
         <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1134" Canvas.Top="800" >
-            <Image Source="images\icons\black-int.png" Height="125" Width="135"/>
+            <Image Source="images\icons\black-int.png"/>
         </Button>
 
         <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1532" Canvas.Top="809" >
-            <Image Source="images\icons\white-int.png" Height="125" Width="135"/>
+            <Image Source="images\icons\white-int.png"/>
         </Button>
 
     </Canvas>
