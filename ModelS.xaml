@@ -25,7 +25,14 @@
         </WrapPanel>
 
         <Canvas>
-            <Label  Content="Model S" Canvas.Left="-1124" Canvas.Top="140" Height="120" Width="373" FontFamily="Gill Sans MT" FontSize="80" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Border Background="White" Width="470" Padding="10" CornerRadius="30">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
+                </Border.Effect>
+                
+            </Border>
+
             <Label  Content="Távolság 1 töltéssel: 652km " Canvas.Left="-1833" Canvas.Top="265" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label  Content="Top sebesség: 250km/óra" Canvas.Left="-1833" Canvas.Top="380" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label  Content="0-100km/óra: 3,8mp" Canvas.Left="-1833" Canvas.Top="505" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>

@@ -22,7 +22,7 @@
         </WrapPanel>
 
         <UniformGrid  Margin="0,130,0,0" Width="1920" Panel.ZIndex="-10">
-            <Image x:Name="extImage" Source="images\Model3\exterior\Model3_Feher_Kerek1.jpg" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Loaded="IntImageLoaded" >
+            <Image x:Name="extImage" Source="images\Model3\exterior\Model3_Feher_Kerek1.png" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Loaded="IntImageLoaded" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
@@ -32,13 +32,13 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="intImage" Source="images\Model3\interior\Model3_Belso_Fekete.jpg" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+            <Image x:Name="intImage" Source="images\Model3\interior\Model3_Belso_Fekete.png" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
         </UniformGrid>
 
         <Border BorderBrush="Black" Background="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="50" Canvas.Top="660" >
             <UniformGrid Rows="4" Height="300">
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" IsChecked="True" Content="Model S" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelS" />
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model 3" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Model3" />
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model S" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelS" />
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" IsChecked="True" Content="Model 3" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Model3" />
                 <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model X" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelX" />
                 <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model Y" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelY" />
             </UniformGrid>
@@ -46,7 +46,7 @@
 
         <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="650">
             <UniformGrid Rows="1" Width="1000">
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi"/>
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\gray-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="GrayUi" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlackUi" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\red-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="RedUi" />

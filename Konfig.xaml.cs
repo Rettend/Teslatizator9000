@@ -153,15 +153,12 @@ namespace Teslatizator9000
         {
             if (folder == "interior")
             {
-                intImage.Source = new BitmapImage(new Uri($@"images\{Model}\interior\{Model}_Belso_{Interior}.jpg", UriKind.Relative));
+                intImage.Source = new BitmapImage(new Uri($@"images\{Model}\interior\{Model}_Belso_{Interior}.png", UriKind.Relative));
             }
             else
             {
-                extImage.Source = new BitmapImage(new Uri($@"images\{Model}\exterior\{Model}_{Color}_{Tire}.jpg", UriKind.Relative));
+                extImage.Source = new BitmapImage(new Uri($@"images\{Model}\exterior\{Model}_{Color}_{Tire}.png", UriKind.Relative));
             }
-            
-            
-
         }
         private void IntImageLoaded(object sender, RoutedEventArgs e)
         {
