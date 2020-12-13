@@ -54,18 +54,23 @@
             <Style.Triggers>
                 <Trigger Property="IsChecked" Value="True">
                     <Setter Property="BorderThickness" Value="6"/>
+                    <Setter Property="BorderBrush" Value="#FF007FFF"/>
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Cursor" Value="Hand"/>
                 </Trigger>
+                <Trigger Property="Focusable" Value="False">
+                    <Setter Property="BorderThickness" Value="6"/>
+                    <Setter Property="Opacity" Value="0.4"/>
+                    <Setter Property="BorderBrush" Value="Red"/>
+                </Trigger>
             </Style.Triggers>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="#FF007FFF"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RadioButton">
                         <Border Padding="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="Transparent" CornerRadius="100">
-                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}">
+                            <Image x:Name="img" Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}">
                                 <Image.Effect>
                                     <DropShadowEffect Color="Black" Opacity="0.4" Direction="315" ShadowDepth="5" BlurRadius="5"/>
                                 </Image.Effect>
@@ -114,6 +119,83 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Cursor" Value="Hand"/>
                     <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SettingLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="FontFamily" Value="Gill Sans MT" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="TestStoryboard">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                             From="0"
+                             To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SettingButton" TargetType="RadioButton">
+            <Setter Property="FontSize" Value="50" />
+            <Setter Property="Margin" Value="0,30,0,0" />
+            <Setter Property="FontFamily" Value="Gill Sans MT" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <ToggleButton IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                              Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Background="Transparent">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border Name="border" BorderThickness="7" Padding="5" BorderBrush="Transparent" CornerRadius="20">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsChecked" Value="true">
+                                                        <Setter TargetName="border" Property="BorderBrush" Value="#eb363f"/>
+                                                        <Setter TargetName="border" Property="Background">
+                                                            <Setter.Value>
+                                                                <RadialGradientBrush Center="0.5,0.5" GradientOrigin="0.5,1.1" SpreadMethod="Pad" RadiusX="10">
+                                                                    <GradientStop Color="White" Offset="0.439"/>
+                                                                    <GradientStop Color="#eb363f" Offset="0"/>
+                                                                </RadialGradientBrush>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="TestStoryboard">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
+                             From="0"
+                             To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
                 </Trigger>
             </Style.Triggers>
         </Style>

@@ -112,41 +112,38 @@ namespace Teslatizator9000
             Interior = "Fekete";
             UpdateImage("interior");
         }
+        private void CreamInt(object sender, RoutedEventArgs e)
+        {
+            Interior = "Cream";
+            UpdateImage("interior");
+        }
         private void ModelS(object sender, RoutedEventArgs e)
         {
             Model = "ModelS";
-            Color = "Feher";
-            Tire = "Kerek1";
-            UpdateImage("exterior");
-            Interior = "Feher";
-            UpdateImage("interior");
+            DisabledInt.Focusable = true;
+            DisabledInt.IsHitTestVisible = true;
+            ResetImage();
         }
         private void Model3(object sender, RoutedEventArgs e)
         {
             Model = "Model3";
-            Color = "Feher";
-            Tire = "Kerek1";
-            UpdateImage("exterior");
-            Interior = "Feher";
-            UpdateImage("interior");
+            DisabledInt.Focusable = false;
+            DisabledInt.IsHitTestVisible = false;
+            ResetImage();
         }
         private void ModelX(object sender, RoutedEventArgs e)
         {
             Model = "ModelX";
-            Color = "Feher";
-            Tire = "Kerek1";
-            UpdateImage("exterior");
-            Interior = "Feher";
-            UpdateImage("interior");
+            DisabledInt.Focusable = true;
+            DisabledInt.IsHitTestVisible = true;
+            ResetImage();
         }
         private void ModelY(object sender, RoutedEventArgs e)
         {
             Model = "ModelY";
-            Color = "Feher";
-            Tire = "Kerek1";
-            UpdateImage("exterior");
-            Interior = "Feher";
-            UpdateImage("interior");
+            DisabledInt.Focusable = false;
+            DisabledInt.IsHitTestVisible = false;
+            ResetImage();
         }
 
         private void UpdateImage(string folder)
@@ -164,6 +161,17 @@ namespace Teslatizator9000
         {
             UpdateImage("interior");
             UpdateImage("exterior");
+        }
+        private void ResetImage()
+        {
+            Color = "Feher";
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+            Interior = "Feher";
+            UpdateImage("interior");
+            DefaultInt.IsChecked = true;
+            DefaultTire.IsChecked = true;
+            DefaultUi.IsChecked = true;
         }
     }
 }

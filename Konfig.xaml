@@ -46,7 +46,7 @@
 
         <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="650">
             <UniformGrid Rows="1" Width="1000">
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi"/>
+                <RadioButton x:Name="DefaultUi" Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi"/>
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\gray-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="GrayUi" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlackUi" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\red-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="RedUi" />
@@ -55,11 +55,12 @@
         </Border>
         <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="850">
             <UniformGrid Rows="1" Width="1000" Height="160" >
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-tire.png" Padding="10" IsChecked="True" GroupName="tire" Height="140" Width="140" Click="WhiteTire" />
+                <RadioButton x:Name="DefaultTire" Style="{StaticResource StyleButton}" Content="images\icons\white-tire.png" Padding="10" IsChecked="True" GroupName="tire" Height="140" Width="140" Click="WhiteTire" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-tire.png" Padding="10" GroupName="tire" Height="140" Width="140" Click="BlackTire"/>
                 <Rectangle Fill="Black" Width="10"/>
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-int.png" Padding="10" IsChecked="True" GroupName="int" Height="140" Width="140" Click="WhiteInt" />
+                <RadioButton x:Name="DefaultInt" Style="{StaticResource StyleButton}" Content="images\icons\white-int.png" Padding="10" IsChecked="True" GroupName="int" Height="140" Width="140" Click="WhiteInt" />
                 <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="BlackInt" />
+                <RadioButton x:Name="DisabledInt" Focusable="False" IsHitTestVisible="False" Style="{StaticResource StyleButton}" Content="images\icons\cream-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="CreamInt" />
             </UniformGrid>
         </Border>
 

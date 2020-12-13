@@ -9,10 +9,42 @@
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\Settings-bg.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <DockPanel Margin="20,20,0,0" Width="1880">
-            <Label Content="Settings" FontFamily="Gill Sans MT" FontSize="60" HorizontalContentAlignment="Center" VerticalAlignment="Center" Width="1779" Padding="100,5,5,5" />
-            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" BorderBrush="#00707070" VerticalAlignment="Center" Width="101" HorizontalAlignment="Right" />
-        </DockPanel>
-        <StackPanel Height="100" Width="100"/>
+        <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70"/>
+            </Button>
+            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
+            <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
+            </Button>
+        </WrapPanel>
+        
+        <UniformGrid Margin="0,40,0,0" Height="950" Width="1920">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Style="{StaticResource SettingLabel}" Content="Pénznem" />
+                <RadioButton GroupName="penznem" Style="{StaticResource SettingButton}" Content="Euró - €" />
+                <RadioButton GroupName="penznem" Style="{StaticResource SettingButton}" Content="Dollár - $" />
+                <RadioButton IsChecked="True" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Forint - Ft" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Style="{StaticResource SettingLabel}" Content="Hosszmérték" />
+                <RadioButton IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Méter - m" />
+                <RadioButton GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mérföld - mi" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Style="{StaticResource SettingLabel}" Content="Térfogatmérték" />
+                <RadioButton IsChecked="True" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Liter - L" />
+                <RadioButton GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Köbláb - cu ft" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Style="{StaticResource SettingLabel}" Content="Sebességmérték" />
+                <RadioButton IsChecked="True" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Kilóméter/óra - km/h" />
+                <RadioButton GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Mérföld per óra - mph" />
+            </StackPanel>
+        </UniformGrid>
     </WrapPanel>
 </UserControl>

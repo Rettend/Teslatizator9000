@@ -144,6 +144,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\ModelS\interior\ModelS_Belso_Cream.png" />
+    <Resource Include="images\ModelX\interior\ModelX_Belso_Cream.png" />
     <Resource Include="images\ModelX\exterior\ModelX_Feher_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -186,7 +188,7 @@
     <Resource Include="images\ModelS\interior\ModelS_Belso_Feher.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek1.png">
+    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\Model3\interior\Model3_Belso_Feher.png">
@@ -195,31 +197,31 @@
     <Resource Include="images\Model3\interior\Model3_Belso_Fekete.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Feher_Kerek1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="images\Model3\exterior\Model3_Feher_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Fekete_Kerek1.png">
+    <Resource Include="images\Model3\exterior\Model3_Feher_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\Model3\exterior\Model3_Fekete_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Kek_Kerek1.png">
+    <Resource Include="images\Model3\exterior\Model3_Fekete_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\Model3\exterior\Model3_Kek_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Metalic_Kerek1.png">
+    <Resource Include="images\Model3\exterior\Model3_Kek_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\Model3\exterior\Model3_Metalic_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek2.png">
+    <Resource Include="images\Model3\exterior\Model3_Metalic_Kerek1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\icons\red-ui.png">
@@ -260,6 +262,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\icons\black-tire.png" />
+    <Resource Include="images\icons\cream-int.png" />
     <Content Include="images\Backgrounds\Info-ModelX.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
