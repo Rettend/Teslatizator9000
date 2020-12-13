@@ -19,9 +19,17 @@ namespace Teslatizator9000
     /// </summary>
     public partial class Konfig : UserControl
     {
+        public string Model { get; private set; }
+        public string Color { get; private set; }
+        public string Tire { get; private set; }
+        public string Interior { get; private set; }
         public Konfig()
         {
             InitializeComponent();
+            Model = "Model3";
+            Color = "Feher";
+            Tire = "Kerek1";
+            Interior = "Feher";
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -57,6 +65,108 @@ namespace Teslatizator9000
         {
             MainWindow.panel.Children.Clear();
             MainWindow.panel.Children.Add(new Settings());
+        }
+
+        private void WhiteUi(object sender, RoutedEventArgs e)
+        {
+            Color = "Feher";
+            UpdateImage("exterior");
+        }
+        private void GrayUi(object sender, RoutedEventArgs e)
+        {
+            Color = "Metalic";
+            UpdateImage("exterior");
+        }
+        private void BlackUi(object sender, RoutedEventArgs e)
+        {
+            Color = "Fekete";
+            UpdateImage("exterior");
+        }
+        private void RedUi(object sender, RoutedEventArgs e)
+        {
+            Color = "Piros";
+            UpdateImage("exterior");
+        }
+        private void BlueUi(object sender, RoutedEventArgs e)
+        {
+            Color = "Kek";
+            UpdateImage("exterior");
+        }
+        private void WhiteTire(object sender, RoutedEventArgs e)
+        {
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+        }
+        private void BlackTire(object sender, RoutedEventArgs e)
+        {
+            Tire = "Kerek2";
+            UpdateImage("exterior");
+        }
+        private void WhiteInt(object sender, RoutedEventArgs e)
+        {
+            Interior = "Feher";
+            UpdateImage("interior");
+        }
+        private void BlackInt(object sender, RoutedEventArgs e)
+        {
+            Interior = "Fekete";
+            UpdateImage("interior");
+        }
+        private void ModelS(object sender, RoutedEventArgs e)
+        {
+            Model = "ModelS";
+            Color = "Feher";
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+            Interior = "Feher";
+            UpdateImage("interior");
+        }
+        private void Model3(object sender, RoutedEventArgs e)
+        {
+            Model = "Model3";
+            Color = "Feher";
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+            Interior = "Feher";
+            UpdateImage("interior");
+        }
+        private void ModelX(object sender, RoutedEventArgs e)
+        {
+            Model = "ModelX";
+            Color = "Feher";
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+            Interior = "Feher";
+            UpdateImage("interior");
+        }
+        private void ModelY(object sender, RoutedEventArgs e)
+        {
+            Model = "ModelY";
+            Color = "Feher";
+            Tire = "Kerek1";
+            UpdateImage("exterior");
+            Interior = "Feher";
+            UpdateImage("interior");
+        }
+
+        private void UpdateImage(string folder)
+        {
+            if (folder == "interior")
+            {
+                intImage.Source = new BitmapImage(new Uri($@"images\{Model}\interior\{Model}_Belso_{Interior}.jpg", UriKind.Relative));
+            }
+            else
+            {
+                extImage.Source = new BitmapImage(new Uri($@"images\{Model}\exterior\{Model}_{Color}_{Tire}.jpg", UriKind.Relative));
+            }
+            
+            
+
+        }
+        private void IntImageLoaded(object sender, RoutedEventArgs e)
+        {
+            UpdateImage("interior");
+            UpdateImage("exterior");
         }
     }
 }

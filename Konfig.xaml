@@ -22,7 +22,7 @@
         </WrapPanel>
 
         <UniformGrid  Margin="0,130,0,0" Width="1920" Panel.ZIndex="-10">
-            <Image Source="images\Model3\exterior\tesla3_Feher_Kerek1.jpg" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+            <Image x:Name="extImage" Source="images\Model3\exterior\Model3_Feher_Kerek1.jpg" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Loaded="IntImageLoaded" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
@@ -32,50 +32,36 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image Source="images\Model3\interior\tesla3_Belso_Fekete.jpg" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+            <Image x:Name="intImage" Source="images\Model3\interior\Model3_Belso_Fekete.jpg" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
         </UniformGrid>
 
+        <Border BorderBrush="Black" Background="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="50" Canvas.Top="660" >
+            <UniformGrid Rows="4" Height="300">
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" IsChecked="True" Content="Model S" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelS" />
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model 3" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Model3" />
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model X" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelX" />
+                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model Y" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelY" />
+            </UniformGrid>
+        </Border>
 
-        <Button Content="Model S" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="705" />
-        <Button Content="Model 3" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="791" />
-        <Button Content="Model X" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" Canvas.Left="44" Canvas.Top="875" />
-        <Button Content="Model Y" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="44" Canvas.Top="969" />
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="265" Canvas.Top="705" >
-            <Image Source="images\icons\white-ui.png" Height="79" Width="115"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="390" Canvas.Top="705">
-            <Image Source="images\icons\black-ui.png" Height="79" Width="115"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="515" Canvas.Top="705" >
-            <Image Source="images\icons\gray-ui.png" Height="79" Width="115"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="640" Canvas.Top="705" >
-            <Image Source="images\icons\blue-ui.png" Height="79" Width="115"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="755" Canvas.Top="705" >
-            <Image Source="images\icons\red-ui.png" Height="79" Width="115"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="350" Canvas.Top="875" >
-            <Image Source="images\icons\white-tire.png" Height="125" Width="145"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="648" Canvas.Top="875" >
-            <Image Source="images\icons\black-tire.png"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1134" Canvas.Top="800" >
-            <Image Source="images\icons\black-int.png"/>
-        </Button>
-
-        <Button Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" RenderTransformOrigin="0.745,0.087" Canvas.Left="1532" Canvas.Top="809" >
-            <Image Source="images\icons\white-int.png"/>
-        </Button>
+        <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="650">
+            <UniformGrid Rows="1" Width="1000">
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\gray-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="GrayUi" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlackUi" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\red-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="RedUi" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\blue-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlueUi" />
+            </UniformGrid>
+        </Border>
+        <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="850">
+            <UniformGrid Rows="1" Width="1000" Height="160" >
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-tire.png" Padding="10" IsChecked="True" GroupName="tire" Height="140" Width="140" Click="WhiteTire" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-tire.png" Padding="10" GroupName="tire" Height="140" Width="140" Click="BlackTire"/>
+                <Rectangle Fill="Black" Width="10"/>
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\white-int.png" Padding="10" IsChecked="True" GroupName="int" Height="140" Width="140" Click="WhiteInt" />
+                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="BlackInt" />
+            </UniformGrid>
+        </Border>
 
     </Canvas>
 </UserControl>

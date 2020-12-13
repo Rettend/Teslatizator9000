@@ -172,9 +172,6 @@
     <Resource Include="images\icons\black-int.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\icons\black-tire.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="images\icons\black-ui.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -184,6 +181,7 @@
     <Resource Include="images\icons\gray-ui.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\icons\black-tire.png" />
     <Content Include="images\Backgrounds\Info-ModelX.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -206,154 +204,148 @@
     <Resource Include="images\Backgrounds\Desktop-ModelY.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Feher_Kerek1.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Feher_Kerek1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Feher_Kerek2.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Feher_Kerek2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Fekete_Kerek1.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Fekete_Kerek1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Fekete_Kerek2.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Fekete_Kerek2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Kek_Kerek1.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Kek_Kerek1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Kek_Kerek2.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Kek_Kerek2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Metalic_Kerek1.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Metalic_Kerek1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Metalic_Kerek2.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Metalic_Kerek2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Piros_Kerek1.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\exterior\tesla3_Piros_Kerek2.jpg">
+    <Resource Include="images\Model3\exterior\Model3_Piros_Kerek2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\interior\tesla3_Belso_Feher.jpg">
+    <Resource Include="images\Model3\interior\Model3_Belso_Feher.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\Model3\interior\tesla3_Belso_Fekete.jpg">
+    <Resource Include="images\Model3\interior\Model3_Belso_Fekete.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Feher_Kerek1.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Feher_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Feher_Kerek2.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Feher_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Feketa_Kerek2.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Fekete_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Fekete_Kerek1.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Fekete_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Kek_kerek1.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Kek_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Kek_Kerek2.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Kek_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Metalic_Kerek1.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Metalic_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Metalic_Kerek2.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Metalic_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Piros_Kerek1.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Piros_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\exterior\teslaS_Piros_Kerek2.png">
+    <Resource Include="images\ModelS\exterior\ModelS_Piros_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\interior\teslaS_Belso_Cream.jpg">
+    <Resource Include="images\ModelS\interior\ModelS_Belso_Fekete.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\interior\teslaS_Belso_Fekete.jpg">
+    <Resource Include="images\ModelS\interior\ModelS_Belso_Feher.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelS\interior\teslaS_Belso_Feketefeher.jpg">
+    <Resource Include="images\ModelX\exterior\ModelX_Feher_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Fehér_Kerek1.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Feher_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Fehér_Kerek2.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Fekete_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Fekete_Kerek1.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Fekete_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Fekete_Kerek2.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Kek_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Kék_Kerek1.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Kek_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Kék_Kerek2.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Piros_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Piros_Kerek1.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Piros_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Piros_Kerek2.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Metalic_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Szürke_Kerek1.png">
+    <Resource Include="images\ModelX\exterior\ModelX_Metalic_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\exterior\TeslaX_Szürke_Kerek2.png">
+    <Resource Include="images\ModelX\interior\ModelX_Belso_Feher.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\interior\teslaX_Belso_Cream.jpg">
+    <Resource Include="images\ModelX\interior\ModelX_Belso_Fekete.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\interior\teslaX_Belso_Feher.jpg">
+    <Resource Include="images\ModelY\exterior\ModelY_Feher_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelX\interior\teslaX_Belso_Fekete.jpg">
+    <Resource Include="images\ModelY\exterior\ModelY_Feher_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Feher_Kerek1.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Fekete_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Feher_Kerek2.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Fekete_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Fekete_Kerek1.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Kek_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Fekete_Kerek2.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Kek_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Kek_Kerek1.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Metalic_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Kek_Kerek2.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Metalic_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Metalic_Kerek1.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Piros_Kerek1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Metalic_Kerek2.png">
+    <Resource Include="images\ModelY\exterior\ModelY_Piros_Kerek2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Piros_Kerek1.png">
+    <Resource Include="images\ModelY\interior\ModelY_Belso_Feher.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="images\ModelY\exterior\teslaY_Piros_Kerek2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\ModelY\interior\teslaY_Belso_Feher.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\ModelY\interior\teslaY_Belso_Fekete.png">
+    <Resource Include="images\ModelY\interior\ModelY_Belso_Fekete.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
