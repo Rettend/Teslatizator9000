@@ -173,5 +173,14 @@ namespace Teslatizator9000
             DefaultTire.IsChecked = true;
             DefaultUi.IsChecked = true;
         }
+
+        private void CheckoutClick(object sender, RoutedEventArgs e)
+        {
+            CheckoutPanel.Visibility = Visibility.Visible;
+        }
+        private void CheckoutOff(object sender, RoutedEventArgs e)
+        {
+            CheckoutPanel.Visibility = Visibility.Hidden;
+        }
     }
 }

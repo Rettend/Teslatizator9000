@@ -63,6 +63,85 @@
                 <RadioButton x:Name="DisabledInt" Focusable="False" IsHitTestVisible="False" Style="{StaticResource StyleButton}" Content="images\icons\cream-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="CreamInt" />
             </UniformGrid>
         </Border>
+        <Border Canvas.Top="800" Canvas.Left="1600" Padding="10" BorderBrush="Black" BorderThickness="7" CornerRadius="40">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Opacity="0.7"/>
+            </Border.Effect>
+            <Button Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
+        </Border>
 
+        <Border Visibility="Hidden" x:Name="CheckoutPanel" Width="1620" Height="880" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100" Canvas.Left="150" Canvas.Top="100">
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button  Style="{StaticResource CheckoutButton}" Grid.Row="1">
+                    <TextBlock TextDecorations="Underline">Autopilot</TextBlock>
+                </Button>
+                <Button Style="{StaticResource CheckoutButton}" Grid.Row="2">
+                    <TextBlock TextDecorations="Underline">Car Gear</TextBlock>
+                </Button>
+                <Button Style="{StaticResource CheckoutButton}" Grid.Row="3">
+                    <TextBlock TextDecorations="Underline">Finance Options</TextBlock>
+                </Button>
+
+                <Label FontFamily="Gill Sans MT" Grid.ColumnSpan="4" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>
+                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
+                    <ListBox Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Focusable="False">
+                        <UniformGrid Columns="1" Height="560">
+                            <TextBlock TextWrapping="Wrap" Padding="10" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
+                            Enables your car to steer, accelerate and brake automatically
+                            for other vehicles and pedestrians within its lane.
+                            </TextBlock>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
+                                    <TextBlock Width="1060" TextWrapping="Wrap">Navigate on Autopilot: automatic driving from highway on-ramp to off-ramp including interchanges and overtaking slower cars.</TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
+                                    <TextBlock Width="1060" TextWrapping="Wrap">Auto Lane Change: automatic lane changes while driving on the highway.
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
+                                    <TextBlock Width="1060" TextWrapping="Wrap">Autopark: both parallel and perpendicular spaces.</TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
+                                    <TextBlock Width="1060" TextWrapping="Wrap">Summon: your parked car will come find you anywhere in a parking lot. Really.
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
+                                    <TextBlock Width="1060" TextWrapping="Wrap">Traffic Light and Stop Sign Control: assisted stops at traffic controlled intersections.
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </UniformGrid>
+                    </ListBox>
+                </Grid>
+
+            </Grid>
+        </Border>
     </Canvas>
 </UserControl>
