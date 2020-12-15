@@ -8,7 +8,11 @@
 
     <WrapPanel x:Name="Container" Height="1080" Width="1920">
         <WrapPanel.Background>
-            <ImageBrush ImageSource="images\Backgrounds\Info-Model3.jpg" Stretch="UniformToFill"/>
+            <VisualBrush Stretch="None">
+                <VisualBrush.Visual>
+                    <MediaElement  Source="images\Backgrounds\Info-Model3.mp4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1920"></MediaElement>
+                </VisualBrush.Visual>
+            </VisualBrush>
         </WrapPanel.Background>
         <Border Padding="10" Background="White" CornerRadius="20">
             <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">

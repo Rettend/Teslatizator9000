@@ -8,7 +8,11 @@
 
     <WrapPanel x:Name="Container" Height="1080" Width="1920">
         <WrapPanel.Background>
-            <ImageBrush ImageSource="images\Backgrounds\Info-ModelS.jpg" Stretch="UniformToFill"/>
+            <VisualBrush Stretch="None">
+                <VisualBrush.Visual>
+                    <MediaElement  Source="images\Backgrounds\Info-ModelS.mp4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1920"></MediaElement>
+                </VisualBrush.Visual>
+            </VisualBrush>
         </WrapPanel.Background>
         <Border Padding="10" Background="White" CornerRadius="20">
             <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
@@ -26,14 +30,22 @@
             </UniformGrid>
         </Border>
 
-        <Canvas>
-            <Label  Content="Távolság 1 töltéssel: 652km " Canvas.Left="-1833" Canvas.Top="265" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Top sebesség: 250km/óra" Canvas.Left="-1833" Canvas.Top="380" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="0-100km/óra: 3,8mp" Canvas.Left="-1833" Canvas.Top="505" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Kezdőár: 71,870€" Canvas.Left="-633" Canvas.Top="265" Height="120" Width="559" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Tartalmazza a prémium csomagot: ülésfűtés, légszűrő, Bluetooth, led ködlámpa, festett üvegtető" Canvas.Left="-1833" Canvas.Top="856" Height="120" Width="1585" FontFamily="Gill Sans MT" Foreground="White" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Canvas>
-        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,700,0,0" ItemWidth="1920">
+        <UniformGrid Rows="1" Width="1920" Margin="0,100,0,0">
+            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <WrapPanel>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />3.7s 0-60 mph</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />402 miles</TextBlock>
+                </WrapPanel>
+            </Border>
+            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <WrapPanel>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />5</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />19" or 21"</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 69420</TextBlock>
+                </WrapPanel>
+            </Border>
+        </UniformGrid>
+        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,300,0,0" ItemWidth="1920">
             <Border Background="White" Width="470" Padding="10" CornerRadius="30">
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
@@ -41,5 +53,6 @@
                 <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
             </Border>
         </WrapPanel>
+       
     </WrapPanel>
 </UserControl>
