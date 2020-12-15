@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Effects;
+using System.Windows.Resources;
 
 namespace Teslatizator9000
 {
@@ -25,7 +26,7 @@ namespace Teslatizator9000
         public string Color { get; private set; }
         public string Tire { get; private set; }
         public string Interior { get; private set; }
-        public List<int> Prices = new List<int>(5) { 37990, 0, 0, 1500, 0 };
+        public List<int> Prices = new List<int>(5) { 46990, 0, 0, 1500, 0 };
         public Konfig()
         {
             InitializeComponent();
@@ -204,6 +205,8 @@ namespace Teslatizator9000
             DefaultInt.IsChecked = true;
             DefaultTire.IsChecked = true;
             DefaultUi.IsChecked = true;
+            LongrangeButton.IsChecked = true;
+            AutopilotButton.IsChecked = false;
             Prices[1] = 0;
             Prices[2] = 0;
             Prices[3] = 1500;
@@ -226,6 +229,8 @@ namespace Teslatizator9000
             CargearBox2.Visibility = Visibility.Hidden;
             FinanceInfo1.Visibility = Visibility.Hidden;
             FinanceInfo2.Visibility = Visibility.Hidden;
+            CheckoutBg.Background = Brushes.White;
+            CheckoutBgImg.Background.Opacity = 0;
         }
         private void CheckoutOff(object sender, RoutedEventArgs e)
         {
@@ -254,6 +259,8 @@ namespace Teslatizator9000
             CargearBox2.Visibility = Visibility.Hidden;
             FinanceInfo1.Visibility = Visibility.Hidden;
             FinanceInfo2.Visibility = Visibility.Hidden;
+            CheckoutBg.Background = Brushes.White;
+            CheckoutBgImg.Background.Opacity = 0;
         }
         private void Cargear_Click(object sender, RoutedEventArgs e)
         {
@@ -284,6 +291,8 @@ namespace Teslatizator9000
                 PerformancePrice.Content = "$ 59990";
                 LongrangePrice.Content = "$ 49990";
             }
+            CheckoutBg.Background = Brushes.White;
+            CheckoutBgImg.Background.Opacity = 0;
         }
         private void Finance_Click(object sender, RoutedEventArgs e)
         {
@@ -300,6 +309,33 @@ namespace Teslatizator9000
             IntPrice.Content = $"$ {Prices[3]}";
             AutopilotPrice.Content = $"$ {Prices[4]}";
             FinalPrice.Content = $"$ {Prices.Sum()}";
+            CheckoutBg.Background = Brushes.Black;
+            
+            Uri resourceUri;
+            if (Model == "ModelS")
+            {
+                resourceUri = new Uri(@"images\Backgrounds\ModelS_specs_bg.png", UriKind.Relative);
+            }
+            else if (Model == "Model3")
+            {
+                resourceUri = new Uri(@"images\Backgrounds\Model3_specs_bg.png", UriKind.Relative);
+            }
+            else if (Model == "ModelX")
+            {
+                resourceUri = new Uri(@"images\Backgrounds\ModelX_specs_bg.png", UriKind.Relative);
+            }
+            else
+            {
+                resourceUri = new Uri(@"images\Backgrounds\ModelY_specs_bg.png", UriKind.Relative);
+            }
+
+            StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+            BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
+            var brush = new ImageBrush();
+            brush.ImageSource = temp;
+            brush.Stretch = Stretch.Uniform;
+            CheckoutBgImg.Background = brush;
+            CheckoutBgImg.Background.Opacity = 1;
         }
         private void Performance_Click(object sender, RoutedEventArgs e)
         {

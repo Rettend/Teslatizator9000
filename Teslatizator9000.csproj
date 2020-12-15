@@ -153,6 +153,18 @@
     <Content Include="images\Backgrounds\Info-ModelY.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\Backgrounds\ModelS_specs_bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Backgrounds\ModelX_specs_bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Backgrounds\ModelY_specs_bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Backgrounds\Model3_specs_bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Settings.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

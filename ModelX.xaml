@@ -14,7 +14,10 @@
                 </VisualBrush.Visual>
             </VisualBrush>
         </WrapPanel.Background>
-        <Border Padding="10" Background="White" CornerRadius="20">
+        <Border Padding="10" Background="White">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
+            </Border.Effect>
             <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
                 <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                     <Image Source="images\icons\off.png" Width="70"/>
@@ -31,13 +34,19 @@
         </Border>
 
         <UniformGrid Rows="1" Width="1920" Margin="0,100,0,0">
-            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Border MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
+                </Border.Effect>
                 <WrapPanel>
                     <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
                     <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />371 miles</TextBlock>
                 </WrapPanel>
             </Border>
-            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Border MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
+                </Border.Effect>
                 <WrapPanel>
                     <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
                     <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>

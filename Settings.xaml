@@ -9,7 +9,7 @@
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\Settings-bg.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <Border Padding="10" Background="White" CornerRadius="20">
+        <Border Padding="10" Background="White">
             <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
                 <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                     <Image Source="images\icons\off.png" Width="70"/>
