@@ -21,26 +21,10 @@ namespace Teslatizator9000
     /// </summary>
     public partial class Settings : UserControl
     {
-        public Settings(string sor)
+        public Settings()
         {
             InitializeComponent();
-
-            string[] m = sor.Split(';');
-            Penznem = m[0];
-            Hosszmertek = m[1];
-            Terfogatmertek = m[2];
-            Sebessegmertek = m[3];
         }
-
-        public string Penznem { get; private set; }
-
-        public string Hosszmertek { get; private set; }
-
-        public string Terfogatmertek { get; private set; }
-
-        public string Sebessegmertek { get; private set; }
-
-
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {
@@ -74,50 +58,106 @@ namespace Teslatizator9000
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                MainWindow.panel.Children.Add(new Settings(i));
-            }
-
-            
+            MainWindow.panel.Children.Add(new Settings());
         }
 
         private void forint_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
-
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
-                i.Replace(i.Split(';')[0], "forint");
                 ki.Add(i);
             }
-            File.AppendAllText("Settings.txt", ki.ToString());
+            ki[0] = "forint";
+            File.WriteAllLines("Settings.txt", ki);
         }
 
         private void dollar_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
-
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
-                i.Replace(i.Split(';')[0], "dollar");
                 ki.Add(i);
             }
-            File.AppendAllText("Settings.txt", ki.ToString());
+            ki[0] = "dollar";
+            File.WriteAllLines("Settings.txt", ki);
         }
 
         private void euro_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
-
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
-                i.Replace(i.Split(';')[0], "euro");
                 ki.Add(i);
             }
-            File.AppendAllText("Settings.txt", ki.ToString());
+            ki[0] = "euro";
+            File.WriteAllLines("Settings.txt", ki);
         }
 
-        //C:\Users\Miklós\Documents\GitHub\Teslatizator9000\Settings.txt
+        private void meter_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[1] = "meter";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void mile_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[1] = "mile";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void liter_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[2] = "liter";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void cubefeet_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[2] = "cubefeet";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void kmph_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[3] = "kmph";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void mph_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[3] = "mph";
+            File.WriteAllLines("Settings.txt", ki);
+        }
     }
 }

@@ -24,6 +24,48 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="RadioButton" x:Key="NavButton">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Gill Sans MT"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <ToggleButton IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                              Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Background="Transparent">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border Name="border" BorderThickness="0" Padding="5" BorderBrush="Black" CornerRadius="20" 
+                                                Background="Transparent">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="true">
+                                                        <Setter TargetName="border" Property="Background" Value="Black"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Opacity" Value="0.6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style TargetType="Image" x:Key="TeslaLogo">
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Window.Loaded">

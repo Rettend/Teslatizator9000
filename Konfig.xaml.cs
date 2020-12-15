@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Media.Effects;
 
 namespace Teslatizator9000
 {
@@ -24,6 +25,7 @@ namespace Teslatizator9000
         public string Color { get; private set; }
         public string Tire { get; private set; }
         public string Interior { get; private set; }
+        public List<int> Prices = new List<int>(5) { 37990, 0, 0, 1000, 0 };
         public Konfig()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace Teslatizator9000
             Color = "Feher";
             Tire = "Kerek1";
             Interior = "Feher";
+            CalcPrice();
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -65,93 +68,114 @@ namespace Teslatizator9000
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
-            List<Settings> settings = new List<Settings>();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                settings.Add(new Settings(i));
-
-            }
-
-            MainWindow.panel.Children.Add(new Settings(settings.ToString()));
+            MainWindow.panel.Children.Add(new Settings());
         }
 
         private void WhiteUi(object sender, RoutedEventArgs e)
         {
             Color = "Feher";
             UpdateImage("exterior");
+            Prices[1] = 0;
+            CalcPrice();
         }
         private void GrayUi(object sender, RoutedEventArgs e)
         {
             Color = "Metalic";
             UpdateImage("exterior");
+            Prices[1] = 1000;
+            CalcPrice();
         }
         private void BlackUi(object sender, RoutedEventArgs e)
         {
             Color = "Fekete";
             UpdateImage("exterior");
+            Prices[1] = 1000;
+            CalcPrice();
         }
         private void RedUi(object sender, RoutedEventArgs e)
         {
             Color = "Piros";
             UpdateImage("exterior");
+            Prices[1] = 2000;
+            CalcPrice();
         }
         private void BlueUi(object sender, RoutedEventArgs e)
         {
             Color = "Kek";
             UpdateImage("exterior");
+            Prices[1] = 1000;
+            CalcPrice();
         }
         private void WhiteTire(object sender, RoutedEventArgs e)
         {
             Tire = "Kerek1";
             UpdateImage("exterior");
+            Prices[2] = 0;
+            CalcPrice();
         }
         private void BlackTire(object sender, RoutedEventArgs e)
         {
             Tire = "Kerek2";
             UpdateImage("exterior");
+            Prices[2] = 4500;
+            CalcPrice();
         }
         private void WhiteInt(object sender, RoutedEventArgs e)
         {
             Interior = "Feher";
             UpdateImage("interior");
+            Prices[3] = 1500;
+            CalcPrice();
         }
         private void BlackInt(object sender, RoutedEventArgs e)
         {
             Interior = "Fekete";
             UpdateImage("interior");
+            Prices[3] = 0;
+            CalcPrice();
         }
         private void CreamInt(object sender, RoutedEventArgs e)
         {
             Interior = "Cream";
             UpdateImage("interior");
+            Prices[3] = 1500;
+            CalcPrice();
         }
         private void ModelS(object sender, RoutedEventArgs e)
         {
             Model = "ModelS";
             DisabledInt.Focusable = true;
             DisabledInt.IsHitTestVisible = true;
-            ResetImage();
+            Prices[0] = 69420;
+            ResetAll();
+            CalcPrice();
         }
         private void Model3(object sender, RoutedEventArgs e)
         {
             Model = "Model3";
             DisabledInt.Focusable = false;
             DisabledInt.IsHitTestVisible = false;
-            ResetImage();
+            Prices[0] = 37990;
+            ResetAll();
+            CalcPrice();
         }
         private void ModelX(object sender, RoutedEventArgs e)
         {
             Model = "ModelX";
             DisabledInt.Focusable = true;
             DisabledInt.IsHitTestVisible = true;
-            ResetImage();
+            Prices[0] = 79990;
+            ResetAll();
+            CalcPrice();
         }
         private void ModelY(object sender, RoutedEventArgs e)
         {
             Model = "ModelY";
             DisabledInt.Focusable = false;
             DisabledInt.IsHitTestVisible = false;
-            ResetImage();
+            Prices[0] = 49990;
+            ResetAll();
+            CalcPrice();
         }
 
         private void UpdateImage(string folder)
@@ -170,7 +194,7 @@ namespace Teslatizator9000
             UpdateImage("interior");
             UpdateImage("exterior");
         }
-        private void ResetImage()
+        private void ResetAll()
         {
             Color = "Feher";
             Tire = "Kerek1";
@@ -180,8 +204,18 @@ namespace Teslatizator9000
             DefaultInt.IsChecked = true;
             DefaultTire.IsChecked = true;
             DefaultUi.IsChecked = true;
+            Prices[1] = 1500;
+            Prices[2] = 0;
+            Prices[3] = 0;
+            Prices[4] = 0;
         }
-
+        private void CalcPrice()
+        {
+            int price = 0;
+            price = Prices.Sum();
+            PriceLabel1.Content = $"$ {price}";
+            PriceLabel2.Content = $"$ {price}";
+        }
         private void CheckoutClick(object sender, RoutedEventArgs e)
         {
             CheckoutPanel.Visibility = Visibility.Visible;
@@ -189,6 +223,21 @@ namespace Teslatizator9000
         private void CheckoutOff(object sender, RoutedEventArgs e)
         {
             CheckoutPanel.Visibility = Visibility.Hidden;
+        }
+
+        private void Autopilot(object sender, RoutedEventArgs e)
+        {
+            if (AutopilotButton.IsChecked == true)
+            {
+                Prices[4] = 10000;
+                CalcPrice();
+            }
+            else
+            {
+                Prices[4] = 0;
+                CalcPrice();
+            }
+            
         }
     }
 }

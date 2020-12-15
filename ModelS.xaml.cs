@@ -58,13 +58,12 @@ namespace Teslatizator9000
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
-            List<Settings> settings = new List<Settings>();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                settings.Add(new Settings(i));
-                MainWindow.panel.Children.Add(new Settings(i));
-            }
-
+            MainWindow.panel.Children.Add(new Settings());
+        }
+        private void Button_Click_Konfig(object sender, RoutedEventArgs e)
+        {
+            MainWindow.panel.Children.Clear();
+            MainWindow.panel.Children.Add(new Konfig());
         }
     }
 }

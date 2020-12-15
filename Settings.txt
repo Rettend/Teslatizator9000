@@ -1,1 +1,4 @@
-﻿forint;meter;liter;kmph
+﻿forint
+meter
+liter
+kmph

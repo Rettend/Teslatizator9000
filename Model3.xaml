@@ -10,28 +10,45 @@
         <WrapPanel.Background>
             <ImageBrush ImageSource="images\Backgrounds\Info-Model3.jpg" Stretch="UniformToFill"/>
         </WrapPanel.Background>
-        <WrapPanel VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70" Margin="10,20,0,0">
-            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Image Source="images\icons\off.png" Width="70"/>
-            </Button>
-            <Button Click="Button_Click_Home" Content="Home" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
-            <Button Click="Button_Click_ModelS" Content="Model S" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
-            <Button Click="Button_Click_Model3" Content="Model 3" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
-            <Button Click="Button_Click_ModelX" Content="Model X" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
-            <Button Click="Button_Click_ModelY" Content="Model Y" Background="#00000000" Margin="186,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070" />
-            <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
-            </Button>
+        <Border Padding="10" Background="White" CornerRadius="20">
+            <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
+                <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                    <Image Source="images\icons\off.png" Width="70"/>
+                </Button>
+                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
+                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
+                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
+                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
+                <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                    <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
+                </Button>
+            </UniformGrid>
+        </Border>
+        
+
+        <UniformGrid Rows="1" Width="1920" Margin="0,100,0,0">
+            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <WrapPanel>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.2s 0-60 mph</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />353 miles</TextBlock>
+                </WrapPanel>
+            </Border>
+            <Border MaxWidth="400" Padding="50" BorderBrush="Black" CornerRadius="30" BorderThickness="7" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <WrapPanel>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />5</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />18" or 19"</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 37990</TextBlock>
+                </WrapPanel>
+            </Border>
+        </UniformGrid>
+        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,300,0,0" ItemWidth="1920">
+            <Border Background="White" Width="470" Padding="10" CornerRadius="30">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
+                </Border.Effect>
+                <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            </Border>
         </WrapPanel>
-
-        <Canvas>
-            <Label  Content="Model 3" Canvas.Left="-1124" Canvas.Top="140" Height="120" Width="373" FontFamily="Gill Sans MT" FontSize="80" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Távolság 1 töltéssel: 430km " Canvas.Left="-1833" Canvas.Top="265" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Top sebesség: 225km/óra" Canvas.Left="-1833" Canvas.Top="380" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="0-100km/óra: 5,6mp" Canvas.Left="-1833" Canvas.Top="505" Height="120" Width="1525" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Kezdőár: 43,880€" Canvas.Left="-475" Canvas.Top="227" Height="120" Width="559" FontFamily="Gill Sans MT" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Label  Content="Tartalmazza a prémium csomagot: ülésfűtés, Bluetooth, vezeték nélküli telefontöltő, festett üvegtető" Canvas.Left="-1833" Canvas.Top="839" Height="120" Width="1917" FontFamily="Gill Sans MT" Foreground="White" FontSize="40" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Canvas>
-
     </WrapPanel>
 </UserControl>
