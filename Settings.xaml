@@ -26,24 +26,24 @@
         <UniformGrid Margin="0,40,0,0" Height="950" Width="1920">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Style="{StaticResource SettingLabel}" Content="Pénznem" />
-                <RadioButton GroupName="penznem" Style="{StaticResource SettingButton}" Content="Euró - €" />
-                <RadioButton GroupName="penznem" Style="{StaticResource SettingButton}" Content="Dollár - $" />
-                <RadioButton IsChecked="True" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Forint - Ft" />
+                <RadioButton x:Name="euro" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Euró - €" Checked="euro_Checked" />
+                <RadioButton x:Name="dollar" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Dollár - $" Checked="dollar_Checked" />
+                <RadioButton x:Name="forint" IsChecked="True" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Forint - Ft" Checked="forint_Checked" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Style="{StaticResource SettingLabel}" Content="Hosszmérték" />
-                <RadioButton IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Méter - m" />
-                <RadioButton GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mérföld - mi" />
+                <RadioButton x:Name="meter" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Méter - m" />
+                <RadioButton x:Name="mile" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mérföld - mi" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Style="{StaticResource SettingLabel}" Content="Térfogatmérték" />
-                <RadioButton IsChecked="True" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Liter - L" />
-                <RadioButton GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Köbláb - cu ft" />
+                <RadioButton x:Name="liter" IsChecked="True" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Liter - L" />
+                <RadioButton x:Name="cubefeet" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Köbláb - cu ft" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Style="{StaticResource SettingLabel}" Content="Sebességmérték" />
-                <RadioButton IsChecked="True" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Kilóméter/óra - km/h" />
-                <RadioButton GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Mérföld per óra - mph" />
+                <RadioButton x:Name="kmph" IsChecked="True" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Kilóméter/óra - km/h" />
+                <RadioButton x:Name="mph" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Mérföld per óra - mph" />
             </StackPanel>
         </UniformGrid>
     </WrapPanel>

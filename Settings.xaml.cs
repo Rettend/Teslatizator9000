@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Teslatizator9000
 {
@@ -20,10 +21,26 @@ namespace Teslatizator9000
     /// </summary>
     public partial class Settings : UserControl
     {
-        public Settings()
+        public Settings(string sor)
         {
             InitializeComponent();
+
+            string[] m = sor.Split(';');
+            Penznem = m[0];
+            Hosszmertek = m[1];
+            Terfogatmertek = m[2];
+            Sebessegmertek = m[3];
         }
+
+        public string Penznem { get; private set; }
+
+        public string Hosszmertek { get; private set; }
+
+        public string Terfogatmertek { get; private set; }
+
+        public string Sebessegmertek { get; private set; }
+
+
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {
@@ -57,7 +74,50 @@ namespace Teslatizator9000
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
-            MainWindow.panel.Children.Add(new Settings());
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                MainWindow.panel.Children.Add(new Settings(i));
+            }
+
+            
         }
+
+        private void forint_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                i.Replace(i.Split(';')[0], "forint");
+                ki.Add(i);
+            }
+            File.AppendAllText("Settings.txt", ki.ToString());
+        }
+
+        private void dollar_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                i.Replace(i.Split(';')[0], "dollar");
+                ki.Add(i);
+            }
+            File.AppendAllText("Settings.txt", ki.ToString());
+        }
+
+        private void euro_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                i.Replace(i.Split(';')[0], "euro");
+                ki.Add(i);
+            }
+            File.AppendAllText("Settings.txt", ki.ToString());
+        }
+
+        //C:\Users\Miklós\Documents\GitHub\Teslatizator9000\Settings.txt
     }
 }

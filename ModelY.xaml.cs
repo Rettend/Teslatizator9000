@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Teslatizator9000
 {
@@ -57,7 +58,13 @@ namespace Teslatizator9000
         private void Button_Click_Settings(object sender, RoutedEventArgs e)
         {
             MainWindow.panel.Children.Clear();
-            MainWindow.panel.Children.Add(new Settings());
+            List<Settings> settings = new List<Settings>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                settings.Add(new Settings(i));
+                MainWindow.panel.Children.Add(new Settings(i));
+            }
+
         }
     }
 }
