@@ -144,6 +144,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\Backgrounds\Info-Model3.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\Backgrounds\Info-ModelS.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\Backgrounds\Info-ModelY.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Settings.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
