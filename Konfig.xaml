@@ -73,7 +73,7 @@
             <Button Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
         </Border>
 
-        <Border Visibility="Visible" x:Name="CheckoutPanel" Width="1620" Height="880" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100" Canvas.Left="150" Canvas.Top="100">
+        <Border Visibility="Hidden" x:Name="CheckoutPanel" Width="1620" Height="880" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100" Canvas.Left="150" Canvas.Top="100">
             <Grid Background="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -89,24 +89,36 @@
                 </Grid.RowDefinitions>
                 <Button Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="1">
+                <Button Style="{StaticResource CheckoutButton}" Grid.Row="1" Click="Autopilot_Click">
                     <TextBlock TextDecorations="Underline">Autopilot</TextBlock>
                 </Button>
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="2">
+                <Button Style="{StaticResource CheckoutButton}" Grid.Row="2" Click="Cargear_Click">
                     <TextBlock TextDecorations="Underline">Car Gear</TextBlock>
                 </Button>
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="3">
+                <Button Style="{StaticResource CheckoutButton}" Grid.Row="3" Click="Finance_Click">
                     <TextBlock TextDecorations="Underline">Finance Options</TextBlock>
                 </Button>
                 <Label x:Name="PriceLabel1" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
-                <Label FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>
-                <RadioButton x:Name="AutopilotButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Click="Autopilot">Select Option - $ 10 000</RadioButton>
+                <Label x:Name="CheckoutTitle" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>
+                <RadioButton x:Name="AutopilotButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Click="Autopilot">Select Option $ 10 000</RadioButton>
                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="493*"/>
                         <ColumnDefinition Width="707*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="AutopilotInfo" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Focusable="False" Margin="4,0,-4,0" Grid.ColumnSpan="2">
+                    <ListBox x:Name="AutopilotContent" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Focusable="False" Margin="4,0,-4,0" Grid.ColumnSpan="2">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <ContentPresenter/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
                         <UniformGrid Columns="1" Height="560">
                             <TextBlock TextWrapping="Wrap" Padding="10" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
                             Enables your car to steer, accelerate and brake automatically
@@ -147,8 +159,33 @@
                             </ListBoxItem>
                         </UniformGrid>
                     </ListBox>
+                    <Grid x:Name="CargearBox1" Visibility="Hidden">
+                        <RadioButton GroupName="cargear" x:Name="PerformanceButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Performance_Click">Performance</RadioButton>
+                        <TextBlock x:Name="PerformanceBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center">+ Acceleration<LineBreak/>+ Top Speed</TextBlock>
+                        <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="PerformancePrice" Margin="0,0,0,100" >$ 54990</Label>
+                    </Grid>
+                    <Grid Grid.Column="1" x:Name="CargearBox2" Visibility="Hidden">
+                        <RadioButton GroupName="cargear" x:Name="LongrangeButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Longrange_Click">Long Range Plus</RadioButton>
+                        <TextBlock x:Name="LongrangeBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center">+ Range<LineBreak/>+ Battery</TextBlock>
+                        <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="LongrangePrice" Margin="0,0,0,100" >$ 46990</Label>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" Visibility="Hidden" x:Name="FinanceInfo1" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,100,0,0">
+                        <Label FontWeight="Bold">Car</Label><LineBreak/>
+                        <Label Name="CarPrice">+ $ 46990</Label><LineBreak/>
+                        <Label FontWeight="Bold">Color</Label><LineBreak/>
+                        <Label Name="ColorPrice">+ $ 0</Label><LineBreak/>
+                        <Label FontWeight="Bold">Tire</Label><LineBreak/>
+                        <Label Name="TirePrice">+ $ 0</Label>
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" TextWrapping="Wrap" Visibility="Hidden" x:Name="FinanceInfo2" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0">
+                        <Label FontWeight="Bold">Interior</Label><LineBreak/>
+                        <Label Name="IntPrice">+ $ 1000</Label><LineBreak/>
+                        <Label FontWeight="Bold">Autopilot</Label><LineBreak/>
+                        <Label Name="AutopilotPrice">+ $ 0</Label><LineBreak/>
+                        <TextBlock Margin="0,50,0,0" FontSize="60" FontWeight="Bold" TextDecorations="Underline">Final Price</TextBlock><LineBreak/>
+                        <Label Name="FinalPrice">$ 47990</Label>
+                    </TextBlock>
                 </Grid>
-
             </Grid>
         </Border>
     </Canvas>
