@@ -68,7 +68,7 @@
         <Label Canvas.Top="690" Canvas.Left="1600" x:Name="PriceLabel2" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
         <Border Canvas.Top="800" Canvas.Left="1600" Padding="10" BorderBrush="Black" BorderThickness="7" CornerRadius="40">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="10" Opacity="0.7"/>
+                <DropShadowEffect BlurRadius="10" Opacity="0.6"/>
             </Border.Effect>
             <Button Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
         </Border>

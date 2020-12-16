@@ -197,6 +197,7 @@ namespace Teslatizator9000
         }
         private void ResetAll()
         {
+            //Factory reseto
             Color = "Feher";
             Tire = "Kerek1";
             UpdateImage("exterior");
