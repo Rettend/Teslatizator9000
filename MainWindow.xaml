@@ -10,5 +10,9 @@
         WindowStyle="None"
         Height="Auto" Width="Auto"
         MinHeight="700" MinWidth="400">
-    <WrapPanel x:Name="Container"></WrapPanel>
+    <UniformGrid x:Name="Container">
+        <UniformGrid.Background>
+            <ImageBrush ImageSource="images\Backgrounds\bg16_9.png" AlignmentY="Center" AlignmentX="Center" Stretch="UniformToFill"/>
+        </UniformGrid.Background>
+    </UniformGrid>
 </Window>

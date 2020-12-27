@@ -6,31 +6,35 @@
              xmlns:local="clr-namespace:Teslatizator9000"
              mc:Ignorable="d">
 
-    <UniformGrid Columns="1" x:Name="Container">
+    <UniformGrid Columns="1" x:Name="Container" Grid.IsSharedSizeScope="True">
         <UniformGrid.Background>
-            <ImageBrush ImageSource="images\Backgrounds\bg.jpg" Stretch="UniformToFill" AlignmentY="Center" AlignmentX="Center"/>
+            <ImageBrush ImageSource="images\Backgrounds\bg16_9.png" AlignmentY="Center" AlignmentX="Center" Stretch="UniformToFill"/>
         </UniformGrid.Background>
-            <UniformGrid Rows="1" VerticalAlignment="Top" Margin="0">
-                <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\off.png" Width="70" Margin="0,10,0,10"/>
-                </Button>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
-                <Button Click="Button_Click_Settings" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\rock-solid.png" Width="70" Height="70"/>
-                </Button>
-            </UniformGrid>
-            <Image x:Name="TeslaLogo" Style="{StaticResource TeslaLogo}" Source="images\Backgrounds\Teslatizator9000_logo.png" MinWidth="400" MaxWidth="1000" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,0,0,0" ItemWidth="1920">
-            <Border Background="White" Width="470" Padding="10" CornerRadius="30">
-                <Border.Effect>
-                    <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
-                </Border.Effect>
-                <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
-            </Border>
-        </WrapPanel>
+        <UniformGrid Width="Auto" Rows="1" VerticalAlignment="Top" Margin="0">
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70" Margin="0,10,0,10"/>
+            </Button>
+            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
+            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
+            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
+            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
+            <Button Click="Button_Click_Settings" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70"/>
+            </Button>
+        </UniformGrid>
+        <Image x:Name="TeslaLogo" Style="{StaticResource TeslaLogo}" Source="images\Backgrounds\Teslatizator9000_logo.png" Margin="0,-50,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Canvas/>
+        <Canvas/>
+        <Canvas/>
+        <Canvas/>
+        <UniformGrid>
+        <Border Background="White" Padding="20,10" CornerRadius="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
+            </Border.Effect>
+            <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+        </Border>
+        </UniformGrid>
     </UniformGrid>
 </UserControl>
