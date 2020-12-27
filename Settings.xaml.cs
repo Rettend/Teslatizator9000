@@ -159,5 +159,46 @@ namespace Teslatizator9000
             ki[3] = "mph";
             File.WriteAllLines("Settings.txt", ki);
         }
+        private void fullsrceen_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[4] = "fullscreen";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+        private void windowed_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[4] = "windowed";
+            File.WriteAllLines("Settings.txt", ki);
+            
+        }
+        private void english_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[5] = "english";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+        private void magyar_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[5] = "magyar";
+            File.WriteAllLines("Settings.txt", ki);
+        }
     }
 }

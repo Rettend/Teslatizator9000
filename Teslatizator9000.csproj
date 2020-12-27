@@ -153,6 +153,7 @@
     <Content Include="images\Backgrounds\Info-ModelY.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\Backgrounds\Teslatizator9000_logo.png" />
     <Resource Include="images\Backgrounds\ModelS_specs_bg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -261,9 +262,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\Backgrounds\Info-ModelS.jpg" />
-    <Resource Include="images\Backgrounds\Tesla_logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="images\icons\off.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

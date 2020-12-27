@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d"
-        Title="MainWindow" Height="auto" Width="auto"
+        Title="MainWindow"
         WindowState="Maximized"
-        WindowStyle="None">
+        WindowStyle="None"
+        Height="Auto" Width="Auto"
+        MinHeight="700" MinWidth="400">
     <WrapPanel x:Name="Container"></WrapPanel>
 </Window>

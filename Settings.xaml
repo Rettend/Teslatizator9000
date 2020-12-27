@@ -51,7 +51,6 @@
                     <Label Style="{StaticResource SettingLabel}" Content="Screen mode" />
                     <RadioButton x:Name="fullscreen" IsChecked="True" GroupName="screen" Style="{StaticResource SettingButton}" Content="Fullscreen" Checked="fullsrceen_Checked" />
                     <RadioButton x:Name="windowed" GroupName="screen" Style="{StaticResource SettingButton}" Content="Windowed" Checked="windowed_Checked" />
-                    <RadioButton x:Name="maximized" GroupName="screen" Style="{StaticResource SettingButton}" Content="Maximized" Checked="maximized_Checked" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label Style="{StaticResource SettingLabel}" Content="Language" />
