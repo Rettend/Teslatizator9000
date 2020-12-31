@@ -45,9 +45,9 @@ namespace Teslatizator9000
                     Range.Content = $"402 miles";
                 }
 
-                if (i.Contains("meter"))
+                if (i.Contains("kilometer"))
                 {
-                    Range.Content = $"646956 meters";
+                    Range.Content = $"646 kilometers";
                 }
             }
             foreach (var i in File.ReadAllLines("Settings.txt"))

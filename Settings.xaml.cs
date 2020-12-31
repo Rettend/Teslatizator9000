@@ -101,7 +101,7 @@ namespace Teslatizator9000
             {
                 ki.Add(i);
             }
-            ki[1] = "meter";
+            ki[1] = "kilometer";
             File.WriteAllLines("Settings.txt", ki);
         }
 

@@ -34,7 +34,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label Style="{StaticResource SettingLabel}" Content="Hosszmérték" />
-                    <RadioButton x:Name="meter" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Méter - m" Checked="meter_Checked" />
+                    <RadioButton x:Name="kilometer" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Kilométer - km" Checked="meter_Checked" />
                     <RadioButton x:Name="mile" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mérföld - mi" Checked="mile_Checked" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
