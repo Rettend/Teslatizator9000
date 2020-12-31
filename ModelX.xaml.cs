@@ -24,7 +24,51 @@ namespace Teslatizator9000
         public ModelX()
         {
             InitializeComponent();
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("mph"))
+                {
+                    AccelerationYes.Content = "4.4s 0-60 mph";
+                }
+
+                if (i.Contains("kmph"))
+                {
+                    AccelerationYes.Content = "4.6s 0-100 kmph";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("mile"))
+                {
+                    Range.Content = $"371 miles";
+                }
+
+                if (i.Contains("kilometer"))
+                {
+                    Range.Content = $"597 kilometers";
+                }
+            }
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    Price.Content = "64792 €";
+                }
+
+                if (i.Contains("forint"))
+                {
+                    Price.Content = "21597300 ft";
+                }
+
+                if (i.Contains("dollar"))
+                {
+                    Price.Content = "$ 79990";
+                }
+            }
         }
+    
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {
