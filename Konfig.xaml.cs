@@ -331,8 +331,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "74511,9 €";
-                        LongrangePrice.Content = "56230,2 €";
+                        PerformancePrice.Content = "74512 €";
+                        LongrangePrice.Content = "56230 €";
                     }
                 }
 
@@ -360,8 +360,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "44541,9 €";
-                        LongrangePrice.Content = "38061,9 €";
+                        PerformancePrice.Content = "44542 €";
+                        LongrangePrice.Content = "38062 €";
                     }
                 }
 
@@ -389,8 +389,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "80991,9 €";
-                        LongrangePrice.Content = "64791,9 €";
+                        PerformancePrice.Content = "80992 €";
+                        LongrangePrice.Content = "64792 €";
                     }
                 }
 
@@ -418,8 +418,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "48591,9 €";
-                        LongrangePrice.Content = "40491,9 €";
+                        PerformancePrice.Content = "48592 €";
+                        LongrangePrice.Content = "40492 €";
                     }
                 }
 
