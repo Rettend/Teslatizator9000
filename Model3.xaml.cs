@@ -58,7 +58,7 @@ namespace Teslatizator9000
 
                 if (i.Contains("forint"))
                 {
-                    Price.Content = "10257300 ft";
+                    Price.Content = "10257300 Ft";
                 }
 
                 if (i.Contains("dollar"))

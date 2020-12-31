@@ -38,7 +38,31 @@ namespace Teslatizator9000
 
             // $1 = 0,81€ or 297ft
             // 1€ = $1,23 or 364,5ft
-            
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    AutopilotButton.Content = "Select option $ 10000";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    AutopilotButton.Content = "Select option 8100 €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    AutopilotButton.Content = "Select option 2700000 Ft";
+                }
+            }
+
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -236,8 +260,8 @@ namespace Teslatizator9000
                 if (i.Contains("forint"))
                 {
                     price = price * 297;
-                    PriceLabel1.Content = $"{price} ft";
-                    PriceLabel2.Content = $"{price} ft";
+                    PriceLabel1.Content = $"{price} Ft";
+                    PriceLabel2.Content = $"{price} Ft";
                 }
             }
 
@@ -283,29 +307,7 @@ namespace Teslatizator9000
 
         private void Autopilot_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                if (i.Contains("dollar"))
-                {
-                    AutopilotButton.Content = "Select option $ 10000";
-                }
-            }
-
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                if (i.Contains("euro"))
-                {
-                    AutopilotButton.Content = "Select option 8100 €";
-                }
-            }
-
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                if (i.Contains("forint"))
-                {
-                    AutopilotButton.Content = "Select option 2700000 ft";
-                }
-            }
+            
             CheckoutTitle.Content = "Autopilot Included";
             AutopilotButton.Visibility = Visibility.Visible;
             AutopilotContent.Visibility = Visibility.Visible;
@@ -340,8 +342,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "24837300 ft";
-                        LongrangePrice.Content = "20617740 ft";
+                        PerformancePrice.Content = "24837300 Ft";
+                        LongrangePrice.Content = "20617740 Ft";
                     }
                 }
 
@@ -369,8 +371,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "14847300 ft";
-                        LongrangePrice.Content = "12687300 ft";
+                        PerformancePrice.Content = "14847300 Ft";
+                        LongrangePrice.Content = "12687300 Ft";
                     }
                 }
 
@@ -398,8 +400,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "26997300 ft";
-                        LongrangePrice.Content = "21597300 ft";
+                        PerformancePrice.Content = "26997300 Ft";
+                        LongrangePrice.Content = "21597300 Ft";
                     }
                 }
 
@@ -427,8 +429,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "16197300 ft";
-                        LongrangePrice.Content = "13497300 ft";
+                        PerformancePrice.Content = "16197300 Ft";
+                        LongrangePrice.Content = "13497300 Ft";
                     }
                 }
 
@@ -471,12 +473,12 @@ namespace Teslatizator9000
             {
                 if (i.Contains("forint"))
                 {
-                    CarPrice.Content = $"{Prices[0] * 270} ft";
-                    ColorPrice.Content = $"{Prices[1] * 270} ft";
-                    TirePrice.Content = $"{Prices[2] * 270} ft";
-                    IntPrice.Content = $"{Prices[3] * 270} ft";
-                    AutopilotPrice.Content = $"{Prices[4] * 270} ft";
-                    FinalPrice.Content = $"{Prices.Sum() * 270} ft";
+                    CarPrice.Content = $"{Prices[0] * 270} Ft";
+                    ColorPrice.Content = $"{Prices[1] * 270} Ft";
+                    TirePrice.Content = $"{Prices[2] * 270} Ft";
+                    IntPrice.Content = $"{Prices[3] * 270} Ft";
+                    AutopilotPrice.Content = $"{Prices[4] * 270} Ft";
+                    FinalPrice.Content = $"{Prices.Sum() * 270} Ft";
                 }
             }
 
