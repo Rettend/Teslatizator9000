@@ -42,14 +42,15 @@ namespace Teslatizator9000
             {
                 if (i.Contains("mile"))
                 {
-                    Range.Content = $"402 miles";
+                    Range.Content = "402 miles";
                 }
 
                 if (i.Contains("kilometer"))
                 {
-                    Range.Content = $"646 kilometers";
+                    Range.Content = "646 kilometers";
                 }
             }
+
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
                 if (i.Contains("euro"))
@@ -65,6 +66,19 @@ namespace Teslatizator9000
                 if (i.Contains("dollar"))
                 {
                     Price.Content = "$ 69420";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("liter"))
+                {
+                    TrunkSpace.Content = "792 liters";
+                }
+
+                if (i.Contains("cubefeet"))
+                {
+                    TrunkSpace.Content = "28 cubic feet";
                 }
             }
         }

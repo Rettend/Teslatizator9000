@@ -50,6 +50,7 @@ namespace Teslatizator9000
                     Range.Content = $"597 kilometers";
                 }
             }
+
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
                 if (i.Contains("euro"))
@@ -65,6 +66,19 @@ namespace Teslatizator9000
                 if (i.Contains("dollar"))
                 {
                     Price.Content = "$ 79990";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("liter"))
+                {
+                    TrunkSpace.Content = "2491 liters";
+                }
+
+                if (i.Contains("cubefeet"))
+                {
+                    TrunkSpace.Content = "88 cubic feet";
                 }
             }
         }
