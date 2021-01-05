@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Teslatizator9000"
              mc:Ignorable="d">
 
-    <UniformGrid Columns="1" x:Name="Container" Grid.IsSharedSizeScope="True">
+    <UniformGrid Columns="1" x:Name="Container" Grid.IsSharedSizeScope="True" SizeChanged="Container_SizeChanged">
         <UniformGrid.Background>
             <ImageBrush ImageSource="images\Backgrounds\bg16_9.png" AlignmentY="Center" AlignmentX="Center" Stretch="UniformToFill"/>
         </UniformGrid.Background>
@@ -14,11 +14,11 @@
             <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Image Source="images\icons\off.png" Width="70" Margin="0,10,0,10"/>
             </Button>
-            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
-            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
-            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
-            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
-            <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
+            <RadioButton x:Name="HomeButton" Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+            <RadioButton x:Name="MSButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
+            <RadioButton x:Name="M3Button" Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
+            <RadioButton x:Name="MXButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
+            <RadioButton x:Name="MYButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
             <Button Click="Button_Click_Settings" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                 <Image Source="images\icons\rock-solid.png" Width="70" Height="70"/>
             </Button>

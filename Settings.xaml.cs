@@ -200,5 +200,24 @@ namespace Teslatizator9000
             ki[5] = "magyar";
             File.WriteAllLines("Settings.txt", ki);
         }
+        private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (ActualWidth < 1100)
+            {
+                HomeButton.Content = "H";
+                MSButton.Content = "S";
+                M3Button.Content = "3";
+                MXButton.Content = "X";
+                MYButton.Content = "Y";
+            }
+            else
+            {
+                HomeButton.Content = "Home";
+                MSButton.Content = "Model S";
+                M3Button.Content = "Model 3";
+                MXButton.Content = "Model X";
+                MYButton.Content = "Model Y";
+            }
+        }
     }
 }

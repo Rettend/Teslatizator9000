@@ -9,10 +9,7 @@
         WindowState="Maximized"
         WindowStyle="None"
         Height="Auto" Width="Auto"
-        MinHeight="700" MinWidth="400">
-    <UniformGrid x:Name="Container">
-        <UniformGrid.Background>
-            <ImageBrush ImageSource="images\Backgrounds\bg16_9.png" AlignmentY="Center" AlignmentX="Center" Stretch="UniformToFill"/>
-        </UniformGrid.Background>
+        MinHeight="800" MinWidth="600">
+    <UniformGrid Background="White" x:Name="Container">
     </UniformGrid>
 </Window>

@@ -145,6 +145,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\icons\arrow-down-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\Backgrounds\bg16_9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

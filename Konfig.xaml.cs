@@ -297,7 +297,7 @@ namespace Teslatizator9000
         }
         private void Finance_Click(object sender, RoutedEventArgs e)
         {
-            CheckoutTitle.Content = "Finance Options";
+            CheckoutTitle.Content = "Final Price";
             AutopilotButton.Visibility = Visibility.Hidden;
             AutopilotContent.Visibility = Visibility.Hidden;
             CargearBox1.Visibility = Visibility.Hidden;
@@ -311,7 +311,7 @@ namespace Teslatizator9000
             AutopilotPrice.Content = $"$ {Prices[4]}";
             FinalPrice.Content = $"$ {Prices.Sum()}";
             CheckoutBg.Background = Brushes.Black;
-            
+
             Uri resourceUri;
             if (Model == "ModelS")
             {
@@ -377,6 +377,137 @@ namespace Teslatizator9000
                 Prices[0] = 49990;
             }
             CalcPrice();
+        }
+        private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (ActualWidth < 1100)
+            {
+                HomeButton.Content = "H";
+                MSButton.Content = "S";
+                M3Button.Content = "3";
+                MXButton.Content = "X";
+                MYButton.Content = "Y";
+                CarConfigS.FontSize = 25;
+                CarConfig3.FontSize = 25;
+                CarConfigX.FontSize = 25;
+                CarConfigY.FontSize = 25;
+                Checkout.FontSize = 30;
+                PriceLabel2.FontSize = 30;
+                CarConfig.MinHeight = 150;
+                Thickness margin = ConfigGrid.Margin;
+                margin.Top = -200;
+                ConfigGrid.Margin = margin;
+            }
+            else
+            {
+                HomeButton.Content = "Home";
+                MSButton.Content = "Model S";
+                M3Button.Content = "Model 3";
+                MXButton.Content = "Model X";
+                MYButton.Content = "Model Y";
+                CarConfigS.FontSize = 40;
+                CarConfig3.FontSize = 40;
+                CarConfigX.FontSize = 40;
+                CarConfigY.FontSize = 40;
+                Checkout.FontSize = 60;
+                PriceLabel2.FontSize = 60;
+                CarConfig.MinHeight = 250;
+                Thickness margin = ConfigGrid.Margin;
+                margin.Top = -300;
+                ConfigGrid.Margin = margin;
+            }
+            if (ActualWidth < 800)
+            {
+                Grid.SetRow(CarConfig, 2);
+                Grid.SetColumnSpan(CarConfig, 1);
+                Thickness margin = ConfigSubGrid2.Margin;
+                margin.Top = -20;
+                ConfigSubGrid2.Margin = margin;
+            }
+            else
+            {
+                Thickness margin = ConfigSubGrid2.Margin;
+                margin.Top = 10;
+                ConfigSubGrid2.Margin = margin;
+                Grid.SetRow(CarConfig, 0);
+                Grid.SetColumnSpan(CarConfig, 2);
+            }
+            if (ActualWidth < 1100)
+            {
+                CarLabel.FontSize = 30;
+                CarPrice.FontSize = 30;
+                ColorLabel.FontSize = 30;
+                ColorPrice.FontSize = 30;
+                TireLabel.FontSize = 30;
+                TirePrice.FontSize = 30;
+                IntLabel.FontSize = 30;
+                IntPrice.FontSize = 30;
+                AutopilotLabel.FontSize = 30;
+                AutopilotPrice.FontSize = 30;
+                FinalLabel.FontSize = 30;
+                FinalPrice.FontSize = 30;
+                PriceLabel1.FontSize = 30;
+                AutopilotButton.FontSize = 30;
+                CheckoutTitle.FontSize = 40;
+                CheckoutX.FontSize = 40;
+                Thickness margin = CheckoutX.Margin;
+                margin.Left = 40;
+                CheckoutX.Margin = margin;
+                CheckoutPanel.CornerRadius = new CornerRadius(0);
+                AutopilotSwitch.FontSize = 25;
+                CarGearSwitch.FontSize = 25;
+                FinalSwitch.FontSize = 25;
+                AutopilotText.FontSize = 20;
+                PerformanceButton.FontSize = 30;
+                PerformanceBlock.FontSize = 20;
+                PerformancePrice.FontSize = 20;
+                LongrangeButton.FontSize = 30;
+                LongrangeBlock.FontSize = 20;
+                LongrangePrice.FontSize = 20;
+                AutopilotText1.FontSize = 15;
+                AutopilotText2.FontSize = 15;
+                AutopilotText3.FontSize = 15;
+                AutopilotText4.FontSize = 15;
+                AutopilotText5.FontSize = 15;
+            }
+            else
+            {
+                CarLabel.FontSize = 50;
+                CarPrice.FontSize = 50;
+                ColorLabel.FontSize = 50;
+                ColorPrice.FontSize = 50;
+                TireLabel.FontSize = 50;
+                TirePrice.FontSize = 50;
+                IntLabel.FontSize = 50;
+                IntPrice.FontSize = 50;
+                AutopilotLabel.FontSize = 50;
+                AutopilotPrice.FontSize = 50;
+                FinalLabel.FontSize = 60;
+                FinalPrice.FontSize = 50;
+                PriceLabel1.FontSize = 60;
+                AutopilotButton.FontSize = 50;
+                CheckoutTitle.FontSize = 70;
+                CheckoutX.FontSize = 70;
+                Thickness margin = CheckoutX.Margin;
+                margin.Left = 200;
+                CheckoutX.Margin = margin;
+                CheckoutPanel.CornerRadius = new CornerRadius(100,100,0,100);
+                AutopilotSwitch.FontSize = 40;
+                CarGearSwitch.FontSize = 40;
+                FinalSwitch.FontSize = 40;
+                AutopilotText.FontSize = 35;
+                PerformanceButton.FontSize = 50;
+                PerformanceBlock.FontSize = 35;
+                PerformancePrice.FontSize = 35;
+                LongrangeButton.FontSize = 50;
+                LongrangeBlock.FontSize = 35;
+                LongrangePrice.FontSize = 35;
+                AutopilotText1.FontSize = 30;
+                AutopilotText2.FontSize = 30;
+                AutopilotText3.FontSize = 30;
+                AutopilotText4.FontSize = 30;
+                AutopilotText5.FontSize = 30;
+            }
         }
     }
 }

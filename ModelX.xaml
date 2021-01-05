@@ -6,62 +6,61 @@
       xmlns:local="clr-namespace:Teslatizator9000"
       mc:Ignorable="d">
 
-    <WrapPanel x:Name="Container" Height="1080" Width="1920">
-        <WrapPanel.Background>
-            <VisualBrush Stretch="None">
+    <Grid x:Name="Container" SizeChanged="Container_SizeChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <VisualBrush Stretch="UniformToFill">
                 <VisualBrush.Visual>
                     <MediaElement  Source="images\Backgrounds\Info-ModelX.mp4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1920"></MediaElement>
                 </VisualBrush.Visual>
             </VisualBrush>
-        </WrapPanel.Background>
-        <Border Padding="10" Background="White">
-            <Border.Effect>
+        </Grid.Background>
+        <UniformGrid Background="White" Rows="1">
+            <UniformGrid.Effect>
                 <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
-            </Border.Effect>
-            <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
-                <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\off.png" Width="70"/>
-                </Button>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
-                <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
-                </Button>
-            </UniformGrid>
-        </Border>
-
-        <UniformGrid Rows="1" Width="1920" Margin="0,100,0,0">
-            <Border MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
-                </Border.Effect>
-                <WrapPanel>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />371 miles</TextBlock>
-                </WrapPanel>
-            </Border>
-            <Border MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
-                </Border.Effect>
-                <WrapPanel>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 79990</TextBlock>
-                </WrapPanel>
-            </Border>
+            </UniformGrid.Effect>
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70" Margin="0,10,0,10"/>
+            </Button>
+            <RadioButton x:Name="HomeButton" Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+            <RadioButton x:Name="MSButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
+            <RadioButton x:Name="M3Button" Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
+            <RadioButton x:Name="MXButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
+            <RadioButton x:Name="MYButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
+            <Button Click="Button_Click_Settings" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70"/>
+            </Button>
         </UniformGrid>
-        <WrapPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,300,0,0" ItemWidth="1920">
-            <Border Background="White" Width="470" Padding="10" CornerRadius="30">
+        <Grid Grid.Row="1" Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="ModelXBorder1" MinWidth="340" MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0">
                 <Border.Effect>
-                    <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
+                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
-                <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                <UniformGrid Columns="1" x:Name="ModelXPanel1">
+                    <TextBlock x:Name="ModelXSub1" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
+                    <TextBlock x:Name="ModelXSub2" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />371 miles</TextBlock>
+                </UniformGrid>
             </Border>
-        </WrapPanel>
-       
-    </WrapPanel>
+            <Border Grid.Column="1" x:Name="ModelXBorder2" MaxWidth="400" Padding="50,30,50,50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,50,50,0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
+                </Border.Effect>
+                <UniformGrid Columns="1" x:Name="ModelXPanel2">
+                    <TextBlock x:Name="ModelXSub3" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
+                    <TextBlock x:Name="ModelXSub4" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>
+                    <TextBlock x:Name="ModelXSub5" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 79990</TextBlock>
+                </UniformGrid>
+            </Border>
+        </Grid>
+    </Grid>
 </UserControl>
