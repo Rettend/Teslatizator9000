@@ -26,7 +26,7 @@ namespace Teslatizator9000
         public string Color { get; private set; }
         public string Tire { get; private set; }
         public string Interior { get; private set; }
-        public List<int> Prices = new List<int>(5) { 46990, 0, 0, 1500, 0 };
+        public List<double> Prices = new List<double>(5) { 46990, 0, 0, 1500, 0 };
         public Konfig()
         {
             InitializeComponent();
@@ -35,6 +35,34 @@ namespace Teslatizator9000
             Tire = "Kerek1";
             Interior = "Feher";
             CalcPrice();
+
+            // $1 = 0,81€ or 297ft
+            // 1€ = $1,23 or 364,5ft
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    AutopilotButton.Content = "Select option $ 10000";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    AutopilotButton.Content = "Select option 8100 €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    AutopilotButton.Content = "Select option 2700000 Ft";
+                }
+            }
+
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -215,10 +243,36 @@ namespace Teslatizator9000
         }
         private void CalcPrice()
         {
-            int price = 0;
-            price = Prices.Sum();
-            PriceLabel1.Content = $"$ {price}";
-            PriceLabel2.Content = $"$ {price}";
+            double price = 0;
+            price = Prices[0] + Prices[1] + Prices[2] + Prices[3] + Prices[4];
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    price = price * 0.81;
+                    PriceLabel1.Content = $"{price} €";
+                    PriceLabel2.Content = $"{price} €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    price = price * 297;
+                    PriceLabel1.Content = $"{price} Ft";
+                    PriceLabel2.Content = $"{price} Ft";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    PriceLabel1.Content = $"$ {price}";
+                    PriceLabel2.Content = $"$ {price}";
+                }
+            }
         }
         private void CheckoutClick(object sender, RoutedEventArgs e)
         {
@@ -253,6 +307,7 @@ namespace Teslatizator9000
 
         private void Autopilot_Click(object sender, RoutedEventArgs e)
         {
+            
             CheckoutTitle.Content = "Autopilot Included";
             AutopilotButton.Visibility = Visibility.Visible;
             AutopilotContent.Visibility = Visibility.Visible;
@@ -274,23 +329,119 @@ namespace Teslatizator9000
             FinanceInfo2.Visibility = Visibility.Hidden;
             if (Model == "ModelS")
             {
-                PerformancePrice.Content = "$ 91990";
-                LongrangePrice.Content = "$ 69420";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "74512 €";
+                        LongrangePrice.Content = "56230 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "24837300 Ft";
+                        LongrangePrice.Content = "20617740 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 91990";
+                        LongrangePrice.Content = "$ 69420";
+                    }
+                }
             }
             else if (Model == "Model3")
             {
-                PerformancePrice.Content = "$ 54990";
-                LongrangePrice.Content = "$ 46990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "44542 €";
+                        LongrangePrice.Content = "38062 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "14847300 Ft";
+                        LongrangePrice.Content = "12687300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 54990";
+                        LongrangePrice.Content = "$ 46990";
+                    }
+                }
             }
             else if (Model == "ModelX")
             {
-                PerformancePrice.Content = "$ 99990";
-                LongrangePrice.Content = "$ 79990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "80992 €";
+                        LongrangePrice.Content = "64792 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "26997300 Ft";
+                        LongrangePrice.Content = "21597300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 99990";
+                        LongrangePrice.Content = "$ 79990";
+                    }
+                }    
             }
             else
             {
-                PerformancePrice.Content = "$ 59990";
-                LongrangePrice.Content = "$ 49990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "48592 €";
+                        LongrangePrice.Content = "40492 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "16197300 Ft";
+                        LongrangePrice.Content = "13497300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 59990";
+                        LongrangePrice.Content = "$ 49990";
+                    }
+                }
             }
             CheckoutBg.Background = Brushes.White;
             CheckoutBgImg.Background.Opacity = 0;
@@ -304,12 +455,46 @@ namespace Teslatizator9000
             CargearBox2.Visibility = Visibility.Hidden;
             FinanceInfo1.Visibility = Visibility.Visible;
             FinanceInfo2.Visibility = Visibility.Visible;
-            CarPrice.Content = $"$ {Prices[0]}";
-            ColorPrice.Content = $"$ {Prices[1]}";
-            TirePrice.Content = $"$ {Prices[2]}";
-            IntPrice.Content = $"$ {Prices[3]}";
-            AutopilotPrice.Content = $"$ {Prices[4]}";
-            FinalPrice.Content = $"$ {Prices.Sum()}";
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    CarPrice.Content = $"{Prices[0] * 0,81} €";
+                    ColorPrice.Content = $"{Prices[1] * 0,81} €";
+                    TirePrice.Content = $"{Prices[2] * 0,81} €";
+                    IntPrice.Content = $"{Prices[3] * 0,81} €";
+                    AutopilotPrice.Content = $"{Prices[4] * 0,81} €";
+                    FinalPrice.Content = $"{Prices.Sum() * 0,81} €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    CarPrice.Content = $"{Prices[0] * 270} Ft";
+                    ColorPrice.Content = $"{Prices[1] * 270} Ft";
+                    TirePrice.Content = $"{Prices[2] * 270} Ft";
+                    IntPrice.Content = $"{Prices[3] * 270} Ft";
+                    AutopilotPrice.Content = $"{Prices[4] * 270} Ft";
+                    FinalPrice.Content = $"{Prices.Sum() * 270} Ft";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    CarPrice.Content = $"$ {Prices[0]}";
+                    ColorPrice.Content = $"$ {Prices[1]}";
+                    TirePrice.Content = $"$ {Prices[2]}";
+                    IntPrice.Content = $"$ {Prices[3]}";
+                    AutopilotPrice.Content = $"$ {Prices[4]}";
+                    FinalPrice.Content = $"$ {Prices.Sum()}";
+                }
+            }
+
             CheckoutBg.Background = Brushes.Black;
 
             Uri resourceUri;
