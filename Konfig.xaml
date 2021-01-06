@@ -91,7 +91,7 @@
             </Border>
         </Grid>
 
-        <Border Visibility="Visible" x:Name="CheckoutPanel" Grid.Row="1" Grid.RowSpan="2" Margin="10" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100, 100, 0, 100" Canvas.Left="150" Canvas.Top="100">
+        <Border Visibility="Hidden" x:Name="CheckoutPanel" Grid.Row="1" Grid.RowSpan="2" Margin="10" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100, 100, 0, 100" Canvas.Left="150" Canvas.Top="100">
             <Grid Background="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
