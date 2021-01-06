@@ -47,8 +47,9 @@
                     <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
                 <UniformGrid Columns="1" x:Name="ModelXPanel1">
-                    <TextBlock x:Name="ModelXSub1" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
-                    <TextBlock x:Name="ModelXSub2" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />371 miles</TextBlock>
+                    <TextBlock x:Name="ModelXSub1" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak /><Label x:Name="AccelerationYes">4.4s 0-60 mph</Label></TextBlock>
+                    <TextBlock x:Name="ModelXSub2" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak /><Label x:Name="Range">371 miles </Label></TextBlock>
+                  <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Trunk space</Label><LineBreak /><Label x:Name="TrunkSpace">2491 liters</Label></TextBlock>
                 </UniformGrid>
             </Border>
             <Border Grid.Column="1" x:Name="ModelXBorder2" MaxWidth="400" Padding="50,30,50,50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,50,50,0">
@@ -58,7 +59,7 @@
                 <UniformGrid Columns="1" x:Name="ModelXPanel2">
                     <TextBlock x:Name="ModelXSub3" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
                     <TextBlock x:Name="ModelXSub4" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>
-                    <TextBlock x:Name="ModelXSub5" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 79990</TextBlock>
+                    <TextBlock x:Name="ModelXSub5" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak /><Label x:Name="Price">$ 79990</Label></TextBlock>
                 </UniformGrid>
             </Border>
         </Grid>

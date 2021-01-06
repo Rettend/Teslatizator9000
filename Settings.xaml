@@ -61,7 +61,7 @@
                     <StackPanel>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label Style="{StaticResource SettingLabel}" Content="Hosszmérték" />
-                            <RadioButton x:Name="meter" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Méter - m" Checked="meter_Checked" />
+                            <RadioButton x:Name="meter" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Kilométer - km" Checked="meter_Checked" />
                             <RadioButton x:Name="mile" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mérföld - mi" Checked="mile_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
