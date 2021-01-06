@@ -5,26 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d">
-    <Canvas x:Name="Container" Height="1080" Width="1920" Background="White">
-
-
-        <Border Padding="10" Background="White" CornerRadius="20">
-            <UniformGrid Rows="1" VerticalAlignment="Center" Width="1900" HorizontalAlignment="Center" Height="70">
-                <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\off.png" Width="70"/>
-                </Button>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
-                <Button Click="Button_Click_Settings" Background="#00000000" Margin="136,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
-                    <Image Source="images\icons\rock-solid.png" Width="70" Height="70" Margin="0"/>
-                </Button>
-            </UniformGrid>
-        </Border>
-        <UniformGrid  Margin="0,130,0,0" Width="1920" Panel.ZIndex="-10">
-            <Image x:Name="extImage" Source="images\Model3\exterior\Model3_Feher_Kerek1.png" Height="500" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Loaded="IntImageLoaded" >
+    <Grid x:Name="Container" Background="White" SizeChanged="Container_SizeChanged">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Background="White" Width="Auto" Rows="1" VerticalAlignment="Top" Margin="0">
+            <UniformGrid.Effect>
+                <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
+            </UniformGrid.Effect>
+            <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\off.png" Width="70" Margin="0,10,0,10"/>
+            </Button>
+            <RadioButton x:Name="HomeButton" Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+            <RadioButton x:Name="MSButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
+            <RadioButton x:Name="M3Button" Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
+            <RadioButton x:Name="MXButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
+            <RadioButton x:Name="MYButton" Style="{StaticResource NavButton}" Click="Button_Click_ModelY" Content="Model Y"/>
+            <Button Click="Button_Click_Settings" Background="#00000000" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
+                <Image Source="images\icons\rock-solid.png" Width="70" Height="70"/>
+            </Button>
+        </UniformGrid>
+        <UniformGrid Grid.Row="1" Panel.ZIndex="-10" Margin="0,-10,0,0">
+            <Image x:Name="extImage" Source="images\Model3\exterior\Model3_Feher_Kerek1.png" MaxHeight="300" UseLayoutRounding="True" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Loaded="IntImageLoaded" >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
@@ -34,46 +41,57 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="intImage" Source="images\Model3\interior\Model3_Belso_Fekete.png" FlowDirection="RightToLeft" Height="500" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+            <Image x:Name="intImage" Source="images\Model3\interior\Model3_Belso_Fekete.png" FlowDirection="RightToLeft" MaxHeight="300" DockPanel.Dock="Right" HorizontalAlignment="Center"/>
         </UniformGrid>
 
-        <Border BorderBrush="Black" Background="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="50" Canvas.Top="660" >
-            <UniformGrid Rows="4" Height="300">
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model S" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelS" />
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" IsChecked="True" Content="Model 3" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Model3" />
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model X" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelX" />
-                <RadioButton Style="{StaticResource ConfigButton}" GroupName="car" Content="Model Y" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelY" />
-            </UniformGrid>
-        </Border>
+        <Grid x:Name="ConfigGrid" Grid.Row="2" Margin="0,-300,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border x:Name="CarConfig" Margin="20,0,0,10" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Padding="5" MinHeight="250" BorderBrush="Black" Background="Black" CornerRadius="50" BorderThickness="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <UniformGrid Rows="4">
+                    <RadioButton x:Name="CarConfigS" Style="{StaticResource ConfigButton}" GroupName="car" Content="Model S" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelS" />
+                    <RadioButton x:Name="CarConfig3" Style="{StaticResource ConfigButton}" GroupName="car" IsChecked="True" Content="Model 3" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Model3" />
+                    <RadioButton x:Name="CarConfigX" Style="{StaticResource ConfigButton}" GroupName="car" Content="Model X" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelX" />
+                    <RadioButton x:Name="CarConfigY" Style="{StaticResource ConfigButton}" GroupName="car" Content="Model Y" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="40" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ModelY" />
+                </UniformGrid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <UniformGrid Rows="1">
+                    <RadioButton x:Name="DefaultUi" Style="{StaticResource StyleButton}" MaxWidth="100" Content="images\icons\white-ui.png" Padding="0" IsChecked="True" GroupName="ext" Click="WhiteUi"/>
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="100" Content="images\icons\gray-ui.png" Padding="0" GroupName="ext" Click="GrayUi" />
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="100" Content="images\icons\black-ui.png" Padding="0" GroupName="ext" Click="BlackUi" />
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="100" Content="images\icons\red-ui.png" Padding="0" GroupName="ext" Click="RedUi" />
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="100" Content="images\icons\blue-ui.png" Padding="0" GroupName="ext" Click="BlueUi" />
+                </UniformGrid>
+            </Border>
+            <Border x:Name="ConfigSubGrid2" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
+                <UniformGrid Rows="1">
+                    <RadioButton x:Name="DefaultTire" Style="{StaticResource StyleButton}" MaxWidth="90" Content="images\icons\white-tire.png" Padding="10" IsChecked="True" GroupName="tire" Click="WhiteTire" />
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="90" Content="images\icons\black-tire.png" Padding="0" GroupName="tire" Click="BlackTire"/>
+                    <Rectangle Fill="Black" Width="10"/>
+                    <RadioButton x:Name="DefaultInt" Style="{StaticResource StyleButton}" MaxWidth="90" Content="images\icons\white-int.png" Padding="10" IsChecked="True" GroupName="int" Click="WhiteInt" />
+                    <RadioButton Style="{StaticResource StyleButton}" MaxWidth="90" Content="images\icons\black-int.png" Padding="0" GroupName="int" Click="BlackInt" />
+                    <RadioButton x:Name="DisabledInt" Focusable="False" IsHitTestVisible="False" Style="{StaticResource StyleButton}" MaxWidth="90" Content="images\icons\cream-int.png" GroupName="int" Click="CreamInt" />
+                </UniformGrid>
+            </Border>
+            <Label  Grid.Row="2" Grid.Column="1" x:Name="PriceLabel2" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Left" VerticalAlignment="Center">$ 0</Label>
+            <Border Grid.Row="2" Grid.Column="3" Padding="10" BorderBrush="Black" BorderThickness="7" CornerRadius="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" Opacity="0.6"/>
+                </Border.Effect>
+                <Button x:Name="Checkout" Background="Transparent" Content="Checkout" FontWeight="Bold" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
+            </Border>
+        </Grid>
 
-        <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="650">
-            <UniformGrid Rows="1" Width="1000">
-                <RadioButton x:Name="DefaultUi" Style="{StaticResource StyleButton}" Content="images\icons\white-ui.png" Padding="10" IsChecked="True" GroupName="ext" Width="120" Click="WhiteUi"/>
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\gray-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="GrayUi" />
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlackUi" />
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\red-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="RedUi" />
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\blue-ui.png" Padding="10" GroupName="ext" Height="120" Width="120" Click="BlueUi" />
-            </UniformGrid>
-        </Border>
-        <Border BorderBrush="Black" CornerRadius="50" BorderThickness="10" Padding="15" Canvas.Left="500" Canvas.Top="850">
-            <UniformGrid Rows="1" Width="1000" Height="160" >
-                <RadioButton x:Name="DefaultTire" Style="{StaticResource StyleButton}" Content="images\icons\white-tire.png" Padding="10" IsChecked="True" GroupName="tire" Height="140" Width="140" Click="WhiteTire" />
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-tire.png" Padding="10" GroupName="tire" Height="140" Width="140" Click="BlackTire"/>
-                <Rectangle Fill="Black" Width="10"/>
-                <RadioButton x:Name="DefaultInt" Style="{StaticResource StyleButton}" Content="images\icons\white-int.png" Padding="10" IsChecked="True" GroupName="int" Height="140" Width="140" Click="WhiteInt" />
-                <RadioButton Style="{StaticResource StyleButton}" Content="images\icons\black-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="BlackInt" />
-                <RadioButton x:Name="DisabledInt" Focusable="False" IsHitTestVisible="False" Style="{StaticResource StyleButton}" Content="images\icons\cream-int.png" Padding="10" GroupName="int" Height="140" Width="140" Click="CreamInt" />
-            </UniformGrid>
-        </Border>
-        <Label Canvas.Top="690" Canvas.Left="1600" x:Name="PriceLabel2" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
-        <Border Canvas.Top="800" Canvas.Left="1600" Padding="10" BorderBrush="Black" BorderThickness="7" CornerRadius="40">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="10" Opacity="0.6"/>
-            </Border.Effect>
-            <Button Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
-        </Border>
-
-        <Border Visibility="Hidden" x:Name="CheckoutPanel" Width="1620" Height="880" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100, 100, 0, 100" Canvas.Left="150" Canvas.Top="100">
+        <Border Visibility="Hidden" x:Name="CheckoutPanel" Grid.Row="1" Grid.RowSpan="2" Margin="10" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100, 100, 0, 100" Canvas.Left="150" Canvas.Top="100">
             <Grid Background="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -87,24 +105,26 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Button Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="CheckoutX" Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="1" Click="Autopilot_Click">
-                    <TextBlock TextDecorations="Underline">Autopilot</TextBlock>
+                <Button x:Name="AutopilotSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="1" Click="Autopilot_Click" VerticalAlignment="Center">
+                    <TextBlock TextDecorations="Underline">1. Autopilot</TextBlock>
                 </Button>
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="2" Click="Cargear_Click">
-                    <TextBlock TextDecorations="Underline">Car Gear</TextBlock>
+                <Image Grid.Row="1" Width="70" Source="images\icons\arrow-down-icon.png" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <Button x:Name="CarGearSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="2" Click="Cargear_Click" VerticalAlignment="Top">
+                    <TextBlock TextDecorations="Underline">2. Car Gear</TextBlock>
                 </Button>
-                <Button Style="{StaticResource CheckoutButton}" Grid.Row="3" Click="Finance_Click">
-                    <TextBlock TextDecorations="Underline">Finance Options</TextBlock>
+                <Image Grid.Row="2" Width="70" Source="images\icons\arrow-down-icon.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="FinalSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="3" Click="Finance_Click">
+                    <TextBlock TextDecorations="Underline" Margin="10,0"> 3. Final Price</TextBlock>
                 </Button>
                 <Label x:Name="PriceLabel1" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
                 <Label x:Name="CheckoutTitle" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>
                 <RadioButton x:Name="AutopilotButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Click="Autopilot" >Select Option</RadioButton>
                 <Grid x:Name="CheckoutBg" Background="White" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
-                    <Grid x:Name="CheckoutBgImg">
+                    <Grid Margin="0,10,0,0" x:Name="CheckoutBgImg">
                         <Grid.Background>
-                            <ImageBrush ImageSource="images\Backgrounds\Model3_specs_bg.png" Stretch="Uniform"/>
+                            <ImageBrush ImageSource="images\Backgrounds\Model3_specs_bg.png" Stretch="UniformToFill"/>
                         </Grid.Background>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="493*"/>
@@ -124,40 +144,40 @@
                                 </Style>
                             </ListBox.ItemContainerStyle>
                             <UniformGrid Columns="1" Height="560">
-                                <TextBlock TextWrapping="Wrap" Padding="5" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
+                            <TextBlock x:Name="AutopilotText" TextWrapping="Wrap" Padding="5" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
                             Enables your car to steer, accelerate and brake automatically
                             for other vehicles and pedestrians within its lane.
                                 </TextBlock>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Navigate on Autopilot: automatic driving from highway on-ramp to off-ramp including interchanges and overtaking slower cars.</TextBlock>
+                                        <TextBlock x:Name="AutopilotText1" TextWrapping="Wrap">Navigate on Autopilot: automatic driving from highway on-ramp to off-ramp including interchanges and overtaking slower cars.</TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Auto Lane Change: automatic lane changes while driving on the highway.
+                                        <TextBlock x:Name="AutopilotText2" TextWrapping="Wrap">Auto Lane Change: automatic lane changes while driving on the highway.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Autopark: both parallel and perpendicular spaces.</TextBlock>
+                                        <TextBlock x:Name="AutopilotText3" TextWrapping="Wrap">Autopark: both parallel and perpendicular spaces.</TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Summon: your parked car will come find you anywhere in a parking lot. Really.
+                                        <TextBlock x:Name="AutopilotText4" TextWrapping="Wrap">Summon: your parked car will come find you anywhere in a parking lot. Really.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Traffic Light and Stop Sign Control: assisted stops at traffic controlled intersections.
+                                        <TextBlock x:Name="AutopilotText5" TextWrapping="Wrap">Traffic Light and Stop Sign Control: assisted stops at traffic controlled intersections.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
@@ -173,25 +193,25 @@
                             <TextBlock x:Name="LongrangeBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center">+ Range<LineBreak/>+ Battery</TextBlock>
                             <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="LongrangePrice" Margin="0,0,0,100" >$ 46990</Label>
                         </Grid>
-                        <TextBlock TextWrapping="Wrap" Visibility="Visible" x:Name="FinanceInfo1" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0">
-                        <Label Foreground="White" FontWeight="Bold">Car</Label><LineBreak/>
-                        <Label Foreground="White" Name="CarPrice">+ $ 46990</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold">Color</Label><LineBreak/>
-                        <Label Foreground="White" Name="ColorPrice">+ $ 0</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold">Tire</Label><LineBreak/>
-                        <Label Foreground="White" Name="TirePrice">+ $ 0</Label>
-                        </TextBlock>
-                        <TextBlock Grid.Column="1" TextWrapping="Wrap" Visibility="Visible" x:Name="FinanceInfo2" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,100,50,0" FlowDirection="RightToLeft">
-                        <Label Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Interior</Label><LineBreak/>
-                        <Label Foreground="White" Name="IntPrice" FlowDirection="LeftToRight">+ $ 1000</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Autopilot</Label><LineBreak/>
-                        <Label Foreground="White" Name="AutopilotPrice" FlowDirection="LeftToRight">+ $ 0</Label><LineBreak/>
-                        <TextBlock Margin="0,50,0,0" FontSize="60" FontWeight="Bold" Foreground="White"  TextDecorations="Underline" FlowDirection="LeftToRight">Final Price</TextBlock><LineBreak/>
-                        <Label Foreground="White" Name="FinalPrice" FlowDirection="LeftToRight">$ 47990</Label>
-                    </TextBlock>
+                        <UniformGrid Columns="1" Visibility="Visible" x:Name="FinanceInfo1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,100,0,0">
+                            <Label x:Name="CarLabel" FontSize="50" FontFamily="Gill Sans MT" Foreground="White" FontWeight="Bold">Car</Label>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="CarPrice">+ $ 46990</Label>
+                            <Label x:Name="ColorLabel" FontSize="50" FontFamily="Gill Sans MT" Foreground="White" FontWeight="Bold">Color</Label>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="ColorPrice">+ $ 0</Label>
+                            <Label x:Name="TireLabel" FontSize="50" FontFamily="Gill Sans MT" Foreground="White" FontWeight="Bold">Tire</Label>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="TirePrice">+ $ 0</Label>
+                        </UniformGrid>
+                        <UniformGrid Columns="1" Grid.Column="1" Visibility="Visible" x:Name="FinanceInfo2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,100,40,0" FlowDirection="RightToLeft">
+                            <Label x:Name="IntLabel" FontSize="50" FontFamily="Gill Sans MT" Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Interior</Label>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="IntPrice" FlowDirection="LeftToRight">+ $ 1000</Label>
+                            <Label x:Name="AutopilotLabel" FontSize="50" FontFamily="Gill Sans MT" Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Autopilot</Label>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="AutopilotPrice" FlowDirection="LeftToRight">+ $ 0</Label>
+                            <TextBlock x:Name="FinalLabel" FontSize="60" FontWeight="Bold" Foreground="White"  TextDecorations="Underline" FlowDirection="LeftToRight">Final Price</TextBlock>
+                            <Label FontSize="50" FontFamily="Gill Sans MT" Foreground="White" x:Name="FinalPrice" FlowDirection="LeftToRight">$ 47990</Label>
+                    </UniformGrid>
                     </Grid>
                 </Grid>
             </Grid>
         </Border>
-    </Canvas>
+    </Grid>
 </UserControl>
