@@ -169,6 +169,11 @@
             <Setter Property="FontFamily" Value="Gill Sans MT" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="White" Direction="315" ShadowDepth="1" BlurRadius="5" Opacity="10" />
+                </Setter.Value>
+            </Setter>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Window.Loaded">
                     <BeginStoryboard>
@@ -183,10 +188,10 @@
         </Style>
         <Style x:Key="SettingButton" TargetType="RadioButton">
             <Setter Property="FontSize" Value="50" />
+            <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="0,30,0,0" />
             <Setter Property="FontFamily" Value="Gill Sans MT" />
             <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="Background" Value="Transparent" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -198,7 +203,7 @@
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="ToggleButton">
-                                                <Border Name="border" BorderThickness="7" Padding="5" BorderBrush="Transparent" CornerRadius="20">
+                                                <Border Name="border" BorderThickness="7" Padding="5" BorderBrush="Transparent" CornerRadius="20" Background="White">
                                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                                 </Border>
                                                 <ControlTemplate.Triggers>
@@ -242,7 +247,7 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="CheckoutButton" TargetType="Button">
-            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="FontSize" Value="40"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Gill Sans MT"/>

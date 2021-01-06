@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+using System.IO;
 
 namespace Teslatizator9000
 {
@@ -20,7 +22,7 @@ namespace Teslatizator9000
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static WrapPanel panel; 
+        public static UniformGrid panel; 
         public MainWindow()
         {
             Initialized += MainWindow_Initialized;
@@ -29,6 +31,16 @@ namespace Teslatizator9000
 
         private void MainWindow_Initialized(object sender, EventArgs e)
         {
+            if (File.ReadLines("Settings.txt").ElementAt(4) == "windowed")
+            {
+                this.WindowState = WindowState.Normal;
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
+            }
+            else //fullscreen - default
+            {
+                this.WindowState = WindowState.Maximized;
+                this.WindowStyle = WindowStyle.None;
+            }
             panel = Container;
             panel.Children.Add(new Home());
         }
