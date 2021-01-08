@@ -60,8 +60,8 @@
                 </Border.Effect>
                 <UniformGrid Columns="1" x:Name="Model3Panel1">
                     <TextBlock x:Name="Model3Sub1" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak /><Label x:Name="AccelerationYes">4.2s 0-60 mph </Label></TextBlock>
-                    <TextBlock x:Name="Model3Sub2" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak /><Label x:Name="Range">353 miles</Label></TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Trunk space</Label><LineBreak /><Label x:Name="TrunkSpace">424 liters</Label></TextBlock>
+                    <TextBlock x:Name="Model3Sub2" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Range</Label><LineBreak /><Label x:Name="Range">353 miles</Label></TextBlock>
+                    <TextBlock x:Name="Model3Sub3" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Trunk space</Label><LineBreak /><Label x:Name="TrunkSpace">424 liters</Label></TextBlock>
                 </UniformGrid>
             </Border>
             <Border Grid.Column="1" x:Name="Model3Border2" MaxWidth="400" Padding="50,30,50,50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,50,50,0">
@@ -69,9 +69,9 @@
                     <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
                 <UniformGrid Columns="1" x:Name="Model3Panel2">
-                    <TextBlock x:Name="Model3Sub3" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Seating</Label><LineBreak />5</TextBlock>
-                    <TextBlock x:Name="Model3Sub4" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />18" or 19"</TextBlock>
-                    <TextBlock x:Name="Model3Sub5" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak /> <Label x:Name="Price">$ 37990 </Label></TextBlock>
+                    <TextBlock x:Name="Model3Sub4" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />5</TextBlock>
+                    <TextBlock x:Name="Model3Sub5" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Wheels</Label><LineBreak />18" or 19"</TextBlock>
+                    <TextBlock x:Name="Model3Sub6" TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Starting at</Label><LineBreak /> <Label x:Name="Price">$ 37990 </Label></TextBlock>
                 </UniformGrid>
             </Border>
         </Grid>

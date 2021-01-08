@@ -143,38 +143,40 @@ namespace Teslatizator9000
             }
             if (ActualWidth < 780)
             {
-                if (ModelYSub3.Parent != ModelYPanel1)
+                if (ModelYSub4.Parent != ModelYPanel1)
                 {
-                    ModelYPanel2.Children.Remove(ModelYSub3);
                     ModelYPanel2.Children.Remove(ModelYSub4);
                     ModelYPanel2.Children.Remove(ModelYSub5);
-                    ModelYPanel1.Children.Add(ModelYSub3);
+                    ModelYPanel2.Children.Remove(ModelYSub6);
                     ModelYPanel1.Children.Add(ModelYSub4);
                     ModelYPanel1.Children.Add(ModelYSub5);
+                    ModelYPanel1.Children.Add(ModelYSub6);
                     ModelYSub1.FontSize = 30;
                     ModelYSub2.FontSize = 30;
                     ModelYSub3.FontSize = 30;
                     ModelYSub4.FontSize = 30;
                     ModelYSub5.FontSize = 30;
+                    ModelYSub6.FontSize = 30;
                 }
                 Grid.SetColumnSpan(ModelYBorder1, 2);
                 ModelYBorder2.Visibility = Visibility.Hidden;
             }
             else
             {
-                if (ModelYSub3.Parent == ModelYPanel1)
+                if (ModelYSub4.Parent == ModelYPanel1)
                 {
-                    ModelYPanel1.Children.Remove(ModelYSub3);
                     ModelYPanel1.Children.Remove(ModelYSub4);
                     ModelYPanel1.Children.Remove(ModelYSub5);
-                    ModelYPanel2.Children.Add(ModelYSub3);
+                    ModelYPanel1.Children.Remove(ModelYSub6);
                     ModelYPanel2.Children.Add(ModelYSub4);
                     ModelYPanel2.Children.Add(ModelYSub5);
+                    ModelYPanel2.Children.Add(ModelYSub6);
                     ModelYSub1.FontSize = 40;
                     ModelYSub2.FontSize = 40;
                     ModelYSub3.FontSize = 40;
                     ModelYSub4.FontSize = 40;
                     ModelYSub5.FontSize = 40;
+                    ModelYSub6.FontSize = 40;
                 }
                 Grid.SetColumnSpan(ModelYBorder1, 1);
                 ModelYBorder2.Visibility = Visibility.Visible;
