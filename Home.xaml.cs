@@ -25,8 +25,13 @@ namespace Teslatizator9000
         public Home()
         {
             InitializeComponent();
-            RB_Home.Content = "Kezdőlap";
-            B_Start.Content = "Konfiguráció kezdete";
+
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                RB_Home.Content = "Kezdőlap";
+                B_Start.Content = "Konfiguráció kezdése";
+            }
+            
         }
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {

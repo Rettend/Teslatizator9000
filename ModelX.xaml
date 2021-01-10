@@ -22,7 +22,7 @@
                 <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                     <Image Source="images\icons\off.png" Width="70"/>
                 </Button>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+                <RadioButton x:Name="RB_Home" Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
@@ -39,8 +39,8 @@
                     <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
                 <WrapPanel>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Range</Label><LineBreak />371 miles</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label x:Name="L_Acceleration" FontWeight="Bold">Acceleration</Label><LineBreak />4.4s 0-60 mph</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label x:Name="L_Range" FontWeight="Bold">Range</Label><LineBreak /><Label x:Name="Range">371 miles</Label></TextBlock>
                 </WrapPanel>
             </Border>
             <Border MaxWidth="400" Padding="50" CornerRadius="30" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,50,0">
@@ -48,9 +48,9 @@
                     <DropShadowEffect ShadowDepth="15" Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
                 <WrapPanel>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>
-                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label FontWeight="Bold">Starting at</Label><LineBreak />$ 79990</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40"><Label x:Name="L_Seating" FontWeight="Bold">Seating</Label><LineBreak />7</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label x:Name="L_Wheels" FontWeight="Bold">Wheels</Label><LineBreak />20" or 22"</TextBlock>
+                    <TextBlock TextWrapping="Wrap" FontFamily="Gill Sans MT" FontSize="40" Margin="0,20,0,0"><Label x:Name="L_StartingAt" FontWeight="Bold">Starting at</Label><LineBreak />$ 79990</TextBlock>
                 </WrapPanel>
             </Border>
         </UniformGrid>
@@ -59,7 +59,7 @@
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
                 </Border.Effect>
-                <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+                <Button x:Name="B_Start" Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
             </Border>
         </WrapPanel>
        
