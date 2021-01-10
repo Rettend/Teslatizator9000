@@ -25,6 +25,8 @@ namespace Teslatizator9000
         public Home()
         {
             InitializeComponent();
+            RB_Home.Content = "Kezdőlap";
+            B_Start.Content = "Konfiguráció kezdete";
         }
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {
