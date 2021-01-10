@@ -43,7 +43,7 @@ namespace Teslatizator9000
                 T_Cargear.Text = "Autófelszerelés";
                 T_Finance.Text = "Végső ár";
                 AutopilotButton.Content = "Kiválasztás $ 10 000";
-                T_steer.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járművek és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
+                T_steer.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járműveket és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
                 T_Navigate.Text = "Navigálás a Robotpilótán: automatikus vezetés az autópályára fel- és lehajtáskor, beleértve a sávváltást és a lassabb autók előzését.";
                 T_AutoLaneChange.Text = "Automatikus sávváltás: automatikus sávváltás autópályán történő vezetés közben.";
                 T_Autopark.Text = "Automatikus parkolás: párhuzamos és merőleges helyeken egyaránt.";

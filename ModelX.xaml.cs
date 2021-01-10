@@ -33,7 +33,7 @@ namespace Teslatizator9000
                 L_StartingAt.Content = "Kezdőár";
                 L_Wheels.Content = "Kerekek";
                 B_Start.Content = "Konfiguráció kezdése";
-                Range.Content = "402 mérföld";
+                Range.Content = "371 mérföld";
             }
         }
 

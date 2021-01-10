@@ -24,6 +24,41 @@ namespace Teslatizator9000
         public Settings()
         {
             InitializeComponent();
+            forditas();
+         
+        }
+
+        private void forditas() 
+        {
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                L_Currency.Content = "Pénznem";
+                euro.Content = "Euró - €";
+                dollar.Content = "Dollár - $";
+                forint.Content = "Forint - Ft";
+
+
+                L_Length.Content = "Hosszmérték";
+                mile.Content = "Mérföld - mi";
+                meter.Content = "Méter - m";
+
+                L_Sreen.Content = "Képernyő";
+                fullscreen.Content = "Teljesképernyős";
+                windowed.Content = "Ablakos";
+                maximized.Content = "Maximalizált";
+
+                L_Velocity.Content = "Sebességmérték";
+                mph.Content = "Mérföld/óra - mph";
+                kmph.Content = "Kilóméter/óra - kmh";
+
+                L_Volume.Content = "Térfogatmérték";
+                cubefeet.Content = "Köbláb - cu ft";
+
+                L_Language.Content = "Nyelv";
+
+                RB_Home.Content = "Kezdőlap";
+
+            }
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -171,6 +206,8 @@ namespace Teslatizator9000
             }
             ki[5] = "magyar";
             File.WriteAllLines("Settings.txt", ki);
+
+            forditas();
         }
 
         private void english_Checked(object sender, RoutedEventArgs e)
@@ -182,6 +219,33 @@ namespace Teslatizator9000
             }
             ki[5] = "english";
             File.WriteAllLines("Settings.txt", ki);
+
+            L_Currency.Content = "Currency";
+            euro.Content = "Euro - €";
+            dollar.Content = "Dollar - $";
+            forint.Content = "Forint - Ft";
+
+
+            L_Length.Content = "Length";
+            mile.Content = "Mile - mi";
+            meter.Content = "Meter - m";
+
+            L_Sreen.Content = "Srcreen mode";
+            fullscreen.Content = "Fullscreen";
+            windowed.Content = "Windowed";
+            maximized.Content = "Maximized";
+
+            L_Velocity.Content = "Velocity";
+            mph.Content = "Miles/hour - mph";
+            kmph.Content = "Kilometers/hour - kmh";
+
+            L_Volume.Content = "Volume";
+            cubefeet.Content = "Cubic feet - cu ft";
+
+            L_Language.Content = "Language";
+
+            RB_Home.Content = "Home";
+
         }
 
         private void fullsrceen_Checked(object sender, RoutedEventArgs e)
