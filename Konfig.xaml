@@ -13,7 +13,7 @@
                 <Button Click="Button_Click_Off" IsCancel="True" Background="#00000000" Margin="50,0,0,0" HorizontalContentAlignment="Center" FontFamily="Gill Sans MT" FontSize="60" VerticalContentAlignment="Center" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#00707070">
                     <Image Source="images\icons\off.png" Width="70"/>
                 </Button>
-                <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
+                <RadioButton x:Name="RB_Home" Style="{StaticResource NavButton}" Click="Button_Click_Home" Content="Home"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelS" Content="Model S"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_Model3" Content="Model 3"/>
                 <RadioButton Style="{StaticResource NavButton}" Click="Button_Click_ModelX" Content="Model X"/>
@@ -70,7 +70,7 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" Opacity="0.6"/>
             </Border.Effect>
-            <Button Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
+            <Button x:Name="B_Checkout" Background="Transparent" Content="Checkout" FontFamily="Gill Sans MT" FontSize="60" Click="CheckoutClick" />
         </Border>
 
         <Border Visibility="Hidden" x:Name="CheckoutPanel" Width="1620" Height="880" Background="White" BorderBrush="Black" BorderThickness="10" CornerRadius="100, 100, 0, 100" Canvas.Left="150" Canvas.Top="100">
@@ -90,13 +90,13 @@
                 <Button Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                 <Button Style="{StaticResource CheckoutButton}" Grid.Row="1" Click="Autopilot_Click">
-                    <TextBlock TextDecorations="Underline">Autopilot</TextBlock>
+                    <TextBlock x:Name="T_Autopilot" TextDecorations="Underline">Autopilot</TextBlock>
                 </Button>
                 <Button Style="{StaticResource CheckoutButton}" Grid.Row="2" Click="Cargear_Click">
-                    <TextBlock TextDecorations="Underline">Car Gear</TextBlock>
+                    <TextBlock x:Name="T_Cargear" TextDecorations="Underline">Car Gear</TextBlock>
                 </Button>
                 <Button Style="{StaticResource CheckoutButton}" Grid.Row="3" Click="Finance_Click">
-                    <TextBlock TextDecorations="Underline">Finance Options</TextBlock>
+                    <TextBlock x:Name="T_Finance" TextDecorations="Underline">Finance Options</TextBlock>
                 </Button>
                 <Label x:Name="PriceLabel1" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
                 <Label x:Name="CheckoutTitle" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>
@@ -124,69 +124,69 @@
                                 </Style>
                             </ListBox.ItemContainerStyle>
                             <UniformGrid Columns="1" Height="560">
-                                <TextBlock TextWrapping="Wrap" Padding="10" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
+                                <TextBlock x:Name="T_steer" TextWrapping="Wrap" Padding="10" FontFamily="Gill Sans MT" FontSize="35" Height="Auto" Width="Auto" >
                             Enables your car to steer, accelerate and brake automatically
                             for other vehicles and pedestrians within its lane.
                                 </TextBlock>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Navigate on Autopilot: automatic driving from highway on-ramp to off-ramp including interchanges and overtaking slower cars.</TextBlock>
+                                        <TextBlock x:Name="T_Navigate" Width="1060" TextWrapping="Wrap">Navigate on Autopilot: automatic driving from highway on-ramp to off-ramp including interchanges and overtaking slower cars.</TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Auto Lane Change: automatic lane changes while driving on the highway.
+                                        <TextBlock x:Name="T_AutoLaneChange" Width="1060" TextWrapping="Wrap">Auto Lane Change: automatic lane changes while driving on the highway.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Autopark: both parallel and perpendicular spaces.</TextBlock>
+                                        <TextBlock x:Name="T_Autopark" Width="1060" TextWrapping="Wrap">Autopark: both parallel and perpendicular spaces.</TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Summon: your parked car will come find you anywhere in a parking lot. Really.
+                                        <TextBlock x:Name="T_Summon" Width="1060" TextWrapping="Wrap">Summon: your parked car will come find you anywhere in a parking lot. Really.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="30" Margin="0,0,20,0" Source="images\icons\black-int.png" />
-                                        <TextBlock Width="1060" TextWrapping="Wrap">Traffic Light and Stop Sign Control: assisted stops at traffic controlled intersections.
+                                        <TextBlock x:Name="T_Control" Width="1060" TextWrapping="Wrap">Traffic Light and Stop Sign Control: assisted stops at traffic controlled intersections.
                                         </TextBlock>
                                     </StackPanel>
                                 </ListBoxItem>
                             </UniformGrid>
                         </ListBox>
                         <Grid x:Name="CargearBox1" Visibility="Hidden">
-                            <RadioButton GroupName="cargear" x:Name="PerformanceButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Performance_Click">Performance</RadioButton>
+                            <RadioButton  GroupName="cargear" x:Name="PerformanceButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Performance_Click">Performance</RadioButton>
                             <TextBlock x:Name="PerformanceBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center">+ Acceleration<LineBreak/>+ Top Speed</TextBlock>
                             <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="PerformancePrice" Margin="0,0,0,100" >$ 54990</Label>
                         </Grid>
                         <Grid Grid.Column="1" x:Name="CargearBox2" Visibility="Hidden">
-                            <RadioButton IsChecked="True" GroupName="cargear" x:Name="LongrangeButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Longrange_Click">Long Range Plus</RadioButton>
+                            <RadioButton  IsChecked="True" GroupName="cargear" x:Name="LongrangeButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Longrange_Click">Long Range Plus</RadioButton>
                             <TextBlock x:Name="LongrangeBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center">+ Range<LineBreak/>+ Battery</TextBlock>
                             <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="LongrangePrice" Margin="0,0,0,100" >$ 46990</Label>
                         </Grid>
                         <TextBlock TextWrapping="Wrap" Visibility="Visible" x:Name="FinanceInfo1" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0">
-                        <Label Foreground="White" FontWeight="Bold">Car</Label><LineBreak/>
+                        <Label x:Name="L_Car" Foreground="White" FontWeight="Bold">Car</Label><LineBreak/>
                         <Label Foreground="White" Name="CarPrice">+ $ 46990</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold">Color</Label><LineBreak/>
+                        <Label x:Name="L_Color" Foreground="White" FontWeight="Bold">Color</Label><LineBreak/>
                         <Label Foreground="White" Name="ColorPrice">+ $ 0</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold">Tire</Label><LineBreak/>
+                        <Label x:Name="L_Tire" Foreground="White" FontWeight="Bold">Tire</Label><LineBreak/>
                         <Label Foreground="White" Name="TirePrice">+ $ 0</Label>
                         </TextBlock>
                         <TextBlock Grid.Column="1" TextWrapping="Wrap" Visibility="Visible" x:Name="FinanceInfo2" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,100,50,0" FlowDirection="RightToLeft">
-                        <Label Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Interior</Label><LineBreak/>
+                        <Label x:Name="L_Interior" Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Interior</Label><LineBreak/>
                         <Label Foreground="White" Name="IntPrice" FlowDirection="LeftToRight">+ $ 1000</Label><LineBreak/>
-                        <Label Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Autopilot</Label><LineBreak/>
+                        <Label x:Name="L_Autopilot" Foreground="White" FontWeight="Bold" FlowDirection="LeftToRight">Autopilot</Label><LineBreak/>
                         <Label Foreground="White" Name="AutopilotPrice" FlowDirection="LeftToRight">+ $ 0</Label><LineBreak/>
-                        <TextBlock Margin="0,50,0,0" FontSize="60" FontWeight="Bold" Foreground="White"  TextDecorations="Underline" FlowDirection="LeftToRight">Final Price</TextBlock><LineBreak/>
+                        <TextBlock x:Name="T_FinalPrice" Margin="0,50,0,0" FontSize="60" FontWeight="Bold" Foreground="White"  TextDecorations="Underline" FlowDirection="LeftToRight">Final Price</TextBlock><LineBreak/>
                         <Label Foreground="White" Name="FinalPrice" FlowDirection="LeftToRight">$ 47990</Label>
                     </TextBlock>
                     </Grid>

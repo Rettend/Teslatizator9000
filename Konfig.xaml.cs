@@ -35,6 +35,33 @@ namespace Teslatizator9000
             Tire = "Kerek1";
             Interior = "Feher";
             CalcPrice();
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                RB_Home.Content = "Kezdőlap";
+                B_Checkout.Content = "Vásárlás";
+                T_Autopilot.Text = "Robotpilóta";
+                T_Cargear.Text = "Autófelszerelés";
+                T_Finance.Text = "Végső ár";
+                AutopilotButton.Content = "Kiválasztás $ 10 000";
+                T_steer.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járművek és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
+                T_Navigate.Text = "Navigálás a Robotpilótán: automatikus vezetés az autópályára fel- és lehajtáskor, beleértve a sávváltást és a lassabb autók előzését.";
+                T_AutoLaneChange.Text = "Automatikus sávváltás: automatikus sávváltás autópályán történő vezetés közben.";
+                T_Autopark.Text = "Automatikus parkolás: párhuzamos és merőleges helyeken egyaránt.";
+                T_Summon.Text = "Megidézés: parkoló autója bárhol megtalálja a parkolóban. Tényleg.";
+                T_Control.Text = "Jelzőlámpa és stoptábla-vezérlés: megállás segítése a forgalom által szabályozott kereszteződéseknél.";
+                T_FinalPrice.Text = "Végső ár";
+                PerformanceButton.Content = "Teljesítmény";
+                PerformanceBlock.Text = "+ Gyorsulás\n+ Csúcssebesség";
+                LongrangeButton.Content = "Nagy hatótávolság";
+                LongrangeBlock.Text = "+ Távolság\n+ Akkumulátor";
+                L_Car.Content = "Autó";
+                L_Autopilot.Content = "Robotpilóta";
+                L_Color.Content = "Szín";
+                L_Interior.Content = "Belső";
+                L_Tire.Content = "Abroncs";
+                AutopilotButton.Content = "Kiválasztás $ 10 000";
+            }
+
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -223,7 +250,15 @@ namespace Teslatizator9000
         private void CheckoutClick(object sender, RoutedEventArgs e)
         {
             CheckoutPanel.Visibility = Visibility.Visible;
-            CheckoutTitle.Content = "Autopilot Included";
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                CheckoutTitle.Content = "Robotpilóta hozzáadaása";
+            }
+            else
+            {
+                CheckoutTitle.Content = "Autopilot included";
+            }
+
             AutopilotButton.Visibility = Visibility.Visible;
             AutopilotContent.Visibility = Visibility.Visible;
             CargearBox1.Visibility = Visibility.Hidden;
@@ -253,7 +288,16 @@ namespace Teslatizator9000
 
         private void Autopilot_Click(object sender, RoutedEventArgs e)
         {
-            CheckoutTitle.Content = "Autopilot Included";
+
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar") 
+            {
+                CheckoutTitle.Content = "Robotpilóta hozzáadaása";
+            }
+            else
+            {
+                CheckoutTitle.Content = "Autopilot included";
+            }
+              
             AutopilotButton.Visibility = Visibility.Visible;
             AutopilotContent.Visibility = Visibility.Visible;
             CargearBox1.Visibility = Visibility.Hidden;
@@ -265,7 +309,14 @@ namespace Teslatizator9000
         }
         private void Cargear_Click(object sender, RoutedEventArgs e)
         {
-            CheckoutTitle.Content = "Select Your Car";
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                CheckoutTitle.Content = "Válassza ki autóját";
+            }
+            else
+            {
+                CheckoutTitle.Content = "Select your car";
+            }
             AutopilotButton.Visibility = Visibility.Hidden;
             AutopilotContent.Visibility = Visibility.Hidden;
             CargearBox1.Visibility = Visibility.Visible;
@@ -297,7 +348,14 @@ namespace Teslatizator9000
         }
         private void Finance_Click(object sender, RoutedEventArgs e)
         {
-            CheckoutTitle.Content = "Finance Options";
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                CheckoutTitle.Content = "Végső ár";
+            }
+            else
+            {
+                CheckoutTitle.Content = "Finance options";
+            }
             AutopilotButton.Visibility = Visibility.Hidden;
             AutopilotContent.Visibility = Visibility.Hidden;
             CargearBox1.Visibility = Visibility.Hidden;
