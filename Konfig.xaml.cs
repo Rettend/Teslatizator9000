@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Media.Effects;
 using System.Windows.Resources;
+using System.Globalization;
 
 namespace Teslatizator9000
 {
@@ -35,14 +36,15 @@ namespace Teslatizator9000
             Tire = "Kerek1";
             Interior = "Feher";
             CalcPrice();
+            // $1 = 0,81€ or 297ft
+            // 1€ = $1,23 or 364,5ft
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
                 HomeButton.Content = "Kezdőlap";
-                CheckoutButton.Content = "Vásárlás";
-                AutopilotSwitch.Text = "Robotpilóta";
-                CarGearSwitch.Text = "Autófelszerelés";
-                FinalSwicth.Text = "Végső ár";
-                AutopilotButton.Content = "Kiválasztás $ 10 000";
+                Checkout.Content = "Vásárlás";
+                AutopilotSwitchLabel.Text = "1. Robotpilóta";
+                CarGearSwitchLabel.Text = "2. Autófelszerelés";
+                FinalSwitchLabel.Text = "3. Végső ár";
                 AutopilotText.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járműveket és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
                 AutopilotText1.Text = "Navigálás a Robotpilótán: automatikus vezetés az autópályára fel- és lehajtáskor, beleértve a sávváltást és a lassabb autók előzését.";
                 AutopilotText2.Text = "Automatikus sávváltás: automatikus sávváltás autópályán történő vezetés közben.";
@@ -57,18 +59,13 @@ namespace Teslatizator9000
                 CarLabel.Content = "Autó";
                 AutopilotLabel.Content = "Robotpilóta";
                 ColorLabel.Content = "Szín";
-                InteriorLabel.Content = "Belső";
+                IntLabel.Content = "Belső";
                 TireLabel.Content = "Abroncs";
-                AutopilotButton.Content = "Kiválasztás $ 10 000";
-
-                // $1 = 0,81€ or 297ft
-                // 1€ = $1,23 or 364,5ft
-
                 foreach (var i in File.ReadAllLines("Settings.txt"))
                 {
                     if (i.Contains("dollar"))
                     {
-                        AutopilotButton.Content = "Select option $ 10000";
+                        AutopilotButton.Content = "Kiválasztás $ 10 000";
                     }
                 }
 
@@ -76,7 +73,7 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        AutopilotButton.Content = "Select option 8100 €";
+                        AutopilotButton.Content = "Kiválasztás 8 100 €";
                     }
                 }
 
@@ -84,9 +81,36 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        AutopilotButton.Content = "Select option 2700000 Ft";
+                        AutopilotButton.Content = "Kiválasztás 2,700,000 Ft";
                     }
                 }
+            }
+            else
+            {
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        AutopilotButton.Content = "Select option $ 10 000";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        AutopilotButton.Content = "Select option 8 100 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        AutopilotButton.Content = "Select option 2,700,000 Ft";
+                    }
+                }
+            }
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -274,8 +298,8 @@ namespace Teslatizator9000
                 if (i.Contains("euro"))
                 {
                     price = price * 0.81;
-                    PriceLabel1.Content = $"{price} €";
-                    PriceLabel2.Content = $"{price} €";
+                    PriceLabel1.Content = $"{Separator(price, " ")} €";
+                    PriceLabel2.Content = $"{Separator(price, " ")} €";
                 }
             }
 
@@ -284,8 +308,8 @@ namespace Teslatizator9000
                 if (i.Contains("forint"))
                 {
                     price = price * 297;
-                    PriceLabel1.Content = $"{price} Ft";
-                    PriceLabel2.Content = $"{price} Ft";
+                    PriceLabel1.Content = $"{Separator(price, ",")} Ft";
+                    PriceLabel2.Content = $"{Separator(price, ",")} Ft";
                 }
             }
 
@@ -293,11 +317,19 @@ namespace Teslatizator9000
             {
                 if (i.Contains("dollar"))
                 {
-                    PriceLabel1.Content = $"$ {price}";
-                    PriceLabel2.Content = $"$ {price}";
+                    PriceLabel1.Content = $"$ {Separator(price, " ")}";
+                    PriceLabel2.Content = $"$ {Separator(price, " ")}";
                 }
             }
         }
+        public string Separator(double x, string separator)
+        {
+            var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+            nfi.NumberGroupSeparator = separator;
+            string formatted = x.ToString("#,0.00", nfi);
+            return formatted;
+        }
+        
         private void CheckoutClick(object sender, RoutedEventArgs e)
         {
             CheckoutPanel.Visibility = Visibility.Visible;
@@ -379,8 +411,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "74512 €";
-                        LongrangePrice.Content = "56230 €";
+                        PerformancePrice.Content = "74 512 €";
+                        LongrangePrice.Content = "56 230 €";
                     }
                 }
 
@@ -388,8 +420,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "24837300 Ft";
-                        LongrangePrice.Content = "20617740 Ft";
+                        PerformancePrice.Content = "24,837,300 Ft";
+                        LongrangePrice.Content = "20,617,740 Ft";
                     }
                 }
 
@@ -397,8 +429,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("dollar"))
                     {
-                        PerformancePrice.Content = "$ 91990";
-                        LongrangePrice.Content = "$ 69420";
+                        PerformancePrice.Content = "$ 91 990";
+                        LongrangePrice.Content = "$ 69 420";
                     }
                 }
             }
@@ -408,8 +440,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "44542 €";
-                        LongrangePrice.Content = "38062 €";
+                        PerformancePrice.Content = "44 542 €";
+                        LongrangePrice.Content = "38 062 €";
                     }
                 }
 
@@ -417,8 +449,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "14847300 Ft";
-                        LongrangePrice.Content = "12687300 Ft";
+                        PerformancePrice.Content = "14,847,300 Ft";
+                        LongrangePrice.Content = "12,687,300 Ft";
                     }
                 }
 
@@ -426,8 +458,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("dollar"))
                     {
-                        PerformancePrice.Content = "$ 54990";
-                        LongrangePrice.Content = "$ 46990";
+                        PerformancePrice.Content = "$ 54 990";
+                        LongrangePrice.Content = "$ 46 990";
                     }
                 }
             }
@@ -437,8 +469,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "80992 €";
-                        LongrangePrice.Content = "64792 €";
+                        PerformancePrice.Content = "80 992 €";
+                        LongrangePrice.Content = "64 792 €";
                     }
                 }
 
@@ -446,8 +478,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "26997300 Ft";
-                        LongrangePrice.Content = "21597300 Ft";
+                        PerformancePrice.Content = "26,997,300 Ft";
+                        LongrangePrice.Content = "21,597,300 Ft";
                     }
                 }
 
@@ -455,8 +487,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("dollar"))
                     {
-                        PerformancePrice.Content = "$ 99990";
-                        LongrangePrice.Content = "$ 79990";
+                        PerformancePrice.Content = "$ 99 990";
+                        LongrangePrice.Content = "$ 79 990";
                     }
                 }    
             }
@@ -466,8 +498,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("euro"))
                     {
-                        PerformancePrice.Content = "48592 €";
-                        LongrangePrice.Content = "40492 €";
+                        PerformancePrice.Content = "48 592 €";
+                        LongrangePrice.Content = "40 492 €";
                     }
                 }
 
@@ -475,8 +507,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("forint"))
                     {
-                        PerformancePrice.Content = "16197300 Ft";
-                        LongrangePrice.Content = "13497300 Ft";
+                        PerformancePrice.Content = "16,197,300 Ft";
+                        LongrangePrice.Content = "13,497,300 Ft";
                     }
                 }
 
@@ -484,8 +516,8 @@ namespace Teslatizator9000
                 {
                     if (i.Contains("dollar"))
                     {
-                        PerformancePrice.Content = "$ 59990";
-                        LongrangePrice.Content = "$ 49990";
+                        PerformancePrice.Content = "$ 59 990";
+                        LongrangePrice.Content = "$ 49 990";
                     }
                 }
             }
@@ -513,12 +545,12 @@ namespace Teslatizator9000
             {
                 if (i.Contains("euro"))
                 {
-                    CarPrice.Content = $"{Prices[0] * 0,81} €";
-                    ColorPrice.Content = $"{Prices[1] * 0,81} €";
-                    TirePrice.Content = $"{Prices[2] * 0,81} €";
-                    IntPrice.Content = $"{Prices[3] * 0,81} €";
-                    AutopilotPrice.Content = $"{Prices[4] * 0,81} €";
-                    FinalPrice.Content = $"{Prices.Sum() * 0,81} €";
+                    CarPrice.Content = $"{Separator(Prices[0] * 0.81, " ")} €";
+                    ColorPrice.Content = $"{Separator(Prices[1] * 0.81, " ")} €";
+                    TirePrice.Content = $"{Separator(Prices[2] * 0.81, " ")} €";
+                    IntPrice.Content = $"{Separator(Prices[3] * 0.81, " ")} €";
+                    AutopilotPrice.Content = $"{Separator(Prices[4] * 0.81, " ")} €";
+                    FinalPrice.Content = $"{Separator(Prices.Sum() * 0.81, " ")} €";
                 }
             }
 
@@ -526,12 +558,12 @@ namespace Teslatizator9000
             {
                 if (i.Contains("forint"))
                 {
-                    CarPrice.Content = $"{Prices[0] * 270} Ft";
-                    ColorPrice.Content = $"{Prices[1] * 270} Ft";
-                    TirePrice.Content = $"{Prices[2] * 270} Ft";
-                    IntPrice.Content = $"{Prices[3] * 270} Ft";
-                    AutopilotPrice.Content = $"{Prices[4] * 270} Ft";
-                    FinalPrice.Content = $"{Prices.Sum() * 270} Ft";
+                    CarPrice.Content = $"{Separator(Prices[0] * 270, ",")} Ft";
+                    ColorPrice.Content = $"{Separator(Prices[1] * 270, ",")} Ft";
+                    TirePrice.Content = $"{Separator(Prices[2] * 270, ",")} Ft";
+                    IntPrice.Content = $"{Separator(Prices[3] * 270, ",")} Ft";
+                    AutopilotPrice.Content = $"{Separator(Prices[4] * 270, ",")} Ft";
+                    FinalPrice.Content = $"{Separator(Prices.Sum() * 270, ",")} Ft";
                 }
             }
 
@@ -539,12 +571,12 @@ namespace Teslatizator9000
             {
                 if (i.Contains("dollar"))
                 {
-                    CarPrice.Content = $"$ {Prices[0]}";
-                    ColorPrice.Content = $"$ {Prices[1]}";
-                    TirePrice.Content = $"$ {Prices[2]}";
-                    IntPrice.Content = $"$ {Prices[3]}";
-                    AutopilotPrice.Content = $"$ {Prices[4]}";
-                    FinalPrice.Content = $"$ {Prices.Sum()}";
+                    CarPrice.Content = $"$ {Separator(Prices[0], " ")}";
+                    ColorPrice.Content = $"$ {Separator(Prices[1], " ")}";
+                    TirePrice.Content = $"$ {Separator(Prices[2], " ")}";
+                    IntPrice.Content = $"$ {Separator(Prices[3], " ")}";
+                    AutopilotPrice.Content = $"$ {Separator(Prices[4], " ")}";
+                    FinalPrice.Content = $"$ {Separator(Prices.Sum(), " ")}";
                 }
             }
 
@@ -640,11 +672,11 @@ namespace Teslatizator9000
             {
                 if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
                 {
-                    HomeButton.Content = "Home";
+                    HomeButton.Content = "Kezdőlap";
                 }
                 else
                 {
-                    HomeButton.Content = "Kezdőlap";
+                    HomeButton.Content = "Home";
                 }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";

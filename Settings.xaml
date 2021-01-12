@@ -44,34 +44,34 @@
                             <Label x:Name="CurrencyLabel" Style="{StaticResource SettingLabel}" Content="Currency" />
                             <RadioButton x:Name="euro" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Euro - €" Checked="euro_Checked" />
                             <RadioButton x:Name="dollar" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Dollar - $" Checked="dollar_Checked" />
-                            <RadioButton x:Name="forint" IsChecked="True" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Forint - Ft" Checked="forint_Checked" />
+                            <RadioButton x:Name="forint" GroupName="penznem" Style="{StaticResource SettingButton}" Content="Forint - Ft" Checked="forint_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label x:Name="SreenLabel" Style="{StaticResource SettingLabel}" Content="Screen mode" />
                             <RadioButton x:Name="fullscreen" GroupName="screen" Style="{StaticResource SettingButton}" Content="Fullscreen" Checked="fullsrceen_Checked" />
-                            <RadioButton x:Name="windowed" IsChecked="True" GroupName="screen" Style="{StaticResource SettingButton}" Content="Windowed" Checked="windowed_Checked" />
+                            <RadioButton x:Name="windowed" GroupName="screen" Style="{StaticResource SettingButton}" Content="Windowed" Checked="windowed_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label x:Name="LanguageLabel" Style="{StaticResource SettingLabel}" Content="Language" />
-                            <RadioButton x:Name="english" IsChecked="True" GroupName="language" Style="{StaticResource SettingButton}" Content="English" Checked="english_Checked" />
+                            <RadioButton x:Name="english" GroupName="language" Style="{StaticResource SettingButton}" Content="English" Checked="english_Checked" />
                             <RadioButton x:Name="magyar" GroupName="language" Style="{StaticResource SettingButton}" Content="Magyar" Checked="magyar_Checked" />
                         </UniformGrid>
                     </StackPanel>
                     <Grid x:Name="fillGrid" Width="400"/>
                     <StackPanel>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Label x:Name="LengthLabel" Style="{StaticResource SettingLabel}" Content="Lenght" />
-                            <RadioButton x:Name="meter" IsChecked="True" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Meter - km" Checked="meter_Checked" />
+                            <Label x:Name="LengthLabel" Style="{StaticResource SettingLabel}" Content="Length" />
+                            <RadioButton x:Name="meter" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Meter - km" Checked="meter_Checked" />
                             <RadioButton x:Name="mile" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mile - mi" Checked="mile_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label x:Name ="VolumeLabel" Style="{StaticResource SettingLabel}" Content="Volume" />
-                            <RadioButton x:Name="liter" IsChecked="True" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Liter - L" Checked="liter_Checked" />
+                            <RadioButton x:Name="liter" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Liter - L" Checked="liter_Checked" />
                             <RadioButton x:Name="cubefeet" GroupName="térfogat" Style="{StaticResource SettingButton}" Content="Cubic feet - cu ft" Checked="cubefeet_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Labell x:Name="VelocityLabel" Style="{StaticResource SettingLabel}" Content="Velocity" />
-                            <RadioButton x:Name="kmph" IsChecked="True" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Kilometer/hour - km/h" Checked="kmph_Checked" />
+                            <Label x:Name="VelocityLabel" Style="{StaticResource SettingLabel}" Content="Velocity" />
+                            <RadioButton x:Name="kmph" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Kilometer/hour - km/h" Checked="kmph_Checked" />
                             <RadioButton x:Name="mph" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Miles per hour - mph" Checked="mph_Checked" />
                         </UniformGrid>
                     </StackPanel>

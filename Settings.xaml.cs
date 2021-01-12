@@ -25,41 +25,61 @@ namespace Teslatizator9000
         {
             InitializeComponent();
             forditas();
-         
-        }
-
-        private void forditas() 
-        {
+            if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
+            {
+                euro.IsChecked = true;   
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
+            {
+                dollar.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(0) == "forint")
+            {
+                forint.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(1) == "meter")
+            {
+                meter.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(1) == "mile")
+            {
+                euro.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(2) == "liter")
+            {
+                liter.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
+            {
+                cubefeet.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(3) == "kmph")
+            {
+                kmph.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(3) == "mph")
+            {
+                mph.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(4) == "fullscreen")
+            {
+                fullscreen.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(4) == "windowed")
+            {
+                windowed.IsChecked = true;
+            }
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "english")
+            {
+                english.IsChecked = true;
+            }
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                CurrencyLabel.Content = "Pénznem";
-                euro.Content = "Euró - €";
-                dollar.Content = "Dollár - $";
-                forint.Content = "Forint - Ft";
-
-
-                LengthLabel.Content = "Hosszmérték";
-                mile.Content = "Mérföld - mi";
-                meter.Content = "Méter - m";
-
-                SreenLabel.Content = "Képernyő";
-                fullscreen.Content = "Teljesképernyős";
-                windowed.Content = "Ablakos";
-
-                VelocityLabel.Content = "Sebességmérték";
-                mph.Content = "Mérföld/óra - mph";
-                kmph.Content = "Kilóméter/óra - kmh";
-
-                VolumeLabel.Content = "Térfogatmérték";
-                cubefeet.Content = "Köbláb - cu ft";
-
-                LanguageLabel.Content = "Nyelv";
-
-                HomeButton.Content = "Kezdőlap";
-
+                magyar.IsChecked = true;
             }
         }
 
+        
         private void Button_Click_Off(object sender, RoutedEventArgs e)
         {
             App.Current.Shutdown();
@@ -135,7 +155,7 @@ namespace Teslatizator9000
             {
                 ki.Add(i);
             }
-            ki[1] = "kilometer";
+            ki[1] = "meter";
             File.WriteAllLines("Settings.txt", ki);
         }
 
@@ -215,33 +235,7 @@ namespace Teslatizator9000
             }
             ki[5] = "english";
             File.WriteAllLines("Settings.txt", ki);
-
-            CurrencyLabel.Content = "Currency";
-            euro.Content = "Euro - €";
-            dollar.Content = "Dollar - $";
-            forint.Content = "Forint - Ft";
-
-
-            LengthLabel.Content = "Length";
-            mile.Content = "Mile - mi";
-            meter.Content = "Meter - m";
-
-            SreenLabel.Content = "Srcreen mode";
-            fullscreen.Content = "Fullscreen";
-            windowed.Content = "Windowed";
-            maximized.Content = "Maximized";
-
-            VelocityLabel.Content = "Velocity";
-            mph.Content = "Miles/hour - mph";
-            kmph.Content = "Kilometers/hour - kmh";
-
-            VolumeLabel.Content = "Volume";
-            cubefeet.Content = "Cubic feet - cu ft";
-
-            LanguageLabel.Content = "Language";
-
-            HomeButton.Content = "Home";
-
+            forditas();
         }
 
         private void fullsrceen_Checked(object sender, RoutedEventArgs e)
@@ -251,7 +245,7 @@ namespace Teslatizator9000
             {
                 ki.Add(i);
             }
-            ki[4] = "fullcsreen";
+            ki[4] = "fullscreen";
             File.WriteAllLines("Settings.txt", ki);
         }
 
@@ -264,6 +258,49 @@ namespace Teslatizator9000
             }
             ki[4] = "windowed";
             File.WriteAllLines("Settings.txt", ki);
+        }
+        private void forditas()
+        {
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                CurrencyLabel.Content = "Pénznem";
+                euro.Content = "Euró - €";
+                dollar.Content = "Dollár - $";
+                forint.Content = "Forint - Ft";
+                LengthLabel.Content = "Hosszmérték";
+                mile.Content = "Mérföld - mi";
+                meter.Content = "Méter - m";
+                SreenLabel.Content = "Képernyő";
+                fullscreen.Content = "Teljesképernyős";
+                windowed.Content = "Ablakos";
+                VelocityLabel.Content = "Sebességmérték";
+                mph.Content = "Mérföld/óra - mph";
+                kmph.Content = "Kilóméter/óra - km/h";
+                VolumeLabel.Content = "Térfogatmérték";
+                cubefeet.Content = "Köbláb - cu ft";
+                LanguageLabel.Content = "Nyelv";
+                HomeButton.Content = "Kezdőlap";
+            }
+            else if (File.ReadLines("Settings.txt").ElementAt(5) == "english")
+            {
+                CurrencyLabel.Content = "Currency";
+                euro.Content = "Euro - €";
+                dollar.Content = "Dollar - $";
+                forint.Content = "Forint - Ft";
+                LengthLabel.Content = "Length";
+                mile.Content = "Mile - mi";
+                meter.Content = "Meter - m";
+                SreenLabel.Content = "Srcreen mode";
+                fullscreen.Content = "Fullscreen";
+                windowed.Content = "Windowed";
+                VelocityLabel.Content = "Velocity";
+                mph.Content = "Miles/hour - mph";
+                kmph.Content = "Kilometers/hour - kmh";
+                VolumeLabel.Content = "Volume";
+                cubefeet.Content = "Cubic feet - cu ft";
+                LanguageLabel.Content = "Language";
+                HomeButton.Content = "Home";
+            }
         }
         private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -279,11 +316,11 @@ namespace Teslatizator9000
             {
                 if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
                 {
-                    HomeButton.Content = "Home";
+                    HomeButton.Content = "Kezdőlap";
                 }
                 else
                 {
-                    HomeButton.Content = "Kezdőlap";
+                    HomeButton.Content = "Home";
                 }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";

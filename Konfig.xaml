@@ -109,15 +109,15 @@
                 <Button x:Name="CheckoutX" Grid.Column="4" Click="CheckoutOff" Content="X" IsCancel="True" Background="#00000000" Margin="200,-50,0,0" FontFamily="Gill Sans MT" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                 <Button x:Name="AutopilotSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="1" Click="Autopilot_Click" VerticalAlignment="Center">
-                    <TextBlock TextDecorations="Underline">1. Autopilot</TextBlock>
+                    <TextBlock x:Name="AutopilotSwitchLabel" TextDecorations="Underline">1. Autopilot</TextBlock>
                 </Button>
                 <Image Grid.Row="1" Width="70" Source="images\icons\arrow-down-icon.png" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
                 <Button x:Name="CarGearSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="2" Click="Cargear_Click" VerticalAlignment="Top">
-                    <TextBlock TextDecorations="Underline">2. Car Gear</TextBlock>
+                    <TextBlock x:Name="CarGearSwitchLabel" TextDecorations="Underline">2. Car Gear</TextBlock>
                 </Button>
                 <Image Grid.Row="2" Width="70" Source="images\icons\arrow-down-icon.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button x:Name="FinalSwitch" Style="{StaticResource CheckoutButton}" Grid.Row="3" Click="Finance_Click">
-                    <TextBlock TextDecorations="Underline" Margin="10,0"> 3. Final Price</TextBlock>
+                    <TextBlock x:Name="FinalSwitchLabel" TextDecorations="Underline" Margin="10,0"> 3. Final Price</TextBlock>
                 </Button>
                 <Label x:Name="PriceLabel1" FontFamily="Gill Sans MT" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">$ 0</Label>
                 <Label x:Name="CheckoutTitle" FontFamily="Gill Sans MT" Grid.ColumnSpan="3" Grid.Column="1" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">Autopilot Included</Label>

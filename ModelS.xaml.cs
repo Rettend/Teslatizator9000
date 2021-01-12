@@ -26,13 +26,13 @@ namespace Teslatizator9000
             InitializeComponent();
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                Home.Content = "Kezdőlap";
-                Model3Sub1.Content = "Gyorsulás";
-                Model3Sub2.Content = "Hatótávolság";
-                Model3Sub3.Content = "Csomagtartó";
-                Model3Sub4.Content = "Ülőhelyek";
-                Model3Sub5.Content = "Kerekek";
-                Model3Sub6.Content = "Kezdőár";
+                HomeButton.Content = "Kezdőlap";
+                AccelerationLabel.Content = "Gyorsulás";
+                RangeLabel.Content = "Hatótávolság";
+                TrunkSpaceLabel.Content = "Csomagtartó";
+                SeatingLabel.Content = "Ülőhelyek";
+                WheelsLabel.Content = "Kerekek";
+                StartingLabel.Content = "Kezdőár";
                 if (File.ReadLines("Settings.txt").ElementAt(2) == "kilometer")
                 {
                     Range.Content = "652 kilométer";
@@ -128,11 +128,11 @@ namespace Teslatizator9000
             {
                 if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
                 {
-                    HomeButton.Content = "Home";
+                    HomeButton.Content = "Kezdőlap";
                 }
                 else
                 {
-                    HomeButton.Content = "Kezdőlap";
+                    HomeButton.Content = "Home";
                 }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";

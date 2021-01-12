@@ -28,8 +28,8 @@ namespace Teslatizator9000
 
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                RB_Home.Content = "Kezdőlap";
-                B_Start.Content = "Konfiguráció kezdése";
+                HomeButton.Content = "Kezdőlap";
+                StartButton.Content = "Konfiguráció kezdése";
             }
             
         }
@@ -94,7 +94,14 @@ namespace Teslatizator9000
             }
             else
             {
-                HomeButton.Content = "Home";
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
+                else
+                {
+                    HomeButton.Content = "Home";
+                }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";
                 MXButton.Content = "Model X";
