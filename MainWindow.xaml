@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d"
-        Title="MainWindow" Height="auto" Width="auto"
+        Title="MainWindow"
         WindowState="Maximized"
-        WindowStyle="None">
-    <WrapPanel x:Name="Container"></WrapPanel>
+        WindowStyle="None"
+        Height="Auto" Width="Auto"
+        MinHeight="800" MinWidth="600">
+    <UniformGrid Background="White" x:Name="Container">
+    </UniformGrid>
 </Window>

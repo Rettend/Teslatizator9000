@@ -26,7 +26,7 @@ namespace Teslatizator9000
         public string Color { get; private set; }
         public string Tire { get; private set; }
         public string Interior { get; private set; }
-        public List<int> Prices = new List<int>(5) { 46990, 0, 0, 1500, 0 };
+        public List<double> Prices = new List<double>(5) { 46990, 0, 0, 1500, 0 };
         public Konfig()
         {
             InitializeComponent();
@@ -37,31 +37,56 @@ namespace Teslatizator9000
             CalcPrice();
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                RB_Home.Content = "Kezdőlap";
-                B_Checkout.Content = "Vásárlás";
-                T_Autopilot.Text = "Robotpilóta";
-                T_Cargear.Text = "Autófelszerelés";
-                T_Finance.Text = "Végső ár";
+                HomeButton.Content = "Kezdőlap";
+                CheckoutButton.Content = "Vásárlás";
+                AutopilotSwitch.Text = "Robotpilóta";
+                CarGearSwitch.Text = "Autófelszerelés";
+                FinalSwicth.Text = "Végső ár";
                 AutopilotButton.Content = "Kiválasztás $ 10 000";
-                T_steer.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járműveket és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
-                T_Navigate.Text = "Navigálás a Robotpilótán: automatikus vezetés az autópályára fel- és lehajtáskor, beleértve a sávváltást és a lassabb autók előzését.";
-                T_AutoLaneChange.Text = "Automatikus sávváltás: automatikus sávváltás autópályán történő vezetés közben.";
-                T_Autopark.Text = "Automatikus parkolás: párhuzamos és merőleges helyeken egyaránt.";
-                T_Summon.Text = "Megidézés: parkoló autója bárhol megtalálja a parkolóban. Tényleg.";
-                T_Control.Text = "Jelzőlámpa és stoptábla-vezérlés: megállás segítése a forgalom által szabályozott kereszteződéseknél.";
-                T_FinalPrice.Text = "Végső ár";
+                AutopilotText.Text = "Lehetővé teszi az autójának, hogy a sávon belül más járműveket és gyalogosokat figyelembe véve automatikusan kormányozzon, gyorsítson és fékezzen.";
+                AutopilotText1.Text = "Navigálás a Robotpilótán: automatikus vezetés az autópályára fel- és lehajtáskor, beleértve a sávváltást és a lassabb autók előzését.";
+                AutopilotText2.Text = "Automatikus sávváltás: automatikus sávváltás autópályán történő vezetés közben.";
+                AutopilotText3.Text = "Automatikus parkolás: párhuzamos és merőleges helyeken egyaránt.";
+                AutopilotText4.Text = "Megidézés: parkoló autója bárhol megtalálja a parkolóban. Tényleg.";
+                AutopilotText5.Text = "Jelzőlámpa és stoptábla-vezérlés: megállás segítése a forgalom által szabályozott kereszteződéseknél.";
+                FinalLabel.Text = "Végső ár";
                 PerformanceButton.Content = "Teljesítmény";
                 PerformanceBlock.Text = "+ Gyorsulás\n+ Csúcssebesség";
                 LongrangeButton.Content = "Nagy hatótávolság";
                 LongrangeBlock.Text = "+ Távolság\n+ Akkumulátor";
-                L_Car.Content = "Autó";
-                L_Autopilot.Content = "Robotpilóta";
-                L_Color.Content = "Szín";
-                L_Interior.Content = "Belső";
-                L_Tire.Content = "Abroncs";
+                CarLabel.Content = "Autó";
+                AutopilotLabel.Content = "Robotpilóta";
+                ColorLabel.Content = "Szín";
+                InteriorLabel.Content = "Belső";
+                TireLabel.Content = "Abroncs";
                 AutopilotButton.Content = "Kiválasztás $ 10 000";
-            }
 
+                // $1 = 0,81€ or 297ft
+                // 1€ = $1,23 or 364,5ft
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        AutopilotButton.Content = "Select option $ 10000";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        AutopilotButton.Content = "Select option 8100 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        AutopilotButton.Content = "Select option 2700000 Ft";
+                    }
+                }
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -242,10 +267,36 @@ namespace Teslatizator9000
         }
         private void CalcPrice()
         {
-            int price = 0;
-            price = Prices.Sum();
-            PriceLabel1.Content = $"$ {price}";
-            PriceLabel2.Content = $"$ {price}";
+            double price = 0;
+            price = Prices[0] + Prices[1] + Prices[2] + Prices[3] + Prices[4];
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    price = price * 0.81;
+                    PriceLabel1.Content = $"{price} €";
+                    PriceLabel2.Content = $"{price} €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    price = price * 297;
+                    PriceLabel1.Content = $"{price} Ft";
+                    PriceLabel2.Content = $"{price} Ft";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    PriceLabel1.Content = $"$ {price}";
+                    PriceLabel2.Content = $"$ {price}";
+                }
+            }
         }
         private void CheckoutClick(object sender, RoutedEventArgs e)
         {
@@ -288,7 +339,6 @@ namespace Teslatizator9000
 
         private void Autopilot_Click(object sender, RoutedEventArgs e)
         {
-
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar") 
             {
                 CheckoutTitle.Content = "Robotpilóta hozzáadaása";
@@ -297,7 +347,7 @@ namespace Teslatizator9000
             {
                 CheckoutTitle.Content = "Autopilot included";
             }
-              
+
             AutopilotButton.Visibility = Visibility.Visible;
             AutopilotContent.Visibility = Visibility.Visible;
             CargearBox1.Visibility = Visibility.Hidden;
@@ -325,23 +375,119 @@ namespace Teslatizator9000
             FinanceInfo2.Visibility = Visibility.Hidden;
             if (Model == "ModelS")
             {
-                PerformancePrice.Content = "$ 91990";
-                LongrangePrice.Content = "$ 69420";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "74512 €";
+                        LongrangePrice.Content = "56230 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "24837300 Ft";
+                        LongrangePrice.Content = "20617740 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 91990";
+                        LongrangePrice.Content = "$ 69420";
+                    }
+                }
             }
             else if (Model == "Model3")
             {
-                PerformancePrice.Content = "$ 54990";
-                LongrangePrice.Content = "$ 46990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "44542 €";
+                        LongrangePrice.Content = "38062 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "14847300 Ft";
+                        LongrangePrice.Content = "12687300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 54990";
+                        LongrangePrice.Content = "$ 46990";
+                    }
+                }
             }
             else if (Model == "ModelX")
             {
-                PerformancePrice.Content = "$ 99990";
-                LongrangePrice.Content = "$ 79990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "80992 €";
+                        LongrangePrice.Content = "64792 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "26997300 Ft";
+                        LongrangePrice.Content = "21597300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 99990";
+                        LongrangePrice.Content = "$ 79990";
+                    }
+                }    
             }
             else
             {
-                PerformancePrice.Content = "$ 59990";
-                LongrangePrice.Content = "$ 49990";
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("euro"))
+                    {
+                        PerformancePrice.Content = "48592 €";
+                        LongrangePrice.Content = "40492 €";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("forint"))
+                    {
+                        PerformancePrice.Content = "16197300 Ft";
+                        LongrangePrice.Content = "13497300 Ft";
+                    }
+                }
+
+                foreach (var i in File.ReadAllLines("Settings.txt"))
+                {
+                    if (i.Contains("dollar"))
+                    {
+                        PerformancePrice.Content = "$ 59990";
+                        LongrangePrice.Content = "$ 49990";
+                    }
+                }
             }
             CheckoutBg.Background = Brushes.White;
             CheckoutBgImg.Background.Opacity = 0;
@@ -354,7 +500,7 @@ namespace Teslatizator9000
             }
             else
             {
-                CheckoutTitle.Content = "Finance options";
+                CheckoutTitle.Content = "Final Price";
             }
             AutopilotButton.Visibility = Visibility.Hidden;
             AutopilotContent.Visibility = Visibility.Hidden;
@@ -362,14 +508,48 @@ namespace Teslatizator9000
             CargearBox2.Visibility = Visibility.Hidden;
             FinanceInfo1.Visibility = Visibility.Visible;
             FinanceInfo2.Visibility = Visibility.Visible;
-            CarPrice.Content = $"$ {Prices[0]}";
-            ColorPrice.Content = $"$ {Prices[1]}";
-            TirePrice.Content = $"$ {Prices[2]}";
-            IntPrice.Content = $"$ {Prices[3]}";
-            AutopilotPrice.Content = $"$ {Prices[4]}";
-            FinalPrice.Content = $"$ {Prices.Sum()}";
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("euro"))
+                {
+                    CarPrice.Content = $"{Prices[0] * 0,81} €";
+                    ColorPrice.Content = $"{Prices[1] * 0,81} €";
+                    TirePrice.Content = $"{Prices[2] * 0,81} €";
+                    IntPrice.Content = $"{Prices[3] * 0,81} €";
+                    AutopilotPrice.Content = $"{Prices[4] * 0,81} €";
+                    FinalPrice.Content = $"{Prices.Sum() * 0,81} €";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("forint"))
+                {
+                    CarPrice.Content = $"{Prices[0] * 270} Ft";
+                    ColorPrice.Content = $"{Prices[1] * 270} Ft";
+                    TirePrice.Content = $"{Prices[2] * 270} Ft";
+                    IntPrice.Content = $"{Prices[3] * 270} Ft";
+                    AutopilotPrice.Content = $"{Prices[4] * 270} Ft";
+                    FinalPrice.Content = $"{Prices.Sum() * 270} Ft";
+                }
+            }
+
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                if (i.Contains("dollar"))
+                {
+                    CarPrice.Content = $"$ {Prices[0]}";
+                    ColorPrice.Content = $"$ {Prices[1]}";
+                    TirePrice.Content = $"$ {Prices[2]}";
+                    IntPrice.Content = $"$ {Prices[3]}";
+                    AutopilotPrice.Content = $"$ {Prices[4]}";
+                    FinalPrice.Content = $"$ {Prices.Sum()}";
+                }
+            }
+
             CheckoutBg.Background = Brushes.Black;
-            
+
             Uri resourceUri;
             if (Model == "ModelS")
             {
@@ -435,6 +615,144 @@ namespace Teslatizator9000
                 Prices[0] = 49990;
             }
             CalcPrice();
+        }
+        private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (ActualWidth < 1100)
+            {
+                HomeButton.Content = "H";
+                MSButton.Content = "S";
+                M3Button.Content = "3";
+                MXButton.Content = "X";
+                MYButton.Content = "Y";
+                CarConfigS.FontSize = 25;
+                CarConfig3.FontSize = 25;
+                CarConfigX.FontSize = 25;
+                CarConfigY.FontSize = 25;
+                Checkout.FontSize = 30;
+                PriceLabel2.FontSize = 30;
+                CarConfig.MinHeight = 150;
+                Thickness margin = ConfigGrid.Margin;
+                margin.Top = -200;
+                ConfigGrid.Margin = margin;
+            }
+            else
+            {
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Home";
+                }
+                else
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
+                MSButton.Content = "Model S";
+                M3Button.Content = "Model 3";
+                MXButton.Content = "Model X";
+                MYButton.Content = "Model Y";
+                CarConfigS.FontSize = 40;
+                CarConfig3.FontSize = 40;
+                CarConfigX.FontSize = 40;
+                CarConfigY.FontSize = 40;
+                Checkout.FontSize = 60;
+                PriceLabel2.FontSize = 60;
+                CarConfig.MinHeight = 250;
+                Thickness margin = ConfigGrid.Margin;
+                margin.Top = -300;
+                ConfigGrid.Margin = margin;
+            }
+            if (ActualWidth < 800)
+            {
+                Grid.SetRow(CarConfig, 2);
+                Grid.SetColumnSpan(CarConfig, 1);
+                Thickness margin = ConfigSubGrid2.Margin;
+                margin.Top = -20;
+                ConfigSubGrid2.Margin = margin;
+            }
+            else
+            {
+                Thickness margin = ConfigSubGrid2.Margin;
+                margin.Top = 10;
+                ConfigSubGrid2.Margin = margin;
+                Grid.SetRow(CarConfig, 0);
+                Grid.SetColumnSpan(CarConfig, 2);
+            }
+            if (ActualWidth < 1100)
+            {
+                CarLabel.FontSize = 30;
+                CarPrice.FontSize = 30;
+                ColorLabel.FontSize = 30;
+                ColorPrice.FontSize = 30;
+                TireLabel.FontSize = 30;
+                TirePrice.FontSize = 30;
+                IntLabel.FontSize = 30;
+                IntPrice.FontSize = 30;
+                AutopilotLabel.FontSize = 30;
+                AutopilotPrice.FontSize = 30;
+                FinalLabel.FontSize = 30;
+                FinalPrice.FontSize = 30;
+                PriceLabel1.FontSize = 30;
+                AutopilotButton.FontSize = 30;
+                CheckoutTitle.FontSize = 40;
+                CheckoutX.FontSize = 40;
+                Thickness margin = CheckoutX.Margin;
+                margin.Left = 40;
+                CheckoutX.Margin = margin;
+                CheckoutPanel.CornerRadius = new CornerRadius(0);
+                AutopilotSwitch.FontSize = 25;
+                CarGearSwitch.FontSize = 25;
+                FinalSwitch.FontSize = 25;
+                AutopilotText.FontSize = 20;
+                PerformanceButton.FontSize = 30;
+                PerformanceBlock.FontSize = 20;
+                PerformancePrice.FontSize = 20;
+                LongrangeButton.FontSize = 30;
+                LongrangeBlock.FontSize = 20;
+                LongrangePrice.FontSize = 20;
+                AutopilotText1.FontSize = 15;
+                AutopilotText2.FontSize = 15;
+                AutopilotText3.FontSize = 15;
+                AutopilotText4.FontSize = 15;
+                AutopilotText5.FontSize = 15;
+            }
+            else
+            {
+                CarLabel.FontSize = 50;
+                CarPrice.FontSize = 50;
+                ColorLabel.FontSize = 50;
+                ColorPrice.FontSize = 50;
+                TireLabel.FontSize = 50;
+                TirePrice.FontSize = 50;
+                IntLabel.FontSize = 50;
+                IntPrice.FontSize = 50;
+                AutopilotLabel.FontSize = 50;
+                AutopilotPrice.FontSize = 50;
+                FinalLabel.FontSize = 60;
+                FinalPrice.FontSize = 50;
+                PriceLabel1.FontSize = 60;
+                AutopilotButton.FontSize = 50;
+                CheckoutTitle.FontSize = 70;
+                CheckoutX.FontSize = 70;
+                Thickness margin = CheckoutX.Margin;
+                margin.Left = 200;
+                CheckoutX.Margin = margin;
+                CheckoutPanel.CornerRadius = new CornerRadius(100,100,0,100);
+                AutopilotSwitch.FontSize = 40;
+                CarGearSwitch.FontSize = 40;
+                FinalSwitch.FontSize = 40;
+                AutopilotText.FontSize = 35;
+                PerformanceButton.FontSize = 50;
+                PerformanceBlock.FontSize = 35;
+                PerformancePrice.FontSize = 35;
+                LongrangeButton.FontSize = 50;
+                LongrangeBlock.FontSize = 35;
+                LongrangePrice.FontSize = 35;
+                AutopilotText1.FontSize = 30;
+                AutopilotText2.FontSize = 30;
+                AutopilotText3.FontSize = 30;
+                AutopilotText4.FontSize = 30;
+                AutopilotText5.FontSize = 30;
+            }
         }
     }
 }

@@ -26,14 +26,52 @@ namespace Teslatizator9000
             InitializeComponent();
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                RB_Home.Content = "Kezdőlap";
-                L_Acceleration.Content = "Gyorsulás";
-                L_Range.Content = "Hatótávolság";
-                L_Seating.Content = "Ülőhelyek";
-                L_StartingAt.Content = "Kezdőár";
-                L_Wheels.Content = "Kerekek";
-                B_Start.Content = "Konfiguráció kezdése";
-                Range.Content = "353 mérföld";
+                Home.Content = "Kezdőlap";
+                Model3Sub1.Content = "Gyorsulás";
+                Model3Sub2.Content = "Hatótávolság";
+                Model3Sub3.Content = "Csomagtartó";
+                Model3Sub4.Content = "Ülőhelyek";
+                Model3Sub5.Content = "Kerekek";
+                Model3Sub6.Content = "Kezdőár";
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "kilometer")
+                {
+                    Range.Content = "580 kilométer";
+                }
+                else
+                {
+                    Range.Content = "353 mérföld";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
+                {
+                    TrunkSpace.Content = "15 köbláb";
+                }
+                else
+                {
+                    TrunkSpace.Content = "424 liter";
+                }
+            }
+            else
+            {
+                if (File.ReadLines("Settings.txt").ElementAt(3) == "kmph")
+                {
+                    AccelerationYes.Content = "4.4s 0-100 km/h";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(1) == "kilometer")
+                {
+                    Range.Content = "568 kilometers";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
+                {
+                    Price.Content = "30772 €";
+                }
+                else if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
+                {
+                    Price.Content = "$ 37990";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
+                {
+                    TrunkSpace.Content = "15 cubic feet";
+                }
             }
         }
 
@@ -75,6 +113,72 @@ namespace Teslatizator9000
         {
             MainWindow.panel.Children.Clear();
             MainWindow.panel.Children.Add(new Konfig());
+        }
+        private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (ActualWidth < 1100)
+            {
+                HomeButton.Content = "H";
+                MSButton.Content = "S";
+                M3Button.Content = "3";
+                MXButton.Content = "X";
+                MYButton.Content = "Y";
+            }
+            else
+            {
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Home";
+                }
+                else
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
+                MSButton.Content = "Model S";
+                M3Button.Content = "Model 3";
+                MXButton.Content = "Model X";
+                MYButton.Content = "Model Y";
+            }
+            if (ActualWidth < 780)
+            {
+                if (Model3Sub4.Parent != Model3Panel1)
+                {
+                    Model3Panel2.Children.Remove(Model3Sub4);
+                    Model3Panel2.Children.Remove(Model3Sub5);
+                    Model3Panel2.Children.Remove(Model3Sub6);
+                    Model3Panel1.Children.Add(Model3Sub4);
+                    Model3Panel1.Children.Add(Model3Sub5);
+                    Model3Panel1.Children.Add(Model3Sub6);
+                    Model3Sub1.FontSize = 30;
+                    Model3Sub2.FontSize = 30;
+                    Model3Sub3.FontSize = 30;
+                    Model3Sub4.FontSize = 30;
+                    Model3Sub5.FontSize = 30;
+                    Model3Sub6.FontSize = 30;
+                }
+                Grid.SetColumnSpan(Model3Border1, 2);
+                Model3Border2.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                if (Model3Sub4.Parent == Model3Panel1)
+                {
+                    Model3Panel1.Children.Remove(Model3Sub4);
+                    Model3Panel1.Children.Remove(Model3Sub5);
+                    Model3Panel1.Children.Remove(Model3Sub6);
+                    Model3Panel2.Children.Add(Model3Sub4);
+                    Model3Panel2.Children.Add(Model3Sub5);
+                    Model3Panel2.Children.Add(Model3Sub6);
+                    Model3Sub1.FontSize = 40;
+                    Model3Sub2.FontSize = 40;
+                    Model3Sub3.FontSize = 40;
+                    Model3Sub4.FontSize = 40;
+                    Model3Sub5.FontSize = 40;
+                    Model3Sub6.FontSize = 40;
+                }
+                Grid.SetColumnSpan(Model3Border1, 1);
+                Model3Border2.Visibility = Visibility.Visible;
+            }
         }
     }
 }

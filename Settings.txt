@@ -2,3 +2,5 @@
 meter
 liter
 kmph
+windowed
+english

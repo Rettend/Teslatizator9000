@@ -32,31 +32,30 @@ namespace Teslatizator9000
         {
             if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                L_Currency.Content = "Pénznem";
+                CurrencyLabel.Content = "Pénznem";
                 euro.Content = "Euró - €";
                 dollar.Content = "Dollár - $";
                 forint.Content = "Forint - Ft";
 
 
-                L_Length.Content = "Hosszmérték";
+                LengthLabel.Content = "Hosszmérték";
                 mile.Content = "Mérföld - mi";
                 meter.Content = "Méter - m";
 
-                L_Sreen.Content = "Képernyő";
+                SreenLabel.Content = "Képernyő";
                 fullscreen.Content = "Teljesképernyős";
                 windowed.Content = "Ablakos";
-                maximized.Content = "Maximalizált";
 
-                L_Velocity.Content = "Sebességmérték";
+                VelocityLabel.Content = "Sebességmérték";
                 mph.Content = "Mérföld/óra - mph";
                 kmph.Content = "Kilóméter/óra - kmh";
 
-                L_Volume.Content = "Térfogatmérték";
+                VolumeLabel.Content = "Térfogatmérték";
                 cubefeet.Content = "Köbláb - cu ft";
 
-                L_Language.Content = "Nyelv";
+                LanguageLabel.Content = "Nyelv";
 
-                RB_Home.Content = "Kezdőlap";
+                HomeButton.Content = "Kezdőlap";
 
             }
         }
@@ -136,7 +135,7 @@ namespace Teslatizator9000
             {
                 ki.Add(i);
             }
-            ki[1] = "meter";
+            ki[1] = "kilometer";
             File.WriteAllLines("Settings.txt", ki);
         }
 
@@ -194,9 +193,6 @@ namespace Teslatizator9000
             ki[3] = "mph";
             File.WriteAllLines("Settings.txt", ki);
         }
-
-
-
         private void magyar_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
@@ -220,31 +216,31 @@ namespace Teslatizator9000
             ki[5] = "english";
             File.WriteAllLines("Settings.txt", ki);
 
-            L_Currency.Content = "Currency";
+            CurrencyLabel.Content = "Currency";
             euro.Content = "Euro - €";
             dollar.Content = "Dollar - $";
             forint.Content = "Forint - Ft";
 
 
-            L_Length.Content = "Length";
+            LengthLabel.Content = "Length";
             mile.Content = "Mile - mi";
             meter.Content = "Meter - m";
 
-            L_Sreen.Content = "Srcreen mode";
+            SreenLabel.Content = "Srcreen mode";
             fullscreen.Content = "Fullscreen";
             windowed.Content = "Windowed";
             maximized.Content = "Maximized";
 
-            L_Velocity.Content = "Velocity";
+            VelocityLabel.Content = "Velocity";
             mph.Content = "Miles/hour - mph";
             kmph.Content = "Kilometers/hour - kmh";
 
-            L_Volume.Content = "Volume";
+            VolumeLabel.Content = "Volume";
             cubefeet.Content = "Cubic feet - cu ft";
 
-            L_Language.Content = "Language";
+            LanguageLabel.Content = "Language";
 
-            RB_Home.Content = "Home";
+            HomeButton.Content = "Home";
 
         }
 
@@ -269,16 +265,31 @@ namespace Teslatizator9000
             ki[4] = "windowed";
             File.WriteAllLines("Settings.txt", ki);
         }
-
-        private void maximized_Checked(object sender, RoutedEventArgs e)
+        private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            List<string> ki = new List<string>();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
+            if (ActualWidth < 1100)
             {
-                ki.Add(i);
+                HomeButton.Content = "H";
+                MSButton.Content = "S";
+                M3Button.Content = "3";
+                MXButton.Content = "X";
+                MYButton.Content = "Y";
             }
-            ki[4] = "maximized";
-            File.WriteAllLines("Settings.txt", ki);
+            else
+            {
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Home";
+                }
+                else
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
+                MSButton.Content = "Model S";
+                M3Button.Content = "Model 3";
+                MXButton.Content = "Model X";
+                MYButton.Content = "Model Y";
+            }
         }
     }
 }
