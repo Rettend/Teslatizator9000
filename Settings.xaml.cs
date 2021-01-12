@@ -24,6 +24,40 @@ namespace Teslatizator9000
         public Settings()
         {
             InitializeComponent();
+            forditas();
+         
+        }
+
+        private void forditas() 
+        {
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+            {
+                CurrencyLabel.Content = "Pénznem";
+                euro.Content = "Euró - €";
+                dollar.Content = "Dollár - $";
+                forint.Content = "Forint - Ft";
+
+
+                LengthLabel.Content = "Hosszmérték";
+                mile.Content = "Mérföld - mi";
+                meter.Content = "Méter - m";
+
+                SreenLabel.Content = "Képernyő";
+                fullscreen.Content = "Teljesképernyős";
+                windowed.Content = "Ablakos";
+
+                VelocityLabel.Content = "Sebességmérték";
+                mph.Content = "Mérföld/óra - mph";
+                kmph.Content = "Kilóméter/óra - kmh";
+
+                VolumeLabel.Content = "Térfogatmérték";
+                cubefeet.Content = "Köbláb - cu ft";
+
+                LanguageLabel.Content = "Nyelv";
+
+                HomeButton.Content = "Kezdőlap";
+
+            }
         }
 
         private void Button_Click_Off(object sender, RoutedEventArgs e)
@@ -159,27 +193,19 @@ namespace Teslatizator9000
             ki[3] = "mph";
             File.WriteAllLines("Settings.txt", ki);
         }
-        private void fullsrceen_Checked(object sender, RoutedEventArgs e)
+        private void magyar_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
                 ki.Add(i);
             }
-            ki[4] = "fullscreen";
+            ki[5] = "magyar";
             File.WriteAllLines("Settings.txt", ki);
+
+            forditas();
         }
-        private void windowed_Checked(object sender, RoutedEventArgs e)
-        {
-            List<string> ki = new List<string>();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                ki.Add(i);
-            }
-            ki[4] = "windowed";
-            File.WriteAllLines("Settings.txt", ki);
-            
-        }
+
         private void english_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
@@ -189,15 +215,54 @@ namespace Teslatizator9000
             }
             ki[5] = "english";
             File.WriteAllLines("Settings.txt", ki);
+
+            CurrencyLabel.Content = "Currency";
+            euro.Content = "Euro - €";
+            dollar.Content = "Dollar - $";
+            forint.Content = "Forint - Ft";
+
+
+            LengthLabel.Content = "Length";
+            mile.Content = "Mile - mi";
+            meter.Content = "Meter - m";
+
+            SreenLabel.Content = "Srcreen mode";
+            fullscreen.Content = "Fullscreen";
+            windowed.Content = "Windowed";
+            maximized.Content = "Maximized";
+
+            VelocityLabel.Content = "Velocity";
+            mph.Content = "Miles/hour - mph";
+            kmph.Content = "Kilometers/hour - kmh";
+
+            VolumeLabel.Content = "Volume";
+            cubefeet.Content = "Cubic feet - cu ft";
+
+            LanguageLabel.Content = "Language";
+
+            HomeButton.Content = "Home";
+
         }
-        private void magyar_Checked(object sender, RoutedEventArgs e)
+
+        private void fullsrceen_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
                 ki.Add(i);
             }
-            ki[5] = "magyar";
+            ki[4] = "fullcsreen";
+            File.WriteAllLines("Settings.txt", ki);
+        }
+
+        private void windowed_Checked(object sender, RoutedEventArgs e)
+        {
+            List<string> ki = new List<string>();
+            foreach (var i in File.ReadAllLines("Settings.txt"))
+            {
+                ki.Add(i);
+            }
+            ki[4] = "windowed";
             File.WriteAllLines("Settings.txt", ki);
         }
         private void Container_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -212,7 +277,14 @@ namespace Teslatizator9000
             }
             else
             {
-                HomeButton.Content = "Home";
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Home";
+                }
+                else
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";
                 MXButton.Content = "Model X";

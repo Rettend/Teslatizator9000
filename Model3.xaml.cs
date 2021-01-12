@@ -24,58 +24,51 @@ namespace Teslatizator9000
         public Model3()
         {
             InitializeComponent();
-            foreach (var i in File.ReadAllLines("Settings.txt"))
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
             {
-                if (i.Contains("mph"))
+                Home.Content = "Kezdőlap";
+                Model3Sub1.Content = "Gyorsulás";
+                Model3Sub2.Content = "Hatótávolság";
+                Model3Sub3.Content = "Csomagtartó";
+                Model3Sub4.Content = "Ülőhelyek";
+                Model3Sub5.Content = "Kerekek";
+                Model3Sub6.Content = "Kezdőár";
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "kilometer")
                 {
-                    AccelerationYes.Content = "4.2s 0-60 mph";
+                    Range.Content = "580 kilométer";
                 }
-
-                if (i.Contains("kmph"))
+                else
                 {
-                    AccelerationYes.Content = "3.3s 0-100 kmph";
+                    Range.Content = "353 mérföld";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
+                {
+                    TrunkSpace.Content = "15 köbláb";
+                }
+                else
+                {
+                    TrunkSpace.Content = "424 liter";
                 }
             }
-
-            foreach (var i in File.ReadAllLines("Settings.txt"))
+            else
             {
-                if (i.Contains("mile"))
+                if (File.ReadLines("Settings.txt").ElementAt(3) == "kmph")
                 {
-                    Range.Content = $"353 miles";
+                    AccelerationYes.Content = "4.4s 0-100 km/h";
                 }
-
-                if (i.Contains("kilometer"))
+                if (File.ReadLines("Settings.txt").ElementAt(1) == "kilometer")
                 {
-                    Range.Content = $"568 kilometers";
+                    Range.Content = "568 kilometers";
                 }
-            }
-
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                if (i.Contains("euro"))
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
                 {
                     Price.Content = "30772 €";
                 }
-
-                if (i.Contains("forint"))
-                {
-                    Price.Content = "10257300 Ft";
-                }
-
-                if (i.Contains("dollar"))
+                else if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
                 {
                     Price.Content = "$ 37990";
                 }
-            }
-
-            foreach (var i in File.ReadAllLines("Settings.txt"))
-            {
-                if (i.Contains("liter"))
-                {
-                    TrunkSpace.Content = "424 liters";
-                }
-
-                if (i.Contains("cubefeet"))
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
                 {
                     TrunkSpace.Content = "15 cubic feet";
                 }
@@ -133,7 +126,14 @@ namespace Teslatizator9000
             }
             else
             {
-                HomeButton.Content = "Home";
+                if (File.ReadLines("Settings.txt").ElementAt(5) == "magyar")
+                {
+                    HomeButton.Content = "Home";
+                }
+                else
+                {
+                    HomeButton.Content = "Kezdőlap";
+                }
                 MSButton.Content = "Model S";
                 M3Button.Content = "Model 3";
                 MXButton.Content = "Model X";

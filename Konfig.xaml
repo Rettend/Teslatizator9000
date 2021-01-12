@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teslatizator9000"
         mc:Ignorable="d">
+   
     <Grid x:Name="Container" Background="White" SizeChanged="Container_SizeChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -184,12 +185,12 @@
                             </UniformGrid>
                         </ListBox>
                         <Grid x:Name="CargearBox1" Visibility="Hidden">
-                            <RadioButton GroupName="cargear" x:Name="PerformanceButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Performance_Click">Performance</RadioButton>
+                            <RadioButton  GroupName="cargear" x:Name="PerformanceButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Performance_Click">Performance</RadioButton>
                             <TextBlock x:Name="PerformanceBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center">+ Acceleration<LineBreak/>+ Top Speed</TextBlock>
                             <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="PerformancePrice" Margin="0,0,0,100" >$ 54990</Label>
                         </Grid>
                         <Grid Grid.Column="1" x:Name="CargearBox2" Visibility="Hidden">
-                            <RadioButton IsChecked="True" GroupName="cargear" x:Name="LongrangeButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Longrange_Click">Long Range Plus</RadioButton>
+                            <RadioButton  IsChecked="True" GroupName="cargear" x:Name="LongrangeButton" Style="{StaticResource ConfigButton}" FontFamily="Gill Sans MT" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" Click="Longrange_Click">Long Range Plus</RadioButton>
                             <TextBlock x:Name="LongrangeBlock" FontFamily="Gill Sans MT" TextWrapping="Wrap" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center">+ Range<LineBreak/>+ Battery</TextBlock>
                             <Label FontWeight="Bold" FontSize="35" VerticalAlignment="Bottom" HorizontalAlignment="Center" x:Name="LongrangePrice" Margin="0,0,0,100" >$ 46990</Label>
                         </Grid>

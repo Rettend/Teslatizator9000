@@ -33,7 +33,7 @@
             <Border.Effect>
                 <DropShadowEffect Opacity="0.6" ShadowDepth="10" BlurRadius="10" Direction="270"/>
             </Border.Effect>
-            <Button Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+            <Button x:Name="StartButton" Content="Start Configuration" Click="Button_Click_Konfig" Background="#00000000" FontFamily="Gill Sans MT" FontSize="50"  Padding="1" BorderBrush="#00707070" UseLayoutRounding="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
         </Border>
         </UniformGrid>
     </UniformGrid>
