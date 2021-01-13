@@ -38,7 +38,7 @@
         </UniformGrid>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" Panel.ZIndex="-10">
             <UniformGrid Margin="0,50,0,0" HorizontalAlignment="Center">
-                <wrapPanelWithFill:WrapPanelFill Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                <WrapPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
                     <StackPanel HorizontalAlignment="Left">
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label x:Name="CurrencyLabel" Style="{StaticResource SettingLabel}" Content="Currency" />
@@ -61,7 +61,7 @@
                     <StackPanel>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Label x:Name="LengthLabel" Style="{StaticResource SettingLabel}" Content="Length" />
-                            <RadioButton x:Name="meter" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Meter - km" Checked="meter_Checked" />
+                            <RadioButton x:Name="kilometer" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Kilometer - km" Checked="kilometer_Checked" />
                             <RadioButton x:Name="mile" GroupName="hossz" Style="{StaticResource SettingButton}" Content="Mile - mi" Checked="mile_Checked" />
                         </UniformGrid>
                         <UniformGrid Margin="20" Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -75,7 +75,7 @@
                             <RadioButton x:Name="mph" GroupName="sebesség" Style="{StaticResource SettingButton}" Content="Miles per hour - mph" Checked="mph_Checked" />
                         </UniformGrid>
                     </StackPanel>
-                </wrapPanelWithFill:WrapPanelFill>
+                </WrapPanel>
             </UniformGrid>
         </ScrollViewer>
     </Grid>
