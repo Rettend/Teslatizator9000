@@ -37,9 +37,9 @@ namespace Teslatizator9000
             {
                 forint.IsChecked = true;
             }
-            if (File.ReadLines("Settings.txt").ElementAt(1) == "meter")
+            if (File.ReadLines("Settings.txt").ElementAt(1) == "kilometer")
             {
-                meter.IsChecked = true;
+                kilometer.IsChecked = true;
             }
             if (File.ReadLines("Settings.txt").ElementAt(1) == "mile")
             {
@@ -148,14 +148,14 @@ namespace Teslatizator9000
             File.WriteAllLines("Settings.txt", ki);
         }
 
-        private void meter_Checked(object sender, RoutedEventArgs e)
+        private void kilometer_Checked(object sender, RoutedEventArgs e)
         {
             List<string> ki = new List<string>();
             foreach (var i in File.ReadAllLines("Settings.txt"))
             {
                 ki.Add(i);
             }
-            ki[1] = "meter";
+            ki[1] = "kilometer";
             File.WriteAllLines("Settings.txt", ki);
         }
 
@@ -269,7 +269,7 @@ namespace Teslatizator9000
                 forint.Content = "Forint - Ft";
                 LengthLabel.Content = "Hosszmérték";
                 mile.Content = "Mérföld - mi";
-                meter.Content = "Méter - m";
+                kilometer.Content = "Kilométer - km";
                 SreenLabel.Content = "Képernyő";
                 fullscreen.Content = "Teljesképernyős";
                 windowed.Content = "Ablakos";
@@ -289,7 +289,7 @@ namespace Teslatizator9000
                 forint.Content = "Forint - Ft";
                 LengthLabel.Content = "Length";
                 mile.Content = "Mile - mi";
-                meter.Content = "Meter - m";
+                kilometer.Content = "Kilometer - km";
                 SreenLabel.Content = "Srcreen mode";
                 fullscreen.Content = "Fullscreen";
                 windowed.Content = "Windowed";

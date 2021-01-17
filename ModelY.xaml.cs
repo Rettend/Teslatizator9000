@@ -33,11 +33,11 @@ namespace Teslatizator9000
                 SeatingLabel.Content = "Ülőhelyek";
                 WheelsLabel.Content = "Kerekek";
                 StartingLabel.Content = "Kezdőár";
-                if (File.ReadLines("Settings.txt").ElementAt(2) == "kilometer")
+                if (File.ReadLines("Settings.txt").ElementAt(1) == "kilometer")
                 {
                     Range.Content = "505 kilométer";
                 }
-                else
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "mile")
                 {
                     Range.Content = "326 mérföld";
                 }
@@ -45,12 +45,24 @@ namespace Teslatizator9000
                 {
                     TrunkSpace.Content = "68 köbláb";
                 }
-                else
+                if (File.ReadLines("Settings.txt").ElementAt(2) == "liter")
                 {
                     TrunkSpace.Content = "1925 liter";
                 }
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
+                {
+                    Price.Content = "40492 €";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
+                {
+                    Price.Content = "$ 49990";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "forint")
+                {
+                    Price.Content = "13497300 Ft";
+                }
             }
-            else
+            if (File.ReadLines("Settings.txt").ElementAt(5) == "english")
             {
                 if (File.ReadLines("Settings.txt").ElementAt(3) == "kmph")
                 {
@@ -64,9 +76,13 @@ namespace Teslatizator9000
                 {
                     Price.Content = "40 492 €";
                 }
-                else if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
                 {
                     Price.Content = "$ 49 990";
+                }
+                if (File.ReadLines("Settings.txt").ElementAt(0) == "forint")
+                {
+                    Price.Content = "13497300 Ft";
                 }
                 if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
                 {
