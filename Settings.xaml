@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:wrapPanelWithFill="clr-namespace:WrapPanelWithFill;assembly=WrapPanelWithFill"
              xmlns:local="clr-namespace:Teslatizator9000"
              mc:Ignorable="d" >
     <UserControl.Resources>
