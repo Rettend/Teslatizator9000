@@ -59,14 +59,14 @@ namespace Teslatizator9000
                 if (File.ReadLines("Settings.txt").ElementAt(1) == "kilometer")
                 {
                     Range.Content = "652 kilometers";
-                }
+                }   
                 if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
                 {
-                    Price.Content = "56230 €";
+                    Price.Content = "56 230 €";
                 }
                 else if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
                 {
-                    Price.Content = "$ 69420";
+                    Price.Content = "$ 69 420";
                 }
                 if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
                 {

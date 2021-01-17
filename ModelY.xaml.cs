@@ -62,11 +62,11 @@ namespace Teslatizator9000
                 }
                 if (File.ReadLines("Settings.txt").ElementAt(0) == "euro")
                 {
-                    Price.Content = "40492 €";
+                    Price.Content = "40 492 €";
                 }
                 else if (File.ReadLines("Settings.txt").ElementAt(0) == "dollar")
                 {
-                    Price.Content = "$ 49990";
+                    Price.Content = "$ 49 990";
                 }
                 if (File.ReadLines("Settings.txt").ElementAt(2) == "cubefeet")
                 {
